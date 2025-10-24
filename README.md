@@ -27,7 +27,7 @@ These projects are perfect for anyone who wants to:
 
 | No  | Game                | Description                                             |
 | --- | ------------------- | ------------------------------------------------------- |
-| 1️⃣  | 🐍 **Snake Game**   | Control the snake and eat food to grow longer.          |
+| 1️⃣  | [🐍 **Snake Game**](content/contribution/mohitlikestocode-snake/index.html)   | Control the snake and eat food to grow longer. (by Mohit) |
 | 2️⃣  | 💣 **Minesweeper**  | Reveal all safe tiles without detonating a bomb.        |
 | 3️⃣  | 🧩 **Memory Match** | Flip cards and match identical pairs.                   |
 | 4️⃣  | 🏓 **Pong**         | Classic paddle and ball arcade challenge.               |
