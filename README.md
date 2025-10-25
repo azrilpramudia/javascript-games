@@ -95,6 +95,13 @@ Your support makes **JavaScript Games for Beginners** better every day. 💪
                 </a>
             </td>
             <td align="center">
+                <a href="https://github.com/Parth-G27">
+                    <img src="https://avatars.githubusercontent.com/u/107863553?v=4" width="100;" alt="Parth-G27"/>
+                    <br />
+                    <sub><b>Parth-G27</b></sub>
+                </a>
+            </td>
+            <td align="center">
                 <a href="https://github.com/spiderOO7">
                     <img src="https://avatars.githubusercontent.com/u/120004473?v=4" width="100;" alt="spiderOO7"/>
                     <br />
@@ -113,6 +120,29 @@ Your support makes **JavaScript Games for Beginners** better every day. 💪
                     <img src="https://avatars.githubusercontent.com/u/112118575?v=4" width="100;" alt="LakshmiSowmya04"/>
                     <br />
                     <sub><b>LakshmiSowmya04</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/Shachi12Shukla">
+                    <img src="https://avatars.githubusercontent.com/u/152056204?v=4" width="100;" alt="Shachi12Shukla"/>
+                    <br />
+                    <sub><b>Shachi12Shukla</b></sub>
+                </a>
+            </td>
+		</tr>
+		<tr>
+            <td align="center">
+                <a href="https://github.com/ZarrarPeshimam">
+                    <img src="https://avatars.githubusercontent.com/u/158853189?v=4" width="100;" alt="ZarrarPeshimam"/>
+                    <br />
+                    <sub><b>ZarrarPeshimam</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/harsh13713">
+                    <img src="https://avatars.githubusercontent.com/u/168455999?v=4" width="100;" alt="harsh13713"/>
+                    <br />
+                    <sub><b>harsh13713</b></sub>
                 </a>
             </td>
 		</tr>
