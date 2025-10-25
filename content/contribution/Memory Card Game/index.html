@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Match</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🧠 Memory Match</h1>
+        </div>
+
+        <div class="stats">
+            <div class="stat">
+                Moves: <span id="moves">0</span>
+            </div>
+            <div class="stat">
+                Time: <span id="timer">0:00</span>
+            </div>
+            <div class="stat">
+                Matches: <span id="matches">0/8</span>
+            </div>
+        </div>
+
+        <div class="game-board" id="gameBoard"></div>
+
+        <div class="controls">
+            <button onclick="resetGame()">New Game</button>
+        </div>
+    </div>
+
+    <div class="victory-message" id="victoryMessage">
+        <div class="victory-content">
+            <h2>🎉 Congratulations!</h2>
+            <p id="victoryText"></p>
+            <button onclick="resetGame()">Play Again</button>
+        </div>
+    </div>
+
+   <script src="script.js"></script>
+
+</body>
+</html>

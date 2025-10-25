@@ -25,13 +25,14 @@ These projects are perfect for anyone who wants to:
 
 ## 📂 Example Games
 
-| No  | Game                | Description                                             |
-| --- | ------------------- | ------------------------------------------------------- |
-| 1️⃣  | 🐍 **Snake Game**   | Control the snake and eat food to grow longer.          |
-| 2️⃣  | 💣 **Minesweeper**  | Reveal all safe tiles without detonating a bomb.        |
-| 3️⃣  | 🧩 **Memory Match** | Flip cards and match identical pairs.                   |
-| 4️⃣  | 🏓 **Pong**         | Classic paddle and ball arcade challenge.               |
-| 5️⃣  | 🪂 **Flappy Bird**  | Tap to fly through pipes and achieve the highest score! |
+| No  | Game                    | Description                                             |
+| --- | ----------------------- | ------------------------------------------------------- |
+| 1️⃣  | 🐍 **Snake Game**       | Control the snake and eat food to grow longer.          |
+| 2️⃣  | 💣 **Minesweeper**      | Reveal all safe tiles without detonating a bomb.        |
+| 3️⃣  | 🧩 **Memory Match**     | Flip cards and match identical pairs.                   |
+| 4️⃣  | 🏓 **Pong**             | Classic paddle and ball arcade challenge.               |
+| 5️⃣  | 🪂 **Flappy Bird**      | Tap to fly through pipes and achieve the highest score! |
+| 6️⃣  | ✂️ **Rock Paper Scissors** | Classic hand game with interactive UI and score tracking. |
 
 > Want to add your own game? Fork this repo and bring your creativity to life! 🎨
 
@@ -80,9 +81,41 @@ See the [LICENSE](./LICENSE) file for details.
 Thank you to all the awesome people who have contributed to this project! 🎉  
 Your support makes **JavaScript Games for Beginners** better every day. 💪
 
-[![Contributors](https://contrib.rocks/image?repo=azrilpramudia/javascript-games)](https://github.com/azrilpramudia/javascript-games/graphs/contributors)
-
 <!-- readme: contributors -start -->
+<table>
+	<tbody>
+		<tr>
+            <td align="center">
+                <a href="https://github.com/azrilpramudia">
+                    <img src="https://avatars.githubusercontent.com/u/107488372?v=4" width="100;" alt="azrilpramudia"/>
+                    <br />
+                    <sub><b>azrilpramudia</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/spiderOO7">
+                    <img src="https://avatars.githubusercontent.com/u/120004473?v=4" width="100;" alt="spiderOO7"/>
+                    <br />
+                    <sub><b>spiderOO7</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/SunjeetKajla">
+                    <img src="https://avatars.githubusercontent.com/u/206449884?v=4" width="100;" alt="SunjeetKajla"/>
+                    <br />
+                    <sub><b>SunjeetKajla</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/LakshmiSowmya04">
+                    <img src="https://avatars.githubusercontent.com/u/112118575?v=4" width="100;" alt="LakshmiSowmya04"/>
+                    <br />
+                    <sub><b>LakshmiSowmya04</b></sub>
+                </a>
+            </td>
+		</tr>
+	<tbody>
+</table>
 <!-- readme: contributors -end -->
 
 ---
