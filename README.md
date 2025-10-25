@@ -32,6 +32,7 @@ These projects are perfect for anyone who wants to:
 | 3️⃣  | 🧩 **Memory Match** | Flip cards and match identical pairs.                   |
 | 4️⃣  | 🏓 **Pong**         | Classic paddle and ball arcade challenge.               |
 | 5️⃣  | 🪂 **Flappy Bird**  | Tap to fly through pipes and achieve the highest score! |
+| 6️⃣  | 🧠 **Simon Says**   | Memorize and repeat color sequences using clicks or keys (1–4)! |
 
 > Want to add your own game? Fork this repo and bring your creativity to life! 🎨
 
