@@ -1,0 +1,134 @@
+/* --- Global & Body Styles --- */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f8f9fa; /* Light, clean background */
+    color: #212529;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* --- Sudoku Board --- */
+#sudoku-board {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+    
+    /* Responsive & Square */
+    width: 90vw;
+    height: 90vw;
+    max-width: 500px;
+    max-height: 500px;
+    aspect-ratio: 1 / 1; /* Ensures it's always square */
+    
+    margin: 20px auto;
+    border-radius: 8px; /* Soft rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Modern "raised" effect */
+    overflow: hidden; /* Clips the inner cells to the rounded border */
+    border: 2px solid #343a40; /* A strong outer border */
+}
+
+/* --- Base Cell Style --- */
+.cell {
+    /* Width/Height are now handled by the grid's '1fr' units */
+    border: 1px solid #e0e0e0; /* Lighter, subtle grid lines */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem; /* Slightly larger, more readable font */
+    font-weight: 500;
+    color: #495057;
+    box-sizing: border-box; 
+    transition: background-color 0.2s ease-in-out;
+    position: relative; /* For z-index and pseudo-elements */
+    cursor: pointer;
+}
+
+.cell:hover {
+    background-color: #f1f3f5; /* Subtle hover for empty cells */
+}
+
+/* --- 3x3 Sub-grid Styling --- */
+/* Use a darker, thicker border for the sub-grids */
+.cell:nth-child(3n):not(:nth-child(9n)) { 
+    border-right: 3px solid #555; 
+}
+
+.cell:nth-child(n+19):nth-child(-n+27),
+.cell:nth-child(n+46):nth-child(-n+54) { 
+    border-bottom: 3px solid #555; 
+}
+
+/* --- Cell States --- */
+
+/* Initial given numbers (the "clues") */
+.cell.initial-value {
+    background-color: #f1f3f5; /* Slightly different bg */
+    color: #343a40;
+    font-weight: 700; /* Bolder to show it's a clue */
+    cursor: not-allowed;
+}
+
+/* Selected cell */
+.cell.selected {
+    /* Using an inset shadow is a modern way to highlight */
+    /* It doesn't cover the number like a background-color would */
+    box-shadow: inset 0 0 0 3px #007bff;
+    background-color: #e7f5ff; /* A very light blue */
+    z-index: 10;
+}
+
+/* Error cell */
+.cell.error {
+    background-color: #ffebee; /* Soft pink/red */
+    color: #d32f2f; /* Dark red text for contrast */
+    font-weight: 700;
+}
+
+/* Selected cell that is also an error */
+.cell.selected.error {
+    box-shadow: inset 0 0 0 3px #d32f2f; /* Red highlight */
+}
+
+/* --- Controls & Buttons --- */
+#controls {
+    display: flex; /* Use flexbox for modern layout */
+    justify-content: center;
+    gap: 15px; /* Spacing between buttons */
+    margin-top: 20px;
+}
+
+button {
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #007bff; /* Primary blue */
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+button:active {
+    transform: translateY(1px); /* "Press" effect */
+    box-shadow: none;
+}
+
+/* Example of a secondary button (e.g., "Clear" or "Reset") */
+button.secondary {
+    background-color: #6c757d; /* A neutral gray */
+    color: white;
+}
+
+button.secondary:hover {
+    background-color: #5a6268;
+}
