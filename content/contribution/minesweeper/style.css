@@ -1,0 +1,106 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    background-color: #121212; /* Dark background */
+    font-family: Arial, sans-serif;
+    
+    /* Added for modern centering */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#board {
+    /* Replaced hard border with a softer shadow and rounded corners */
+    border: 1px solid #444;
+    border-spacing: 0px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    overflow: hidden; /* Ensures cells stay inside the rounded corners */
+}
+
+#board tr {
+    display: block;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* This is the default, unclicked cell */
+#board td {
+    margin: 0px;
+    padding: 15px; /* This controls your cell size */
+    
+    /* Replaced 'block.png' with a dark background color */
+    background-color: #333;
+    border: 1px solid #222; /* Subtle grid lines */
+    
+    /* Modern transition for hover */
+    transition: background-color 0.2s ease;
+}
+
+/* Added a hover effect for unclicked cells */
+#board td:not([class*=" "]):hover,
+#board td.flagged:hover {
+    background-color: #444;
+    cursor: pointer;
+}
+
+/* --- REVEALED & SPRITE CELLS --- */
+
+/* Shared styles for all cells that use an image sprite */
+#board td.flagged,
+#board td.mine,
+#board td.one,
+#board td.two,
+#board td.three,
+#board td.four,
+#board td.five,
+#board td.six,
+#board td.seven,
+#board td.eight {
+    background-repeat: no-repeat;
+    background-size: 100%;
+    /* Revealed cells shouldn't change on hover */
+    cursor: default;
+}
+
+/* This is the revealed "empty" cell */
+#board td.empty {
+    /* Replaced 'empty.png' with a darker, "dug-out" color */
+    background-color: #222;
+    border-color: #222;
+    cursor: default;
+}
+
+/* Your original sprite classes */
+#board td.flagged {
+    background-image: url('sprites/flagged.png');
+}
+#board td.mine {
+    background-image: url('sprites/mine.png');
+}
+#board td.one {
+    background-image: url('sprites/one.png');
+}
+#board td.two {
+    background-image: url('sprites/two.png');
+}
+#board td.three {
+    background-image: url('sprites/three.png');
+}
+#board td.four {
+    background-image: url('sprites/four.png');
+}
+#board td.five {
+    background-image: url('sprites/five.png');
+}
+#board td.six {
+    background-image: url('sprites/six.png');
+}
+#board td.seven {
+    background-image: url('sprites/seven.png');
+}
+#board td.eight {
+    background-image: url('sprites/eight.png');
+}
