@@ -1,38 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Paper Scissors Game</title>
-    <link rel="stylesheet" href="style.css">
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anime Style Tic Tac Toe</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <p class="Title">Rock Paper Scissors</p>
+  <div class="game-container">
+    <h1 class="title">🎌 Anime Tic Tac Toe 🎮</h1>
+    <div id="board" class="board">
+      <div class="cell" data-index="0"></div>
+      <div class="cell" data-index="1"></div>
+      <div class="cell" data-index="2"></div>
+      <div class="cell" data-index="3"></div>
+      <div class="cell" data-index="4"></div>
+      <div class="cell" data-index="5"></div>
+      <div class="cell" data-index="6"></div>
+      <div class="cell" data-index="7"></div>
+      <div class="cell" data-index="8"></div>
+    </div>
 
-    <button onclick="playGame('Rock');" class="move-button"><img src= "rock-emoji-removebg-preview.png" class="move-icon"></button>
+    <h2 id="status">Player X's Turn</h2>
+    <button id="reset">🔁 Restart Game</button>
+  </div>
 
-    <button onclick="playGame('Paper');" class="move-button"><img src="paper-emoji-removebg-preview.png" class="move-icon"></button>
-
-    <button onclick="playGame('Scissors');" class="move-button"><img src="scissors-emoji-removebg-preview.png" class="move-icon"></button>
-    
-    <p class="js-result result"></p>
-
-    <p class="js-moves moves">
-       
-    </p>
-
-    <p class="js-score score"></p>
-
-    <button onclick="
-    score.wins = 0;
-    score.losses = 0;
-    score.ties = 0;
-    localStorage.removeItem('score');
-    updateScoreElement();"  class="reset-score-button" >Reset Score</button>
-
-    <script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
