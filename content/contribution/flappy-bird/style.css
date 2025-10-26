@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #87CEEB, #98FB98);
+    font-family: Arial, sans-serif;
+}
+
+.game-container {
+    text-align: center;
+    position: relative;
+}
+
+#gameCanvas {
+    border: 3px solid #333;
+    background: linear-gradient(to bottom, #87CEEB, #98FB98);
+    cursor: pointer;
+}
+
+.score {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.instructions {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #333;
+}

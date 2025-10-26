@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetris</title>
+    <!-- Using a pixel-style font for the retro game feel -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>TETRIS</h1>
+
+    <div class="game-container">
+        <!-- Game Board -->
+        <div class="game-board-container">
+            <canvas id="gameBoard"></canvas>
+            <!-- Game Over Message -->
+            <div id="messageOverlay">
+                <div id="messageText">GAME OVER</div>
+                <span id="finalScore"></span>
+            </div>
+        </div>
+        
+        <!-- Game Info Panel -->
+        <div class="game-info">
+            <div class="info-box">
+                <h2>SCORE</h2>
+                <span id="score">0</span>
+            </div>
+            
+            <div class="info-box">
+                <h2>LINES</h2>
+                <span id="lines">0</span>
+            </div>
+            
+            <div class="info-box">
+                <h2>LEVEL</h2>
+                <span id="level">0</span>
+            </div>
+            
+            <div class="info-box">
+                <h2>NEXT</h2>
+                <div class="next-piece-container">
+                    <canvas id="nextPieceCanvas"></canvas>
+                </div>
+            </div>
+
+            <button id="startButton">Start Game</button>
+
+            <div class="controls-info">
+                Use Arrow Keys to Move
+                <br>
+                [Up] to Rotate
+                <br>
+                [Space] to Hard Drop
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to the external JavaScript file -->
+    <!-- 'defer' ensures the script runs after the HTML is parsed -->
+    <script src="script.js" defer></script>
+</body>
+</html>

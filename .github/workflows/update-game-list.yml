@@ -1,0 +1,88 @@
+name: 🎮 Smart Game List Updater (Auto PR)
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    types: [closed]
+  workflow_dispatch:
+  schedule:
+    - cron: "0 * * * *"  # Run every 1 hour (UTC)
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update-game-list:
+    name: 🧾 Generate Game List and Create PR
+    runs-on: ubuntu-latest
+
+    if: github.event_name != 'pull_request' || github.event.pull_request.merged == true
+
+    steps:
+      - name: 🧩 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 📦 Get current folder structure
+        id: current
+        run: |
+          find content/contribution -mindepth 1 -maxdepth 1 -type d | sort > current_games.txt
+          md5sum current_games.txt | cut -d " " -f1 > current_hash.txt
+          echo "hash=$(cat current_hash.txt)" >> $GITHUB_OUTPUT
+
+      - name: 💾 Get previous folder hash (if exists)
+        id: previous
+        run: |
+          if [ -f .games_hash ]; then
+            cat .games_hash
+            echo "hash=$(cat .games_hash)" >> $GITHUB_OUTPUT
+          else
+            echo "hash=none" >> $GITHUB_OUTPUT
+          fi
+
+      - name: 🔍 Compare folder list
+        id: compare
+        run: |
+          if [ "${{ steps.current.outputs.hash }}" = "${{ steps.previous.outputs.hash }}" ]; then
+            echo "same=true" >> $GITHUB_OUTPUT
+          else
+            echo "same=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: 🧠 Generate list-game.md (only if changed)
+        if: steps.compare.outputs.same == 'false'
+        run: |
+          echo "# 🎮 List of JavaScript Games" > list-game.md
+          echo "" >> list-game.md
+          echo "Automatically generated from the [content/contribution](./content/contribution) folder." >> list-game.md
+          echo "" >> list-game.md
+          echo "| No. | Game Title | Path |" >> list-game.md
+          echo "|:--:|:----------------|:----------------------------|" >> list-game.md
+          i=1
+          for d in content/contribution/*/ ; do
+            game_name=$(basename "$d")
+            title=$(echo "$game_name" | sed -r 's/-/ /g' | sed -r 's/\b(.)/\u\1/g')
+            echo "| $i | **$title** | [./$d](./$d) |" >> list-game.md
+            ((i++))
+          done
+          echo "" >> list-game.md
+          echo "> 🧩 Auto-updated on $(date +'%Y-%m-%d %H:%M:%S')" >> list-game.md
+
+      - name: 🪄 Commit and create pull request
+        if: steps.compare.outputs.same == 'false'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cp current_hash.txt .games_hash
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "GitHub Action"
+          branch="auto/update-game-list"
+          git checkout -b "$branch"
+          git add list-game.md .games_hash
+          git commit -m "🎮 Auto update game list"
+          git push origin "$branch"
+          gh pr create \
+            --title "🎮 Auto update game list" \
+            --body "This PR automatically updates \`list-game.md\` based on new folders in \`content/contribution/\`." \
+            --base main --head "$branch" || echo "⚠️ PR already exists, skipping."

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Simple Snake Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <div class="topbar">
+        <h1>Simple Snake Game</h1>
+        <div class="score">Score: <span id="score">0</span></div>
+      </div>
+
+      <div style="position:relative">
+        <canvas id="game" width="400" height="400"></canvas>
+        <div id="gameOverlay" style="display:none;position:absolute;inset:0;align-items:center;justify-content:center"></div>
+      </div>
+
+      <div class="controls">
+        <button id="startBtn">Start</button>
+        <button id="pauseBtn" class="secondary">Pause</button>
+        <button id="restartBtn" class="secondary">Restart</button>
+      </div>
+
+      <div class="mobile-pad small" style="justify-content:space-between">
+        <div style="width:120px"></div>
+        <div class="pad-col">
+          <div id="btnUp" class="pad-btn">↑</div>
+          <div style="display:flex;gap:8px;justify-content:center">
+            <div id="btnLeft" class="pad-btn">←</div>
+            <div id="btnDown" class="pad-btn">↓</div>
+            <div id="btnRight" class="pad-btn">→</div>
+          </div>
+        </div>
+      </div>
+
+      <p class="small" style="margin-top:12px">Use arrow keys or WASD to control. Food increases length and speed slightly.</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

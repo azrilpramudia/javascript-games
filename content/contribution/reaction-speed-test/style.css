@@ -1,0 +1,53 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: lightcoral; /* initial red */
+  cursor: pointer;
+  user-select: none;
+}
+
+h2 {
+  margin-bottom: 30px;
+  font-size: 32px;
+  color: #222;
+}
+
+/* Container for results */
+#result {
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Individual time boxes */
+.time-box {
+  padding: 15px 25px;
+  margin: 8px 0;
+  border-radius: 12px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  min-width: 220px;
+}
+
+.reaction-time {
+  background-color: #4caf50; /* greenish */
+}
+
+.best-time {
+  background-color: #2196f3; /* blue */
+}
+
+.instruction {
+  margin-top: 15px;
+}

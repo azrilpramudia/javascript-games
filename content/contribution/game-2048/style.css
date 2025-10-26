@@ -1,0 +1,229 @@
+/*
+ * CSS updated for "Cyber Neon" Theme 
+ */
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #EAEAEA; /* Changed for Theme 1 */
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #121212; /* Changed for Theme 1 */
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.head{
+    width: 25rem;
+    height: 9.375rem;
+    margin-top: 2rem;
+}
+
+.new-game{
+    text-decoration: none;
+    /* Added styles for Theme 1 to match the button in screenshot */
+    background-color: #00F0FF; /* Bright Cyan */
+    color: #121212; /* Dark text */
+    height: 1.875rem;
+    width: 6.5rem; /* Made slightly wider than score */
+    border-radius: 0.2rem;
+    float: right;
+    clear: right; /* To go below the score */
+    margin-top: 0.5rem; /* Added space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.score{
+    color: #121212; /* Changed for Theme 1 */
+    background-color: #00F0FF; /* Changed for Theme 1 */
+    height: 1.875rem;
+    width: 5.625rem;
+    border-radius: 0.2rem;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title{
+    font-size: 3.75rem;
+    font-weight: bold;
+}
+
+.new-game:hover{
+    cursor: pointer;
+    /* Added subtle hover effect for the new button */
+    filter: brightness(90%);
+}
+
+.board{
+    height: 25rem;
+    width: 25rem;
+    background: #333333; /* Changed to Empty Tile color for Theme 1 */
+    border: 0.3125rem solid #1E1E1E; /* Changed to Grid Background for Theme 1 */
+    border-radius: 0.3125rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tile{
+    height: 5.625rem;
+    width: 5.625rem;
+    border: 0.3125rem solid #1E1E1E; /* Changed to Grid Background for Theme 1 */
+    font-size: 3.125rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 500ms all linear;
+}
+
+/* * Neon Tile Theme
+ */
+.b2 {
+    background-color: #00F0FF; /* Cyan */
+    color: #121212;
+}
+
+.b4 {
+    background-color: #FF00FF; /* Magenta */
+    color: #121212;
+}
+
+.b8 {
+    background-color: #39FF14; /* Lime Green */
+    color: #121212;
+}
+
+.b16{
+    background-color: #F9A000; /* Bright Orange */
+    color: white;
+}
+
+.b32{
+    background-color: #F50000; /* Bright Red */
+    color: white;
+}
+
+.b64{
+    background-color: #007FFF; /* Azure Blue */
+    color: white;
+}
+
+.b128{
+    background-color: #FFFF00; /* Bright Yellow */
+    color: #121212;
+}
+
+.b256{
+    background-color: #FF1493; /* Deep Pink */
+    color: white;
+}
+
+.b512{
+    background-color: #00FF7F; /* Spring Green */
+    color: white;
+}
+
+.b1024{
+    background-color: #9400D3; /* Dark Violet */
+    color: white;
+}
+
+.b2048{
+    background-color: #FFFFFF; /* White */
+    color: #121212;
+}
+
+.b4096 {
+    background-color: #FF4500; /* Orange-Red */
+    color: white;
+}
+
+.b8192 {
+    background-color: #4B0082; /* Indigo */
+    color: white;
+}
+/* End of Neon Tile Theme */
+
+
+.footer{
+    width: 25rem;
+    height: 12.5rem;
+    margin-top: 5rem;    
+}
+
+p{
+    font-size: 1.1rem;
+}
+
+.arrow-keys, .key{
+    display: none;
+}
+
+.key{
+    height: 5rem;
+    width: 5rem;
+    border-radius: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    background-color: #333333; /* Changed for Theme 1 */
+    margin: 0.5rem;
+}
+
+.key img{
+    width: 4.5rem;
+    /* Added a filter in case your arrow images are dark */
+    filter: invert(100%); 
+}
+
+#keyup{
+    align-items: center;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 500px) {
+    :root {
+        font-size: 12px;
+    }
+    .tile{
+        height: 5.75rem;
+        width: 5.75rem;
+    }
+    .arrow-keys, .key{
+        display: flex;
+    }
+    .footer{
+        margin-top: 2rem;
+    }  
+}
+
+@media only screen and (max-width: 400px) {
+    :root {
+        font-size: 10px;
+    }
+    .arrow-keys, .key{
+        display: flex;
+    }
+    .tile{
+        height: 5.65rem;
+        width: 5.65rem;
+    }
+    .footer{
+        margin-top: 2rem;
+    }  
+}

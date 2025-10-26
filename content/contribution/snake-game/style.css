@@ -1,0 +1,153 @@
+:root {
+  --bg: #111;
+  --panel: #0f1720;
+  --accent: #22c55e;
+  --snake: #60a5fa;
+  --food: #f97316;
+  --muted: #94a3b8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  background: linear-gradient(180deg, #071022 0%, #061122 100%);
+  font-family: Inter, system-ui, Arial, sans-serif;
+  color: #e6eef6;
+}
+
+.wrap {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(2, 6, 23, 0.6);
+  width: 420px;
+  max-width: 100%; /* Ensures the card does not overflow on small screens */
+}
+
+h1 {
+  font-size: 18px;
+  margin: 0 0 8px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.score {
+  font-size: 14px;
+  color: var(--accent);
+}
+
+canvas {
+  background: linear-gradient(180deg, #022 0%, #012 100%);
+  display: block;
+  border-radius: 8px;
+  width: 100%;
+  height: auto;
+  max-height: 350px; /* Prevent canvas from growing too large */
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+button {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 0;
+  background: #0b1220;
+  color: #dbeafe;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button.secondary {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.mobile-pad {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.pad-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pad-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  border: 0;
+  background: rgba(255, 255, 255, 0.03);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  cursor: pointer;
+  user-select: none;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6));
+  border-radius: 8px;
+}
+
+.overlay .box {
+  background: var(--panel);
+  padding: 18px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.small {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 100%;
+  }
+
+  .controls {
+    flex-direction: column; /* Stack controls vertically on smaller screens */
+  }
+
+  .mobile-pad {
+    gap: 4px; /* Adjust space between pad buttons on small screens */
+  }
+
+  .pad-btn {
+    width: 48px;
+    height: 48px; /* Adjust button size for mobile */
+  }
+}
