@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>WORDLE</h1>
+        
+        <!-- Score Display -->
+        <div class="stats">
+            <div class="stat">
+                <span class="stat-number" id="games-played">0</span>
+                <span class="stat-label">Played</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number" id="win-percentage">0</span>
+                <span class="stat-label">Win %</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number" id="current-streak">0</span>
+                <span class="stat-label">Streak</span>
+            </div>
+        </div>
+        
+        <!-- 6x5 Game Grid -->
+        <div class="game-grid" id="game-grid"></div>
+        
+        <!-- Virtual Keyboard -->
+        <div class="keyboard" id="keyboard">
+            <div class="keyboard-row">
+                <button class="key" data-key="Q">Q</button>
+                <button class="key" data-key="W">W</button>
+                <button class="key" data-key="E">E</button>
+                <button class="key" data-key="R">R</button>
+                <button class="key" data-key="T">T</button>
+                <button class="key" data-key="Y">Y</button>
+                <button class="key" data-key="U">U</button>
+                <button class="key" data-key="I">I</button>
+                <button class="key" data-key="O">O</button>
+                <button class="key" data-key="P">P</button>
+            </div>
+            <div class="keyboard-row">
+                <button class="key" data-key="A">A</button>
+                <button class="key" data-key="S">S</button>
+                <button class="key" data-key="D">D</button>
+                <button class="key" data-key="F">F</button>
+                <button class="key" data-key="G">G</button>
+                <button class="key" data-key="H">H</button>
+                <button class="key" data-key="J">J</button>
+                <button class="key" data-key="K">K</button>
+                <button class="key" data-key="L">L</button>
+            </div>
+            <div class="keyboard-row">
+                <button class="key enter-key" data-key="ENTER">ENTER</button>
+                <button class="key" data-key="Z">Z</button>
+                <button class="key" data-key="X">X</button>
+                <button class="key" data-key="C">C</button>
+                <button class="key" data-key="V">V</button>
+                <button class="key" data-key="B">B</button>
+                <button class="key" data-key="N">N</button>
+                <button class="key" data-key="M">M</button>
+                <button class="key backspace-key" data-key="BACKSPACE">⌫</button>
+            </div>
+        </div>
+        
+        <!-- Message Display -->
+        <div class="message" id="message"></div>
+        
+        <!-- Restart Button -->
+        <div class="controls">
+            <button class="restart-btn" id="restart-btn" onclick="restartGame()">New Game</button>
+        </div>
+    </div>
+
+    <!-- Load words first, then game logic -->
+    <script src="words.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
