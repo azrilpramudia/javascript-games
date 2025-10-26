@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Typing Speed Challenge ⌨️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="day-theme">
+  <div class="container">
+    <h1>🔥 Typing Speed Challenge</h1>
+    <p class="sub">Select difficulty, type fast, and see your results!</p>
+
+    <div class="settings">
+      <label for="level">🎯 Choose Level:</label>
+      <select id="level">
+        <option value="easy">Easy</option>
+        <option value="medium" selected>Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+
+      <button id="theme-btn">🌙 Night Mode</button>
+    </div>
+
+    <div id="quote-box">
+      <span id="quote"></span>
+    </div>
+
+    <textarea id="input-area" placeholder="Start typing here..." disabled></textarea>
+
+    <div class="buttons">
+      <button id="start-btn">Start Test</button>
+      <button id="submit-btn" disabled>Submit</button>
+      <button id="restart-btn" disabled>Restart</button>
+    </div>
+
+    <div class="stats">
+      <div>⏱ Time: <span id="time">60</span>s</div>
+      <div>⚡ WPM: <span id="wpm">0</span></div>
+      <div>🎯 Accuracy: <span id="accuracy">100</span>%</div>
+    </div>
+
+    <div id="result" class="hidden"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
