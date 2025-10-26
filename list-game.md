@@ -13,7 +13,8 @@ Automatically generated from the [content/contribution](./content/contribution) 
 | 7 | **Rock Paper Scissors** | [./content/contribution/rock-paper-scissors/](./content/contribution/rock-paper-scissors/) |
 | 8 | **Simon Says Game** | [./content/contribution/simon-says-game/](./content/contribution/simon-says-game/) |
 | 9 | **Snake Game** | [./content/contribution/snake-game/](./content/contribution/snake-game/) |
-| 10 | **Tetris** | [./content/contribution/tetris/](./content/contribution/tetris/) |
-| 11 | **Tic Tac Toe** | [./content/contribution/tic-tac-toe/](./content/contribution/tic-tac-toe/) |
+| 10 | **Sudoku** | [./content/contribution/sudoku/](./content/contribution/sudoku/) |
+| 11 | **Tetris** | [./content/contribution/tetris/](./content/contribution/tetris/) |
+| 12 | **Tic Tac Toe** | [./content/contribution/tic-tac-toe/](./content/contribution/tic-tac-toe/) |
 
-> 🧩 Auto-updated on 2025-10-26 14:48:35
+> 🧩 Auto-updated on 2025-10-26 18:30:06
