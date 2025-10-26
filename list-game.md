@@ -14,5 +14,7 @@ Automatically generated from the [content/contribution](./content/contribution) 
 | 8 | **Snake Game** | [./content/contribution/snake-game/](./content/contribution/snake-game/) |
 | 9 | **Tetris** | [./content/contribution/tetris/](./content/contribution/tetris/) |
 | 10 | **Tic Tac Toe** | [./content/contribution/tic-tac-toe/](./content/contribution/tic-tac-toe/) |
+| 11 | **Catch Falling Objects** | [./content/contribution/catch-falling-objects/](./content/contribution/catch-falling-objects/) |
+
 
 > 🧩 Auto-updated on 2025-10-25 20:34:31

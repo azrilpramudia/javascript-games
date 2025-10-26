@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catch the Falling Objects</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .game-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .info-box {
+            flex: 1;
+            padding: 10px;
+        }
+        
+        .info-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 5px;
+        }
+        
+        .info-value {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        .game-container {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            margin-bottom: 20px;
+        }
+        
+        #game-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .controls {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 25px;
+            justify-content: center;
+        }
+        
+        button {
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        #start-btn {
+            background: linear-gradient(to right, #00b09b, #96c93d);
+            color: white;
+        }
+        
+        #reset-btn {
+            background: linear-gradient(to right, #ff416c, #ff4b2b);
+            color: white;
+        }
+        
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        button:active {
+            transform: translateY(1px);
+        }
+        
+        .game-content {
+            max-height: 80vh;
+            overflow-y: auto;
+            padding-right: 10px;
+            width: 100%;
+        }
+        
+        /* Custom scrollbar */
+        .game-content::-webkit-scrollbar {
+            width: 12px;
+        }
+        
+        .game-content::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+        
+        .game-content::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, #ff7e5f, #feb47b);
+            border-radius: 10px;
+        }
+        
+        .game-content::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(to bottom, #ff6b4a, #fd9e52);
+        }
+        
+        .instructions {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: left;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .instructions h3 {
+            margin-bottom: 10px;
+            color: #ffcc00;
+        }
+        
+        .instructions ul {
+            padding-left: 20px;
+        }
+        
+        .instructions li {
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+        
+        .game-over {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            border-radius: 15px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease;
+        }
+        
+        .game-over.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+        
+        .game-over h2 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: #ff416c;
+        }
+        
+        .game-over p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+        
+        .object {
+            position: absolute;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        .basket {
+            position: absolute;
+            bottom: 20px;
+            width: 100px;
+            height: 40px;
+            background: linear-gradient(to right, #8e2de2, #4a00e0);
+            border-radius: 10px 10px 20px 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+            transition: transform 0.1s ease;
+        }
+        
+        .basket::after {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            right: 10px;
+            height: 15px;
+            background: linear-gradient(to right, #8e2de2, #4a00e0);
+            border-radius: 10px 10px 0 0;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            width: 180px;
+            text-align: center;
+        }
+        
+        .feature-card h4 {
+            color: #ffcc00;
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .game-container {
+                height: 400px;
+            }
+            
+            .controls {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .game-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Catch the Falling Objects</h1>
+        <p class="subtitle">Use arrow keys to move the basket and catch as many objects as you can!</p>
+        
+        <div class="game-content">
+            <div class="game-info">
+                <div class="info-box">
+                    <div class="info-label">SCORE</div>
+                    <div class="info-value" id="score">0</div>
+                </div>
+                <div class="info-box">
+                    <div class="info-label">LEVEL</div>
+                    <div class="info-value" id="level">1</div>
+                </div>
+                <div class="info-box">
+                    <div class="info-label">MISSED</div>
+                    <div class="info-value" id="missed">0</div>
+                </div>
+            </div>
+            
+            <div class="game-container">
+                <canvas id="game-canvas"></canvas>
+                <div class="game-over" id="game-over">
+                    <h2>Game Over!</h2>
+                    <p>Your final score: <span id="final-score">0</span></p>
+                    <button id="restart-btn">Play Again</button>
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button id="start-btn">Start Game</button>
+                <button id="reset-btn">Reset Game</button>
+            </div>
+            
+            <div class="instructions">
+                <h3>How to Play:</h3>
+                <ul>
+                    <li>Use the <strong>LEFT</strong> and <strong>RIGHT</strong> arrow keys to move the basket</li>
+                    <li>Catch falling objects to earn points</li>
+                    <li>Different objects have different point values</li>
+                    <li>The game gets faster as you level up</li>
+                    <li>Game ends if you miss 10 objects</li>
+                </ul>
+            </div>
+            
+            <div class="features">
+                <div class="feature-card">
+                    <h4>Colorful Objects</h4>
+                    <p>Multiple object types with different point values</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Increasing Difficulty</h4>
+                    <p>Game speeds up as you progress through levels</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Smooth Controls</h4>
+                    <p>Responsive keyboard controls for precise movement</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Visual Feedback</h4>
+                    <p>Beautiful animations and visual effects</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const canvas = document.getElementById('game-canvas');
+            const ctx = canvas.getContext('2d');
+            const scoreElement = document.getElementById('score');
+            const levelElement = document.getElementById('level');
+            const missedElement = document.getElementById('missed');
+            const startBtn = document.getElementById('start-btn');
+            const resetBtn = document.getElementById('reset-btn');
+            const restartBtn = document.getElementById('restart-btn');
+            const gameOverScreen = document.getElementById('game-over');
+            const finalScoreElement = document.getElementById('final-score');
+
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+            
+            let score = 0;
+            let level = 1;
+            let missed = 0;
+            let gameRunning = false;
+            let animationId;
+            let objectInterval;
+            
+            // Basket properties
+            const basket = {
+                width: 100,
+                height: 40,
+                x: canvas.width / 2 - 50,
+                y: canvas.height - 60,
+                speed: 8,
+                color: '#8e2de2'
+            };
+            
+            // Falling objects
+            const objects = [];
+            const objectTypes = [
+                { color: '#FF5252', points: 10, radius: 15 }, // Red - 10 points
+                { color: '#4CAF50', points: 20, radius: 20 }, // Green - 20 points
+                { color: '#2196F3', points: 30, radius: 25 }, // Blue - 30 points
+                { color: '#FFC107', points: 50, radius: 30 }  // Yellow - 50 points
+            ];
+            
+            // Initialize game
+            function init() {
+                score = 0;
+                level = 1;
+                missed = 0;
+                objects.length = 0;
+                basket.x = canvas.width / 2 - basket.width / 2;
+                
+                updateUI();
+                gameOverScreen.classList.remove('active');
+            }
+            
+            // Update UI elements
+            function updateUI() {
+                scoreElement.textContent = score;
+                levelElement.textContent = level;
+                missedElement.textContent = missed;
+            }
+            
+            // Draw basket
+            function drawBasket() {
+                // Basket body
+                ctx.fillStyle = basket.color;
+                ctx.beginPath();
+                ctx.roundRect(basket.x, basket.y, basket.width, basket.height, 10);
+                ctx.fill();
+                
+                // Basket rim
+                ctx.fillStyle = '#6a1b9a';
+                ctx.beginPath();
+                ctx.roundRect(basket.x + 10, basket.y - 10, basket.width - 20, 15, 10);
+                ctx.fill();
+            }
+            
+            // Create a new falling object
+            function createObject() {
+                const type = objectTypes[Math.floor(Math.random() * objectTypes.length)];
+                const object = {
+                    x: Math.random() * (canvas.width - type.radius * 2) + type.radius,
+                    y: -type.radius,
+                    radius: type.radius,
+                    color: type.color,
+                    points: type.points,
+                    speed: 2 + (level * 0.5)
+                };
+                
+                objects.push(object);
+            }
+            
+            // Draw all falling objects
+            function drawObjects() {
+                objects.forEach(obj => {
+                    // Object shadow
+                    ctx.fillStyle = 'rgba(0, 0, 0, 0.2)';
+                    ctx.beginPath();
+                    ctx.arc(obj.x + 3, obj.y + 3, obj.radius, 0, Math.PI * 2);
+                    ctx.fill();
+                    
+                    // Object body
+                    ctx.fillStyle = obj.color;
+                    ctx.beginPath();
+                    ctx.arc(obj.x, obj.y, obj.radius, 0, Math.PI * 2);
+                    ctx.fill();
+                    
+                    // Object highlight
+                    ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+                    ctx.beginPath();
+                    ctx.arc(obj.x - obj.radius/3, obj.y - obj.radius/3, obj.radius/3, 0, Math.PI * 2);
+                    ctx.fill();
+                    
+                    // Points text
+                    ctx.fillStyle = 'white';
+                    ctx.font = 'bold 14px Arial';
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'middle';
+                    ctx.fillText(obj.points, obj.x, obj.y);
+                });
+            }
+            
+            // Update object positions
+            function updateObjects() {
+                for (let i = objects.length - 1; i >= 0; i--) {
+                    const obj = objects[i];
+                    obj.y += obj.speed;
+                    
+                    // Check if object is caught
+                    if (
+                        obj.y + obj.radius >= basket.y &&
+                        obj.x >= basket.x &&
+                        obj.x <= basket.x + basket.width
+                    ) {
+                        score += obj.points;
+                        objects.splice(i, 1);
+                        
+                        // Level up every 100 points
+                        if (score >= level * 100) {
+                            level++;
+                        }
+                        
+                        updateUI();
+                        continue;
+                    }
+                    
+                    // Check if object is missed
+                    if (obj.y - obj.radius > canvas.height) {
+                        objects.splice(i, 1);
+                        missed++;
+                        updateUI();
+                        
+                        // Game over condition
+                        if (missed >= 10) {
+                            endGame();
+                        }
+                    }
+                }
+            }
+            
+            // Draw background with gradient
+            function drawBackground() {
+                const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+                gradient.addColorStop(0, '#1a2a6c');
+                gradient.addColorStop(0.5, '#b21f1f');
+                gradient.addColorStop(1, '#fdbb2d');
+                
+                ctx.fillStyle = gradient;
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                // Add some stars
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+                for (let i = 0; i < 50; i++) {
+                    const x = Math.random() * canvas.width;
+                    const y = Math.random() * canvas.height;
+                    const radius = Math.random() * 1.5;
+                    
+                    ctx.beginPath();
+                    ctx.arc(x, y, radius, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            }
+            
+            // Main game loop
+            function gameLoop() {
+                // Clear canvas
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                // Draw game elements
+                drawBackground();
+                drawObjects();
+                drawBasket();
+                
+                // Update game state
+                updateObjects();
+                
+                // Continue animation if game is running
+                if (gameRunning) {
+                    animationId = requestAnimationFrame(gameLoop);
+                }
+            }
+            
+            // Start the game
+            function startGame() {
+                if (!gameRunning) {
+                    gameRunning = true;
+                    startBtn.textContent = 'Pause Game';
+                    
+                    // Start object generation
+                    objectInterval = setInterval(() => {
+                        if (gameRunning) {
+                            createObject();
+                        }
+                    }, 1000 - (level * 50)); // Faster object generation as level increases
+                    
+                    gameLoop();
+                } else {
+                    pauseGame();
+                }
+            }
+            
+            // Pause the game
+            function pauseGame() {
+                gameRunning = false;
+                startBtn.textContent = 'Resume Game';
+                cancelAnimationFrame(animationId);
+                clearInterval(objectInterval);
+            }
+            
+            // End the game
+            function endGame() {
+                gameRunning = false;
+                cancelAnimationFrame(animationId);
+                clearInterval(objectInterval);
+                
+                finalScoreElement.textContent = score;
+                gameOverScreen.classList.add('active');
+            }
+            
+            // Event listeners for controls
+            startBtn.addEventListener('click', startGame);
+            
+            resetBtn.addEventListener('click', function() {
+                pauseGame();
+                init();
+            });
+            
+            restartBtn.addEventListener('click', function() {
+                init();
+                startGame();
+            });
+            
+            // Keyboard controls
+            document.addEventListener('keydown', function(e) {
+                if (!gameRunning) return;
+                
+                if (e.key === 'ArrowLeft' && basket.x > 0) {
+                    basket.x -= basket.speed;
+                } else if (e.key === 'ArrowRight' && basket.x < canvas.width - basket.width) {
+                    basket.x += basket.speed;
+                }
+            });
+            
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                canvas.width = canvas.offsetWidth;
+                canvas.height = canvas.offsetHeight;
+                basket.x = Math.min(basket.x, canvas.width - basket.width);
+            });
+            
+            // Initialize the game
+            init();
+            
+            // Add some floating effect to the title
+            const title = document.querySelector('h1');
+            title.classList.add('floating');
+        });
+    </script>
+</body>
+</html>
