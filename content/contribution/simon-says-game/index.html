@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Simon Says — Aurora Wave</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="top">
+      <div class="title">Simon Says</div>
+      <div class="controls">
+        <label>
+          <select id="difficulty">
+            <option value="easy">Easy</option>
+            <option value="medium" selected>Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+        </label>
+        <button id="startBtn">Start</button>
+        <button id="strictBtn" aria-pressed="false" title="If strict: one mistake = game over">
+          Strict: <span id="strictState">Off</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="game">
+      <div id="board" class="board" aria-hidden="false">
+        <button class="pad pad0" data-color="0" id="pad0" aria-label="Red pad"></button>
+        <button class="pad pad1" data-color="1" id="pad1" aria-label="Yellow pad"></button>
+        <button class="pad pad2" data-color="2" id="pad2" aria-label="Green pad"></button>
+        <button class="pad pad3" data-color="3" id="pad3" aria-label="Blue pad"></button>
+      </div>
+
+      <div class="status">
+        <div>Round: <span id="round">0</span></div>
+        <div>High: <span id="high">0</span></div>
+        <div id="message" class="message">Press Start</div>
+      </div>
+
+      <div class="hint">You can also press keys <strong>1 2 3 4</strong> for the pads.</div>
+    </main>
+
+    <footer class="foot">Simple Simon implementation — perfect for beginners. No scroll. No enemies.</footer>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
