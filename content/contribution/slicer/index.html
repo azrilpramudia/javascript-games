@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slicer Game</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+
+    <div class="startGame" id="startGame">
+      <div class="home">
+        <h1>Slicer Game</h1>
+        <button id="startGameBtn">Play</button>
+        <p>Your High Score: <span id="homeHighScore"></span></p>
+      </div>
+    </div>
+
+    <div class="countDown" id="countDownContainer">
+      <h1></h1>
+    </div>
+
+    <div id="inGameContainer">
+      <div class="scoreDiv">
+        <p>Score: <span id="score"></span></p>
+        <p>High Score: <span id="highScore"></span></p>
+      </div>
+      <div class="gameCountTime">
+        <h1 id="gameMinuteAndSecond">00 : 00</h1>
+      </div>
+      <div class="bomb-explode-overlay"></div>
+    </div>
+
+    <div id="gameEndDiv">
+      <div class="gameEndContainer">
+        <p>Your Score: <span id="endGameScore"></span></p>
+        <button id="returnHome">
+          Return Home <i class="fa-solid fa-right-to-bracket"></i>
+        </button>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
