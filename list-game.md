@@ -19,5 +19,14 @@ Automatically generated from the [content/contribution](./content/contribution) 
 | 13 | **Sudoku** | [./content/contribution/sudoku/](./content/contribution/sudoku/) |
 | 14 | **Tetris** | [./content/contribution/tetris/](./content/contribution/tetris/) |
 | 15 | **Tic Tac Toe** | [./content/contribution/tic-tac-toe/](./content/contribution/tic-tac-toe/) |
+| 16 | **Whack A Mole** | [./content/contribution/whack-a-mole/](./content/contribution/whack-a-mole/) |
 
-> 🧩 Auto-updated on 2025-10-27 07:31:14
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+> 🧩 Auto-updated on 2025-10-27 09:09:51
+=======
+> 🧩 Auto-updated on 2025-10-27 09:10:22
+>>>>>>> Stashed changes
+=======
+> 🧩 Auto-updated on 2025-10-27 09:10:24
+>>>>>>> Stashed changes
