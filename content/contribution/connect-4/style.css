@@ -1,0 +1,204 @@
+:root {
+    --primary-color: #2c3e50;
+    --board-color: #34495e;
+    --player1-color: #e74c3c;
+    --player2-color: #f1c40f;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #3498db, #2c3e50);
+    font-family: 'Arial', sans-serif;
+}
+
+#game-container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.turn-indicator {
+    color: white;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.game-board {
+    display: flex;
+    gap: 8px;
+    background: var(--board-color);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.column:hover {
+    transform: translateY(-5px);
+}
+
+.cell {
+    width: 60px;
+    height: 60px;
+    background: white;
+    border-radius: 50%;
+    transition: background-color 0.3s, transform 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.cell.red, .cell.yellow {
+    animation: dropPiece 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.cell.red {
+    background: var(--player1-color);
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.cell.yellow {
+    background: var(--player2-color);
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.cell.winner {
+    background: #2ecc71 !important;
+    animation: winPulse 1s ease-in-out infinite;
+}
+
+@keyframes winPulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.4);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(46, 204, 113, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(46, 204, 113, 0);
+    }
+}
+
+@keyframes dropPiece {
+    0% {
+        transform: translateY(-300px);
+    }
+    60% {
+        transform: translateY(10px);
+    }
+    80% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+#mode-selection {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.mode-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.mode-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.mode-button.selected {
+    background: var(--player1-color);
+    border-color: var(--player1-color);
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.reset-button, .new-game-button {
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.reset-button {
+    background: #e74c3c;
+}
+
+.new-game-button {
+    background: #2ecc71;
+}
+
+.reset-button:hover, .new-game-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.reset-button:hover {
+    background: #c0392b;
+}
+
+.new-game-button:hover {
+    background: #27ae60;
+}
+
+.reset-button:active, .new-game-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 600px) {
+    .cell {
+        width: 40px;
+        height: 40px;
+    }
+    
+    #game-container {
+        padding: 1rem;
+    }
+}
