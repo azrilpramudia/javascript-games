@@ -34,6 +34,8 @@ These projects are perfect for anyone who wants to:
 | 5️⃣  | 🪂 **Flappy Bird**      | Tap to fly through pipes and achieve the highest score! |
 | 6️⃣  | ✂️ **Rock Paper Scissors** | Classic hand game with interactive UI and score tracking. |
 | 7️⃣  | 🧩 **Sudoku**           | Fill the 9×9 grid so each row, column and 3×3 box contains digits 1–9. |
+| 7️⃣  | 🔴🟡 **Connect 4**      | Drop discs to connect four in a row before your opponent does. |
+
 
 > Want to add your own game? Fork this repo and bring your creativity to life! 🎨
 
@@ -96,6 +98,13 @@ Your support makes **JavaScript Games for Beginners** better every day. 💪
                 </a>
             </td>
             <td align="center">
+                <a href="https://github.com/GOUTHAMVE04">
+                    <img src="https://avatars.githubusercontent.com/u/180084300?v=4" width="100;" alt="GOUTHAMVE04"/>
+                    <br />
+                    <sub><b>GOUTHAMVE04</b></sub>
+                </a>
+            </td>
+            <td align="center">
                 <a href="https://github.com/K2976">
                     <img src="https://avatars.githubusercontent.com/u/120504065?v=4" width="100;" alt="K2976"/>
                     <br />
@@ -123,6 +132,22 @@ Your support makes **JavaScript Games for Beginners** better every day. 💪
                     <sub><b>SunjeetKajla</b></sub>
                 </a>
             </td>
+		</tr>
+		<tr>
+            <td align="center">
+                <a href="https://github.com/Devdammie">
+                    <img src="https://avatars.githubusercontent.com/u/136215055?v=4" width="100;" alt="Devdammie"/>
+                    <br />
+                    <sub><b>Devdammie</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/DevAta515">
+                    <img src="https://avatars.githubusercontent.com/u/123933781?v=4" width="100;" alt="DevAta515"/>
+                    <br />
+                    <sub><b>DevAta515</b></sub>
+                </a>
+            </td>
             <td align="center">
                 <a href="https://github.com/LakshmiSowmya04">
                     <img src="https://avatars.githubusercontent.com/u/112118575?v=4" width="100;" alt="LakshmiSowmya04"/>
@@ -130,8 +155,6 @@ Your support makes **JavaScript Games for Beginners** better every day. 💪
                     <sub><b>LakshmiSowmya04</b></sub>
                 </a>
             </td>
-		</tr>
-		<tr>
             <td align="center">
                 <a href="https://github.com/mdrafi28">
                     <img src="https://avatars.githubusercontent.com/u/174167695?v=4" width="100;" alt="mdrafi28"/>
@@ -153,6 +176,8 @@ Your support makes **JavaScript Games for Beginners** better every day. 💪
                     <sub><b>ZarrarPeshimam</b></sub>
                 </a>
             </td>
+		</tr>
+		<tr>
             <td align="center">
                 <a href="https://github.com/harsh13713">
                     <img src="https://avatars.githubusercontent.com/u/168455999?v=4" width="100;" alt="harsh13713"/>
