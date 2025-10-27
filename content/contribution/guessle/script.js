@@ -10,6 +10,7 @@ let guessList = ["aahed", "aalii", "aargh", "aarti", "abaca", "abaci", "abacs", 
 
 guessList = guessList.concat(wordList);
 
+
 let correctWord = wordList[Math.floor(Math.random()*wordList.length)].toUpperCase();
 
 let gameOver = false;
