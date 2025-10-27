@@ -4,20 +4,6 @@ Automatically generated from the [content/contribution](./content/contribution) 
 
 | No. | Game Title | Path |
 |:--:|:----------------|:----------------------------|
-<<<<<<< Updated upstream
-| 1 | **Memory Card Game** | [./content/contribution/Memory Card Game/](./content/contribution/Memory Card Game/) |
-| 2 | **Flappy Bird** | [./content/contribution/flappy-bird/](./content/contribution/flappy-bird/) |
-| 3 | **Game 2048** | [./content/contribution/game-2048/](./content/contribution/game-2048/) |
-| 4 | **Hangman** | [./content/contribution/hangman/](./content/contribution/hangman/) |
-| 5 | **Paddle Ball Game** | [./content/contribution/paddle-ball-game/](./content/contribution/paddle-ball-game/) |
-| 6 | **Reaction Speed Test** | [./content/contribution/reaction-speed-test/](./content/contribution/reaction-speed-test/) |
-| 7 | **Rock Paper Scissors** | [./content/contribution/rock-paper-scissors/](./content/contribution/rock-paper-scissors/) |
-| 8 | **Simon Says Game** | [./content/contribution/simon-says-game/](./content/contribution/simon-says-game/) |
-| 9 | **Snake Game** | [./content/contribution/snake-game/](./content/contribution/snake-game/) |
-| 10 | **Sudoku** | [./content/contribution/sudoku/](./content/contribution/sudoku/) |
-| 11 | **Tetris** | [./content/contribution/tetris/](./content/contribution/tetris/) |
-| 12 | **Tic Tac Toe** | [./content/contribution/tic-tac-toe/](./content/contribution/tic-tac-toe/) |
-=======
 | 1 | **Dice Roll Simulator** | [./content/contribution/Dice-Roll-Simulator/](./content/contribution/Dice-Roll-Simulator/) |
 | 2 | **Memory Card Game** | [./content/contribution/Memory-Card-Game/](./content/contribution/Memory-Card-Game/) |
 | 3 | **Number Guess** | [./content/contribution/Number Guess/](./content/contribution/Number Guess/) |
@@ -33,6 +19,5 @@ Automatically generated from the [content/contribution](./content/contribution) 
 | 13 | **Sudoku** | [./content/contribution/sudoku/](./content/contribution/sudoku/) |
 | 14 | **Tetris** | [./content/contribution/tetris/](./content/contribution/tetris/) |
 | 15 | **Tic Tac Toe** | [./content/contribution/tic-tac-toe/](./content/contribution/tic-tac-toe/) |
->>>>>>> Stashed changes
 
 > 🧩 Auto-updated on 2025-10-27 07:31:14
