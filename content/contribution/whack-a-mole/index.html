@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Whack-a-Mole</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="header">
+        <h1>Whack-a-Mole</h1>
+        <div class="controls">
+          <div class="score">Score: <span id="score">0</span></div>
+          <div class="timer">Time: <span id="time">30</span>s</div>
+          <label for="difficulty">Difficulty:</label>
+          <select id="difficulty">
+            <option value="easy">Easy</option>
+            <option value="medium" selected>Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+          <button id="start">Start</button>
+        </div>
+      </header>
+
+      <section class="game">
+        <div class="grid" id="grid">
+          <!-- 3x3 grid: 9 holes -->
+          <div class="hole" data-index="0"><div class="mole"></div></div>
+          <div class="hole" data-index="1"><div class="mole"></div></div>
+          <div class="hole" data-index="2"><div class="mole"></div></div>
+          <div class="hole" data-index="3"><div class="mole"></div></div>
+          <div class="hole" data-index="4"><div class="mole"></div></div>
+          <div class="hole" data-index="5"><div class="mole"></div></div>
+          <div class="hole" data-index="6"><div class="mole"></div></div>
+          <div class="hole" data-index="7"><div class="mole"></div></div>
+          <div class="hole" data-index="8"><div class="mole"></div></div>
+        </div>
+        <div id="message" class="message" aria-live="polite"></div>
+      </section>
+
+      <footer class="footer">
+        <p>Built with HTML, CSS & JavaScript — Hacktoberfest 2025 contribution</p>
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

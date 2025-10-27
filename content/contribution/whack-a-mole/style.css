@@ -1,0 +1,29 @@
+:root{
+  --bg: #f4f6f8;
+  --card: #ffffff;
+  --accent: #5b8c6a;
+  --hole: #2b2b2b;
+  --mole: #8b5e3c;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Segoe UI, Roboto, Arial, sans-serif;background:var(--bg);color:#222}
+.app{max-width:900px;margin:24px auto;padding:12px}
+.header{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.header h1{margin:0;font-size:1.4rem}
+.controls{display:flex;align-items:center;gap:10px}
+.controls .score,.controls .timer{background:var(--card);padding:8px 12px;border-radius:6px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+select,button{padding:8px 10px;border-radius:6px;border:1px solid #ddd;background:white}
+button{cursor:pointer}
+.game{margin-top:18px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:600px;margin:0 auto}
+.hole{background:linear-gradient(180deg,#ddd 0,#cfcfcf 100%);border-radius:12px;position:relative;overflow:hidden;padding-top:100%; /* square */ box-shadow:inset 0 8px 12px rgba(0,0,0,.06)}
+.hole .mole{position:absolute;left:50%;bottom: -100%;transform:translateX(-50%) translateY(0);width:60%;height:60%;border-radius:50%;background:var(--mole);box-shadow:inset -6px -6px 0 rgba(0,0,0,.12);transition:transform 0.25s ease}
+.hole.up .mole{bottom:10%;transform:translateX(-50%) translateY(-10%)}
+.mole:after{content:"";position:absolute;left:50%;top:25%;transform:translateX(-50%);width:44%;height:28%;background:#222;border-radius:50%}
+.message{margin-top:12px;text-align:center;color:#444}
+.footer{margin-top:16px;text-align:center;font-size:.9rem;color:#666}
+
+@media (max-width:600px){
+  .grid{gap:8px}
+  .controls{flex-wrap:wrap}
+}

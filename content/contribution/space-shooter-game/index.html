@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Space Shooter</title>
+    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="gameContainer">
+        <div id="ui">
+            <div id="score">Score: 0</div>
+            <div id="lives">Lives: 3</div>
+            <div id="gameOver" class="hidden">
+                <h2>GAME OVER</h2>
+                <p>Final Score: <span id="finalScore">0</span></p>
+                <button id="newGameBtn">NEW GAME</button>
+            </div>
+            <div id="startScreen">
+                <h1>SPACE SHOOTER</h1>
+                <p>Use ← → to move, SPACE to shoot</p>
+                <button id="startBtn">START GAME</button>
+            </div>
+        </div>
+        <div id="gameCanvas"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
