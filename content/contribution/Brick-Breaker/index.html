@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brick Breaker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="header">
+            <h1>Brick Breaker</h1>
+            <div class="stats">
+                <div class="stat">
+                    <span class="label">Score:</span>
+                    <span id="score" class="value">0</span>
+                </div>
+                <div class="stat">
+                    <span class="label">Lives:</span>
+                    <span id="lives" class="value">3</span>
+                </div>
+                <div class="stat">
+                    <span class="label">Bricks:</span>
+                    <span id="bricks" class="value">50</span>
+                </div>
+            </div>
+        </div>
+        
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        
+        <div id="gameOver" class="overlay hidden">
+            <div class="message-box">
+                <h2>Game Over!</h2>
+                <p>Final Score: <span id="finalScore">0</span></p>
+                <button id="restartBtn" class="btn">Play Again</button>
+            </div>
+        </div>
+        
+        <div id="victory" class="overlay hidden">
+            <div class="message-box">
+                <h2>Victory!</h2>
+                <p>All Bricks Destroyed!</p>
+                <p>Final Score: <span id="victoryScore">0</span></p>
+                <button id="newGameBtn" class="btn">New Game</button>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <p>Use <strong>← →</strong> Arrow Keys or <strong>A D</strong> to move paddle</p>
+            <p>Press <strong>SPACE</strong> to launch ball</p>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
