@@ -4,7 +4,7 @@ Automatically generated from the [content/contribution](./content/contribution) 
 
 | No. | Game Title | Path |
 |:--:|:----------------|:----------------------------|
-| 1 | **Memory Card Game** | [./content/contribution/Memory Card Game/](./content/contribution/Memory Card Game/) |
+| 1 | **Memory Card Game** | [./content/contribution/Memory Card Game/](./content/contribution/Memory%20Card%20Game/) |
 | 2 | **Flappy Bird** | [./content/contribution/flappy-bird/](./content/contribution/flappy-bird/) |
 | 3 | **Game 2048** | [./content/contribution/game-2048/](./content/contribution/game-2048/) |
 | 4 | **Hangman** | [./content/contribution/hangman/](./content/contribution/hangman/) |
