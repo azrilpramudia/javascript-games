@@ -1,0 +1,121 @@
+:root {
+  --bg: #050811;
+  --fg: #e6eef8;
+  --accent: #4fd1c5;
+  --accent2: #a78bfa;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Inter, system-ui, Segoe UI, Roboto, Arial;
+}
+
+@keyframes glow {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.wrap {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
+  background: radial-gradient(ellipse at top, rgba(79, 209, 197, 0.08), transparent 50%), 
+              radial-gradient(ellipse at bottom, rgba(167, 139, 250, 0.06), transparent 50%), 
+              var(--bg);
+  color: var(--fg);
+}
+
+canvas {
+  background: linear-gradient(135deg, #08101b 0%, #0f1525 50%, #0a1018 100%);
+  border-radius: 12px;
+  box-shadow: 0 0 60px rgba(79, 209, 197, 0.15), 0 8px 40px rgba(2, 6, 14, 0.8);
+  border: 1px solid rgba(79, 209, 197, 0.15);
+  transition: box-shadow 0.3s ease;
+}
+
+canvas:hover {
+  box-shadow: 0 0 80px rgba(79, 209, 197, 0.25), 0 8px 40px rgba(2, 6, 14, 0.8);
+}
+
+.hud {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+
+.score {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 12px rgba(79, 209, 197, 0.4));
+}
+
+.controls {
+  font-size: 13px;
+  opacity: 0.75;
+  padding: 8px 16px;
+  background: rgba(79, 209, 197, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(79, 209, 197, 0.1);
+}
+
+.btn {
+  background: rgba(79, 209, 197, 0.08);
+  border: 1px solid rgba(79, 209, 197, 0.3);
+  padding: 10px 16px;
+  border-radius: 8px;
+  color: var(--fg);
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  font-size: 13px;
+}
+
+.btn:hover {
+  background: rgba(79, 209, 197, 0.15);
+  border-color: rgba(79, 209, 197, 0.5);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(79, 209, 197, 0.2);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+select.btn {
+  background: rgba(79, 209, 197, 0.08);
+  color: var(--fg);
+  border: 1px solid rgba(79, 209, 197, 0.3);
+  cursor: pointer;
+}
+
+select.btn:hover {
+  background: rgba(79, 209, 197, 0.12);
+}
+
+.small {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+footer {
+  position: fixed;
+  bottom: 12px;
+  left: 12px;
+  font-size: 12px;
+  opacity: 0.4;
+}
