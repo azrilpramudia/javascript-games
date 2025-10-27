@@ -69,7 +69,7 @@ jobs:
           echo "" >> list-game.md
           echo "> 🧩 Auto-updated on $(date +'%Y-%m-%d %H:%M:%S')" >> list-game.md
 
-      - name: 🪄 Commit and create pull request
+      - name: 🪄 Commit and create pull request safely
         if: steps.compare.outputs.same == 'false'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -78,11 +78,27 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "GitHub Action"
           branch="auto/update-game-list"
-          git checkout -b "$branch"
+
+          # cek apakah branch sudah ada di remote
+          if git ls-remote --exit-code origin "$branch" >/dev/null 2>&1; then
+            echo "🌿 Branch $branch already exists. Checking it out..."
+            git fetch origin "$branch"
+            git checkout "$branch"
+            git pull origin "$branch" --rebase
+          else
+            echo "🌱 Creating new branch $branch..."
+            git checkout -b "$branch"
+          fi
+
           git add list-game.md .games_hash
-          git commit -m "🎮 Auto update game list"
-          git push origin "$branch"
-          gh pr create \
-            --title "🎮 Auto update game list" \
-            --body "This PR automatically updates \`list-game.md\` based on new folders in \`content/contribution/\`." \
-            --base main --head "$branch" || echo "⚠️ PR already exists, skipping."
+          git commit -m "🎮 Auto update game list" || echo "No new commits to make"
+          git push origin "$branch" --force-with-lease
+
+          # Coba buat PR hanya jika belum ada
+          gh pr list --head "$branch" --json number --jq '.[0].number' | grep -q '[0-9]' \
+            && echo "⚠️ PR already exists, skipping creation." \
+            || gh pr create \
+                --title "🎮 Auto update game list" \
+                --body "This PR automatically updates \`list-game.md\` based on new folders in \`content/contribution/\`." \
+                --base main \
+                --head "$branch"
