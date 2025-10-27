@@ -97,17 +97,17 @@ Your support makes **JavaScript Games for Beginners** better every day. 💪
                 </a>
             </td>
             <td align="center">
-                <a href="https://github.com/GOUTHAMVE04">
-                    <img src="https://avatars.githubusercontent.com/u/180084300?v=4" width="100;" alt="GOUTHAMVE04"/>
-                    <br />
-                    <sub><b>GOUTHAMVE04</b></sub>
-                </a>
-            </td>
-            <td align="center">
                 <a href="https://github.com/K2976">
                     <img src="https://avatars.githubusercontent.com/u/120504065?v=4" width="100;" alt="K2976"/>
                     <br />
                     <sub><b>K2976</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/GOUTHAMVE04">
+                    <img src="https://avatars.githubusercontent.com/u/180084300?v=4" width="100;" alt="GOUTHAMVE04"/>
+                    <br />
+                    <sub><b>GOUTHAMVE04</b></sub>
                 </a>
             </td>
             <td align="center">
@@ -182,6 +182,20 @@ Your support makes **JavaScript Games for Beginners** better every day. 💪
                     <img src="https://avatars.githubusercontent.com/u/168455999?v=4" width="100;" alt="harsh13713"/>
                     <br />
                     <sub><b>harsh13713</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/sea-deep">
+                    <img src="https://avatars.githubusercontent.com/u/122673793?v=4" width="100;" alt="sea-deep"/>
+                    <br />
+                    <sub><b>sea-deep</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/harshwardhan-singh-bais">
+                    <img src="https://avatars.githubusercontent.com/u/172008861?v=4" width="100;" alt="harshwardhan-singh-bais"/>
+                    <br />
+                    <sub><b>harshwardhan-singh-bais</b></sub>
                 </a>
             </td>
 		</tr>
