@@ -21,3 +21,4 @@ Automatically generated from the [content/contribution](./content/contribution) 
 | 15 | **Tetris** | [./content/contribution/tetris/](./content/contribution/tetris/) |
 | 16 | **Tic Tac Toe** | [./content/contribution/tic-tac-toe/](./content/contribution/tic-tac-toe/) |
 | 17 | **Whack A Mole** | [./content/contribution/whack-a-mole/](./content/contribution/whack-a-mole/) |
+| 18 | **Typing Test** | [./content/contribution/TypingTest/](./content/contribution/TypingTest/) |
