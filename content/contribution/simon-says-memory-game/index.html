@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>3D Simon — Minimal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="hud">
+    <div class="status">Level: <span id="level">0</span></div>
+    <div class="status">Score: <span id="score">0</span></div>
+    <button id="startBtn" class="btn">Start Game</button>
+  </div>
+
+  <div class="center-wrap">
+    <div id="board" class="board" aria-label="Game board"></div>
+    <div class="hint">Watch the sequence and repeat it. Blocks increase every 5 levels.</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

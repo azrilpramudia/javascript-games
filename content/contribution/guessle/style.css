@@ -1,0 +1,178 @@
+/* --- Root & Body --- */
+:root {
+  --color-background: #121213;
+  --color-text: #F8F8F8;
+  --color-absent: #3A3A3C;
+  --color-present: #C9B458;
+  --color-correct: #6AAA64;
+  --color-key-bg: #818384;
+  --color-tile-border: #3A3A3C;
+  --color-tile-border-active: #565657;
+}
+
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
+               Helvetica, Arial, sans-serif;
+  text-align: center;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  padding-bottom: 50px; 
+}
+
+hr {
+  width: 90%;
+  max-width: 500px;
+  margin: 25px auto;
+  border-color: var(--color-tile-border);
+}
+
+#title {
+  font-size: 36px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin: 2vh auto;
+}
+
+/* --- Game Board & Tiles --- */
+#board {
+  width: 325px; 
+  height: 390px; 
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px; 
+}
+
+.tile {
+  border: 2px solid var(--color-tile-border);
+  width: 60px;
+  height: 60px;
+  
+
+
+  color: var(--color-text);
+  font-size: 36px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  
+  transition: transform 0.4s, background-color 0.2s, border-color 0.2s;
+}
+
+.tile:not(:empty) {
+  border-color: var(--color-tile-border-active);
+}
+
+.correct {
+  background-color: var(--color-correct);
+  border-color: var(--color-correct);
+}
+
+.present {
+  background-color: var(--color-present);
+  border-color: var(--color-present);
+}
+
+.absent {
+  background-color: var(--color-absent);
+  border-color: var(--color-absent);
+}
+
+/* --- Keyboard --- */
+
+
+#keyboard-container {
+  margin-top: 40px;
+}
+
+.keyboard-row {
+  width: 100%;
+  max-width: 500px; /* More responsive */
+  margin: 5px auto;
+  display: flex;
+  justify-content: center;
+}
+
+.key-tile,
+.enter-key-tile {
+  height: 58px;
+  margin: 3px;
+  border: none; /* Cleaner look */
+  border-radius: 4px;
+  background-color: var(--color-key-bg);
+  color: var(--color-text);
+
+
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Flex sizing */
+  flex-grow: 1;
+  flex-basis: 0; 
+
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.key-tile {
+  max-width: 43px; 
+}
+
+.enter-key-tile {
+  max-width: 65px; 
+  font-size: 14px;
+}
+
+
+.key-tile.correct,
+.enter-key-tile.correct {
+  background-color: var(--color-correct);
+}
+
+.key-tile.present,
+.enter-key-tile.present {
+  background-color: var(--color-present);
+}
+
+.key-tile.absent,
+.enter-key-tile.absent {
+  background-color: var(--color-absent);
+}
+
+/* --- Restart Button --- */
+#restartButton {
+  padding: 12px 24px;
+  margin-top: 40px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #FFFFFF; 
+  text-transform: uppercase;
+
+  background-color: var(--color-correct); 
+  border: none;
+  border-radius: 5px;
+
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+#restartButton:hover {
+  background-color: #5A9A54; 
+}
+
+#restartButton:active {
+  transform: scale(0.98); 
+}

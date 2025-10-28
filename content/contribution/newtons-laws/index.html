@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Newton — Simple JS Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <canvas id="game" width="760" height="420" aria-label="Newton simple game"></canvas>
+
+    <aside class="panel">
+      <h3>Newton — Tiny JS Game</h3>
+
+      <div class="stat"><strong>Pos:</strong> <span id="pos">—</span></div>
+      <div class="stat"><strong>Vel:</strong> <span id="vel">—</span></div>
+      <div class="stat"><strong>Acc:</strong> <span id="acc">—</span></div>
+
+      <label>Force (per key)
+        <input id="force" type="range" min="20" max="300" value="80">
+      </label>
+
+      <label>Mass (kg)
+        <input id="mass" type="range" min="0.3" max="4" step="0.1" value="1">
+      </label>
+
+      <p>Controls: <kbd>← → ↑ ↓</kbd> to push (hold to continue). <kbd>Space</kbd> stops the ball. Double-click canvas to teleport the ball.</p>
+
+      <footer>F = ma • Elastic walls</footer>
+    </aside>
+  </div>
+
+  <section class="explain">
+    <h2>What you see (quick):</h2>
+    <p>Pressing an arrow key applies a constant force in that direction. The ball accelerates according to the force and mass (bigger mass → smaller acceleration). When the ball hits a wall it bounces off elastically (no energy lost in this demo).</p>
+
+    <h2>Newton's Laws — short & sweet</h2>
+    <ol>
+      <li><strong>First law — Inertia:</strong> An object stays at rest or moves at constant velocity unless an external force acts on it.
+        <br><em>In the game:</em> If you don't press any keys (no force), the ball keeps moving at the same velocity.</li>
+
+      <li><strong>Second law — F = ma:</strong> The net force on an object equals mass × acceleration. So acceleration = force / mass.
+        <br><em>In the game:</em> Pressing an arrow key applies force. The slider for mass changes how strongly that force accelerates the ball.</li>
+
+      <li><strong>Third law — Action & reaction:</strong> Forces come in equal and opposite pairs.
+        <br><em>In the game:</em> When the ball hits a wall the wall applies an impulse that reverses the ball's velocity (equal/opposite effect). The collision is modeled as an elastic bounce.</li>
+    </ol>
+
+    <p class="tip">Tip: Try heavy mass + big force, then light mass + same force — feel the difference in acceleration. Science is tactile, and this is your remote-control lab.</p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

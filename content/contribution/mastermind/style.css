@@ -1,0 +1,199 @@
+:root {
+    --bg-color: #121212;
+    --board-color: #282828;
+    --peg-empty: #444;
+    --border-color: #555;
+    --text-color: #eee;
+    
+    /* These are the game colors */
+    --color-1: #E53935; /* Red */
+    --color-2: #1E88E5; /* Blue */
+    --color-3: #43A047; /* Green */
+    --color-4: #FDD835; /* Yellow */
+    --color-5: #8E24AA; /* Purple */
+    --color-6: #FB8C00; /* Orange */
+    
+    --feedback-black: #FFFFFF; /* Correct position */
+    --feedback-white: #9E9E9E; /* Correct color */
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.game-container {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+#game-board {
+    display: flex;
+    flex-direction: column-reverse; /* Shows 1st attempt at the bottom */
+    background-color: var(--board-color);
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid var(--border-color);
+}
+
+.guess-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    border: 2px solid transparent; /* Highlight for active row */
+}
+
+.guess-row.active {
+    border: 2px solid var(--color-2);
+    border-radius: 5px;
+}
+
+.peg-row {
+    display: flex;
+    gap: 10px;
+    margin-right: 15px;
+}
+
+.peg {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--peg-empty);
+    border: 2px solid var(--border-color);
+    cursor: pointer;
+}
+
+.peg.guess:hover {
+    border-color: var(--text-color);
+}
+
+/* Feedback pegs styling */
+.feedback-pegs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    width: 35px;
+    height: 35px;
+    background-color: var(--peg-empty);
+    border-radius: 5px;
+    padding: 2px;
+}
+
+.feedback-peg {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid #333;
+}
+
+.feedback-peg.black { background-color: var(--feedback-black); }
+.feedback-peg.white { background-color: var(--feedback-white); }
+
+
+/* Color Palette */
+.palette-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--board-color);
+    padding: 15px;
+    border-radius: 8px;
+    border: 2px solid var(--border-color);
+}
+
+#color-palette {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.color-option {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 3px solid transparent;
+}
+
+.color-option.selected {
+    border-color: var(--text-color);
+    transform: scale(1.1);
+}
+
+#check-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--color-3);
+    color: var(--bg-color);
+    cursor: pointer;
+}
+
+#check-button:disabled {
+    background-color: var(--peg-empty);
+    cursor: not-allowed;
+}
+
+/* Secret Code */
+.secret-code-container {
+    background-color: var(--board-color);
+    padding: 15px;
+    border-radius: 8px;
+    border: 2px solid var(--border-color);
+}
+.secret-code-container .peg {
+    background-color: var(--peg-empty);
+    cursor: default;
+}
+
+/* Modal */
+.modal-overlay.hidden { display: none; }
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.modal-content {
+    background-color: var(--board-color);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 2px solid var(--border-color);
+}
+#new-game-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--color-2);
+    color: var(--text-color);
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+/* Dynamically added color classes */
+.color-1 { background-color: var(--color-1); }
+.color-2 { background-color: var(--color-2); }
+.color-3 { background-color: var(--color-3); }
+.color-4 { background-color: var(--color-4); }
+.color-5 { background-color: var(--color-5); }
+.color-6 { background-color: var(--color-6); }
