@@ -1,0 +1,39 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+canvas {
+    background-color: #111;
+    border: 2px solid #fff;
+}
+
+.game-info {
+    display: flex;
+    justify-content: space-between;
+    width: 800px; /* Match canvas width */
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.instructions {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.instructions span {
+    font-weight: bold;
+    background: #333;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
