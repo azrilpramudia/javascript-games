@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastermind</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Mastermind</h1>
+
+    <div class="game-container">
+        <div class="secret-code-container">
+            <h3>Secret Code:</h3>
+            <div class="peg-row" id="secret-code">
+                <div class="peg solution"></div>
+                <div class="peg solution"></div>
+                <div class="peg solution"></div>
+                <div class="peg solution"></div>
+            </div>
+        </div>
+
+        <div id="game-board">
+            </div>
+
+        <div class="palette-container">
+            <h3>Colors</h3>
+            <div id="color-palette">
+                </div>
+            <button id="check-button">Check Guess</button>
+        </div>
+    </div>
+
+    <div id="modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <h2 id="modal-title">You Won!</h2>
+            <p id="modal-message">You guessed the code!</p>
+            <button id="new-game-button">Play Again</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

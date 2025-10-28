@@ -1,0 +1,41 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  background: #87ceeb; /* sky blue */
+  margin: 0;
+  overflow: hidden;
+}
+
+#game {
+  position: relative;
+  width: 400px;
+  height: 600px;
+  background: #fff;
+  border: 2px solid #000;
+  overflow: hidden;
+}
+
+#player {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: red;
+  bottom: 150px;
+  left: 175px;
+  border-radius: 10px;
+}
+
+.platform {
+  position: absolute;
+  width: 100px;
+  height: 15px;
+  background: green;
+  border-radius: 5px;
+}
+
+#score {
+  margin-top: 10px;
+  font-size: 20px;
+}

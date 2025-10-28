@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pong — Classic Paddle & Ball</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="hud">
+      <div class="score"><span id="leftScore">0</span> — <span id="rightScore">0</span></div>
+      <div class="controls">Controls: W/S (left) • ↑/↓ (right) • Click canvas or Serve to start</div>
+    </div>
+
+    <canvas id="game" width="900" height="500" style="max-width:95vw;max-height:75vh"></canvas>
+
+    <div class="hud small">
+      <button id="resetBtn" class="btn">Reset</button>
+      <button id="pauseBtn" class="btn">Pause</button>
+      <label class="small">Difficulty:
+        <select id="difficulty" class="btn small">
+          <option value="0.06">Easy</option>
+          <option value="0.10" selected>Medium</option>
+          <option value="0.16">Hard</option>
+        </select>
+      </label>
+      <label class="small">
+        Single Mode: <input type="checkbox" id="singleMode" checked>
+      </label>
+    </div>
+  </div>
+  <footer>Classic Pong — Built for you</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
