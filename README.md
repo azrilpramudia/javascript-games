@@ -265,6 +265,13 @@ Your support makes **JavaScript Games for Beginners** better every day. 💪
                     <sub><b>VectorSigmaOmega</b></sub>
                 </a>
             </td>
+            <td align="center">
+                <a href="hhttps://github.com/dhairyagoel-git/">
+                    <img src="https://avatars.githubusercontent.com/u/77429914?v=4" width="100;" alt="Dhairya Goel"/>
+                    <br />
+                    <sub><b>Dhairya Goel</b></sub>
+                </a>
+            </td>
 		</tr>
 	<tbody>
 </table>
