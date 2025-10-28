@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pac-Man</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link to your custom stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen p-4">
+
+    <h1 class="text-4xl text-yellow-400 mb-4" style="text-shadow: 2px 2px #FF0000;">PAC-MAN</h1>
+
+    <!-- Game UI -->
+    <div class="flex justify-between w-full max-w-lg mb-4 text-2xl">
+        <div>
+            SCORE: <span id="score" class="text-white">0</span>
+        </div>
+        <div>
+            LIVES: <span id="lives" class="text-yellow-400">❤️❤️❤️</span>
+        </div>
+    </div>
+
+    <!-- Game Canvas -->
+    <!-- tabindex="0" is required to allow the canvas to receive keydown events -->
+    <canvas id="gameCanvas" width="504" height="588" tabindex="0"></canvas>
+
+    <!-- Game Over Message -->
+    <div id="gameOver" class="hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
+        <h2 class="text-5xl text-red-600 mb-4">GAME OVER</h2>
+        <button id="restartButton" class="bg-yellow-400 text-black px-6 py-3 rounded-lg text-2xl">RESTART</button>
+    </div>
+
+    <!-- Link to your game script -->
+    <script src="script.js"></script>
+</body>
+</html>
