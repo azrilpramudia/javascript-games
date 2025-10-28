@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pac-Man</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>PAC-MAN</h1>
+    <div class="game-container">
+        <canvas id="gameCanvas" width="560" height="620"></canvas>
+        <div class="info-panel">
+            <h2>Score: <span id="scoreDisplay">0</span></h2>
+            <div class="instructions">
+                <p><span>&uarr; &darr; &larr; &rarr;</span> : Move</p>
+                <p>Eat all the dots to win!</p>
+                <p>Avoid the ghosts! 👻</p>
+            </div>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
