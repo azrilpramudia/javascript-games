@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Endless Runner</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="game-container">
+        <!-- Controls -->
+        <div class="instructions">
+            <div><strong>SPACE</strong> - Jump</div>
+            <div><strong>↓</strong> - Slide</div>
+        </div>
+
+        <!-- Scoreboards -->
+        <div class="score">Score: <span id="score">0</span></div>
+        <div class="high-score">High: <span id="highScore">0</span></div>
+
+        <!-- Ground -->
+        <div class="ground">
+            <div class="ground-line"></div>
+        </div>
+
+        <!-- Player -->
+        <div class="player" id="player">
+            <div class="player-head">
+                <div class="player-eye"></div>
+                <div class="player-eye"></div>
+            </div>
+            <div class="player-body"></div>
+            <div class="player-legs">
+                <div class="leg"></div>
+                <div class="leg"></div>
+            </div>
+        </div>
+
+        <!-- Start Screen -->
+        <div class="start-screen" id="startScreen">
+            <h2>ENDLESS RUNNER</h2>
+            <button class="start-btn" onclick="startGame()">START GAME</button>
+        </div>
+
+        <!-- Game Over Screen -->
+        <div class="game-over" id="gameOver">
+            <h2>GAME OVER!</h2>
+            <p>Your Score: <span id="finalScore">0</span></p>
+            <p>High Score: <span id="finalHighScore">0</span></p>
+            <button class="restart-btn" onclick="restartGame()">PLAY AGAIN</button>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
