@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tower Stacker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1 class="title">Tower Stacker</h1>
+        
+        <div class="score-board">
+            <div class="score-item">
+                <div class="score-label">Score</div>
+                <div class="score-value" id="score">0</div>
+            </div>
+            <div class="score-item">
+                <div class="score-label">High Score</div>
+                <div class="score-value" id="highScore">0</div>
+            </div>
+        </div>
+
+        <canvas id="gameCanvas" width="400" height="600"></canvas>
+        
+        <div class="instructions">
+            Click or press SPACEBAR to drop blocks
+        </div>
+
+        <div class="start-screen" id="startScreen">
+            <h2> Tower Stacker</h2>
+            <div class="how-to">
+                <div class="how-to-item">
+                    <span class="icon"></span>
+                    <span>Stack blocks as high as possible</span>
+                </div>
+                <div class="how-to-item">
+                    <span class="icon"></span>
+                    <span>Click or press SPACEBAR to drop</span>
+                </div>
+                <div class="how-to-item">
+                    <span class="icon"></span>
+                    <span>Misaligned parts get trimmed</span>
+                </div>
+                <div class="how-to-item">
+                    <span class="icon"></span>
+                    <span>Speed increases as you progress</span>
+                </div>
+            </div>
+            <button class="start-btn" onclick="startGame()">START GAME</button>
+        </div>
+
+        <div class="game-over" id="gameOver">
+            <h2>Game Over!</h2>
+            <p>Final Score: <span id="finalScore">0</span></p>
+            <p id="newHighScore" style="color: #ffd700; display: none;">🎉 New High Score! 🎉</p>
+            <button class="restart-btn" onclick="restartGame()">Play Again</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
