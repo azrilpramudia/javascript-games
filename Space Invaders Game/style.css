@@ -1,0 +1,39 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+canvas {
+    background-color: #111;
+    border: 2px solid #fff;
+}
+
+h1 {
+    font-weight: normal;
+}
+
+/* Updated: Styles for instructions */
+.instructions {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.instructions p {
+    margin: 0;
+}
+
+.instructions span {
+    font-weight: bold;
+    color: #0f0; /* Match player color */
+}
