@@ -36,7 +36,6 @@ These projects are perfect for anyone who wants to:
 | 7️⃣  | 🔴🟡 **Connect 4**      | Drop discs to connect four in a row before your opponent does. |
 
 
-
 > Want to add your own game? Fork this repo and bring your creativity to life! 🎨
 
 🎮 Check out all available games in the [Game List](./list-game.md)
