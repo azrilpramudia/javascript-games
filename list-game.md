@@ -22,4 +22,4 @@ Automatically generated from the [content/contribution](./content/contribution) 
 | 16 | **Tic Tac Toe** | [./content/contribution/tic-tac-toe/](./content/contribution/tic-tac-toe/) |
 | 17 | **Whack A Mole** | [./content/contribution/whack-a-mole/](./content/contribution/whack-a-mole/) |
 | 18 | **Typing Test** | [./content/contribution/TypingTest/](./content/contribution/TypingTest/) |
-| 19 | **Aim Trainer Game** | [./content/contribution/aim-trainer-game/](./content/contribution/aim-trainer-game/) |
+| 19 | **Aim Trainer Game** | [./content/contribution/aim-trainer-game/](./content/contribution/aim-trainer-game/) |"
