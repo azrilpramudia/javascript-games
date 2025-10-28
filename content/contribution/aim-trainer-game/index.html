@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Canvas Aim Training</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <style>
+    body {
+      background: purple;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end; /* 👈 Push content to the bottom */
+    }
+
+    .background {
+      background: #e2e2e2;
+      padding: 15px;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+      margin-bottom: 40px; /* 👈 Slight lift from bottom */
+    }
+
+    canvas {
+      cursor: none;
+      border-radius: 12px;
+      background: #fff;
+      border: 2px solid #ccc;
+      box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
+      display: block;
+    }
+
+    /* Optional glowing border effect when active */
+    canvas:active {
+      border-color: #e40700;
+      box-shadow: 0 0 20px #e40700;
+    }
+  </style>
+</head>
+<body>
+  <div class="background">
+    <canvas id="aim" width="800" height="600"></canvas>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
