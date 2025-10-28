@@ -155,6 +155,13 @@ Your support makes **JavaScript Games for Beginners** better every day. 💪
                 </a>
             </td>
             <td align="center">
+                <a href="https://github.com/kris2005mehra">
+                    <img src="https://avatars.githubusercontent.com/u/183271663?v=4" width="100;" alt="kris2005mehra"/>
+                    <br />
+                    <sub><b>kris2005mehra</b></sub>
+                </a>
+            </td>
+            <td align="center">
                 <a href="https://github.com/harsh13713">
                     <img src="https://avatars.githubusercontent.com/u/168455999?v=4" width="100;" alt="harsh13713"/>
                     <br />
@@ -168,6 +175,8 @@ Your support makes **JavaScript Games for Beginners** better every day. 💪
                     <sub><b>ZarrarPeshimam</b></sub>
                 </a>
             </td>
+		</tr>
+		<tr>
             <td align="center">
                 <a href="https://github.com/Shachi12Shukla">
                     <img src="https://avatars.githubusercontent.com/u/152056204?v=4" width="100;" alt="Shachi12Shukla"/>
@@ -175,8 +184,6 @@ Your support makes **JavaScript Games for Beginners** better every day. 💪
                     <sub><b>Shachi12Shukla</b></sub>
                 </a>
             </td>
-		</tr>
-		<tr>
             <td align="center">
                 <a href="https://github.com/mdrafi28">
                     <img src="https://avatars.githubusercontent.com/u/174167695?v=4" width="100;" alt="mdrafi28"/>
