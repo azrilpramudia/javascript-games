@@ -132,6 +132,13 @@ Your support makes **JavaScript Games for Beginners** better every day. 💪
                     <sub><b>Parth-G27</b></sub>
                 </a>
             </td>
+            <td align="center">
+                <a href="https://github.com/Mohitlikestocode">
+                    <img src="https://avatars.githubusercontent.com/u/197102299?v=4" width="100;" alt="Mohitlikestocode"/>
+                    <br />
+                    <sub><b>Mohitlikestocode</b></sub>
+                </a>
+            </td>
 		</tr>
 		<tr>
             <td align="center">
