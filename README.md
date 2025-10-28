@@ -33,6 +33,7 @@ These projects are perfect for anyone who wants to:
 | 4️⃣  | 🏓 **Pong**             | Classic paddle and ball arcade challenge.               |
 | 5️⃣  | 🪂 **Flappy Bird**      | Tap to fly through pipes and achieve the highest score! |
 | 6️⃣  | ✂️ **Rock Paper Scissors** | Classic hand game with interactive UI and score tracking. |
+| 7️⃣  | 🧩 **Sudoku**           | Fill the 9×9 grid so each row, column and 3×3 box contains digits 1–9. |
 | 7️⃣  | 🔴🟡 **Connect 4**      | Drop discs to connect four in a row before your opponent does. |
 
 
