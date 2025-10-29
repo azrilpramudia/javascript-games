@@ -1,0 +1,19 @@
+/* Use a pixel-style font */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #000;
+    color: #fff;
+}
+
+canvas {
+    background-color: #000;
+    border: 5px solid #0000FF; /* Blue border like the arcade */
+    box-shadow: 0 0 20px #0000FF;
+}
+
+/* Hide the ugly 'out-of-bounds' cursor behavior */
+#gameCanvas:focus {
+    outline: none;
+}
