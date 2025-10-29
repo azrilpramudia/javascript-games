@@ -113,6 +113,13 @@ Your support makes **JavaScript Games for Beginners** better every day. 💪
                 </a>
             </td>
             <td align="center">
+                <a href="https://github.com/Sa-sketch-max">
+                    <img src="https://avatars.githubusercontent.com/u/118535055?v=4" width="100;" alt="Sa-sketch-max"/>
+                    <br />
+                    <sub><b>Sa-sketch-max</b></sub>
+                </a>
+            </td>
+            <td align="center">
                 <a href="https://github.com/kayode96-max">
                     <img src="https://avatars.githubusercontent.com/u/67349260?v=4" width="100;" alt="kayode96-max"/>
                     <br />
@@ -126,27 +133,13 @@ Your support makes **JavaScript Games for Beginners** better every day. 💪
                     <sub><b>K2976</b></sub>
                 </a>
             </td>
-            <td align="center">
-                <a href="https://github.com/GOUTHAMVE04">
-                    <img src="https://avatars.githubusercontent.com/u/180084300?v=4" width="100;" alt="GOUTHAMVE04"/>
-                    <br />
-                    <sub><b>GOUTHAMVE04</b></sub>
-                </a>
-            </td>
 		</tr>
 		<tr>
             <td align="center">
-                <a href="https://github.com/SunjeetKajla">
-                    <img src="https://avatars.githubusercontent.com/u/206449884?v=4" width="100;" alt="SunjeetKajla"/>
+                <a href="https://github.com/vingoel26">
+                    <img src="https://avatars.githubusercontent.com/u/183179914?v=4" width="100;" alt="vingoel26"/>
                     <br />
-                    <sub><b>SunjeetKajla</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/dhairyagoel-git">
-                    <img src="https://avatars.githubusercontent.com/u/77429914?v=4" width="100;" alt="dhairyagoel-git"/>
-                    <br />
-                    <sub><b>dhairyagoel-git</b></sub>
+                    <sub><b>vingoel26</b></sub>
                 </a>
             </td>
             <td align="center">
@@ -157,12 +150,35 @@ Your support makes **JavaScript Games for Beginners** better every day. 💪
                 </a>
             </td>
             <td align="center">
-                <a href="https://github.com/vingoel26">
-                    <img src="https://avatars.githubusercontent.com/u/183179914?v=4" width="100;" alt="vingoel26"/>
+                <a href="https://github.com/sea-deep">
+                    <img src="https://avatars.githubusercontent.com/u/122673793?v=4" width="100;" alt="sea-deep"/>
                     <br />
-                    <sub><b>vingoel26</b></sub>
+                    <sub><b>sea-deep</b></sub>
                 </a>
             </td>
+            <td align="center">
+                <a href="https://github.com/dhairyagoel-git">
+                    <img src="https://avatars.githubusercontent.com/u/77429914?v=4" width="100;" alt="dhairyagoel-git"/>
+                    <br />
+                    <sub><b>dhairyagoel-git</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/GOUTHAMVE04">
+                    <img src="https://avatars.githubusercontent.com/u/180084300?v=4" width="100;" alt="GOUTHAMVE04"/>
+                    <br />
+                    <sub><b>GOUTHAMVE04</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/SunjeetKajla">
+                    <img src="https://avatars.githubusercontent.com/u/206449884?v=4" width="100;" alt="SunjeetKajla"/>
+                    <br />
+                    <sub><b>SunjeetKajla</b></sub>
+                </a>
+            </td>
+		</tr>
+		<tr>
             <td align="center">
                 <a href="https://github.com/Anshul-Bartwal">
                     <img src="https://avatars.githubusercontent.com/u/223218288?v=4" width="100;" alt="Anshul-Bartwal"/>
@@ -177,8 +193,6 @@ Your support makes **JavaScript Games for Beginners** better every day. 💪
                     <sub><b>SuvanshTembe</b></sub>
                 </a>
             </td>
-		</tr>
-		<tr>
             <td align="center">
                 <a href="https://github.com/spiderOO7">
                     <img src="https://avatars.githubusercontent.com/u/120004473?v=4" width="100;" alt="spiderOO7"/>
@@ -207,6 +221,8 @@ Your support makes **JavaScript Games for Beginners** better every day. 💪
                     <sub><b>DevAta515</b></sub>
                 </a>
             </td>
+		</tr>
+		<tr>
             <td align="center">
                 <a href="https://github.com/harshwardhan-singh-bais">
                     <img src="https://avatars.githubusercontent.com/u/172008861?v=4" width="100;" alt="harshwardhan-singh-bais"/>
@@ -214,15 +230,6 @@ Your support makes **JavaScript Games for Beginners** better every day. 💪
                     <sub><b>harshwardhan-singh-bais</b></sub>
                 </a>
             </td>
-            <td align="center">
-                <a href="https://github.com/sea-deep">
-                    <img src="https://avatars.githubusercontent.com/u/122673793?v=4" width="100;" alt="sea-deep"/>
-                    <br />
-                    <sub><b>sea-deep</b></sub>
-                </a>
-            </td>
-		</tr>
-		<tr>
             <td align="center">
                 <a href="https://github.com/kris2005mehra">
                     <img src="https://avatars.githubusercontent.com/u/183271663?v=4" width="100;" alt="kris2005mehra"/>
@@ -252,6 +259,15 @@ Your support makes **JavaScript Games for Beginners** better every day. 💪
                 </a>
             </td>
             <td align="center">
+                <a href="https://github.com/Srushti-Thombre">
+                    <img src="https://avatars.githubusercontent.com/u/177668898?v=4" width="100;" alt="Srushti-Thombre"/>
+                    <br />
+                    <sub><b>Srushti-Thombre</b></sub>
+                </a>
+            </td>
+		</tr>
+		<tr>
+            <td align="center">
                 <a href="https://github.com/Shachi12Shukla">
                     <img src="https://avatars.githubusercontent.com/u/152056204?v=4" width="100;" alt="Shachi12Shukla"/>
                     <br />
@@ -265,8 +281,6 @@ Your support makes **JavaScript Games for Beginners** better every day. 💪
                     <sub><b>Mohitlikestocode</b></sub>
                 </a>
             </td>
-		</tr>
-		<tr>
             <td align="center">
                 <a href="https://github.com/mdrafi28">
                     <img src="https://avatars.githubusercontent.com/u/174167695?v=4" width="100;" alt="mdrafi28"/>
@@ -295,11 +309,20 @@ Your support makes **JavaScript Games for Beginners** better every day. 💪
                     <sub><b>devvsingh</b></sub>
                 </a>
             </td>
+		</tr>
+		<tr>
             <td align="center">
                 <a href="https://github.com/AnjaliPai16">
                     <img src="https://avatars.githubusercontent.com/u/183728409?v=4" width="100;" alt="AnjaliPai16"/>
                     <br />
                     <sub><b>AnjaliPai16</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/Anahskal">
+                    <img src="https://avatars.githubusercontent.com/u/169256712?v=4" width="100;" alt="Anahskal"/>
+                    <br />
+                    <sub><b>Anahskal</b></sub>
                 </a>
             </td>
             <td align="center">
@@ -309,8 +332,6 @@ Your support makes **JavaScript Games for Beginners** better every day. 💪
                     <sub><b>aditi-verma-20</b></sub>
                 </a>
             </td>
-		</tr>
-		<tr>
             <td align="center">
                 <a href="https://github.com/VectorSigmaOmega">
                     <img src="https://avatars.githubusercontent.com/u/69073394?v=4" width="100;" alt="VectorSigmaOmega"/>
@@ -319,14 +340,6 @@ Your support makes **JavaScript Games for Beginners** better every day. 💪
                 </a>
             </td>
 		</tr>
-        <td align="center">
-    <a href="https://github.com/anahskal">
-        <img src="https://avatars.githubusercontent.com/u/169256712?v=4" width="100;" alt="anahskal"/>
-        <br />
-        <sub><b>anahskal</b></sub>
-    </a>
-</td>
-
 	<tbody>
 </table>
 <!-- readme: contributors -end -->
