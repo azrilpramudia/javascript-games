@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Word Scramble Story</title>
+  <style>
+    body {
+      font-family: 'Courier New', monospace;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #000;
+      color: #00ffff; /* Neon cyan */
+      text-align: center;
+      overflow-x: hidden;
+    }
+    .game-container {
+      background: #111;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #00ffff, inset 0 0 10px rgba(0, 255, 255, 0.1);
+      border: 2px solid #00ffff;
+    }
+    #quote {
+      min-height: 100px;
+      margin: 20px 0;
+      border: 2px dashed #ff00ff; /* Neon magenta */
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(255, 0, 255, 0.3);
+    }
+    .word {
+      display: inline-block;
+      padding: 10px 15px;
+      margin: 5px;
+      background: #000;
+      color: #00ff00; /* Neon green */
+      cursor: grab;
+      border-radius: 5px;
+      user-select: none;
+      transition: all 0.3s;
+      border: 1px solid #00ff00;
+      box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+    }
+    .word:hover, .word.selected {
+      box-shadow: 0 0 15px #00ff00;
+      transform: scale(1.05);
+    }
+    .word.dragging {
+      opacity: 0.5;
+      transform: rotate(5deg);
+    }
+    .word.wrong {
+      box-shadow: 0 0 15px #ff0000; /* Neon red */
+      border-color: #ff0000;
+      background: rgba(255, 0, 0, 0.2);
+    }
+    .wrong-container {
+      background: rgba(255, 0, 0, 0.1);
+      border: 2px solid #ff0000;
+      border-radius: 5px;
+      padding: 10px;
+      margin: 10px 0;
+      box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+    }
+    .correct-quote {
+      color: #00ff00;
+      font-weight: bold;
+      margin-top: 10px;
+      padding: 10px;
+      background: rgba(0, 255, 0, 0.1);
+      border: 1px solid #00ff00;
+      border-radius: 5px;
+    }
+    #timer {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #ff00ff; /* Neon magenta */
+      text-shadow: 0 0 10px #ff00ff;
+    }
+    #score {
+      font-size: 1.2em;
+      margin: 10px 0;
+      color: #ffff00; /* Neon yellow */
+      text-shadow: 0 0 5px #ffff00;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      background: #000;
+      color: #00ffff;
+      border: 2px solid #00ffff;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+      transition: all 0.3s;
+    }
+    button:hover {
+      box-shadow: 0 0 20px #00ffff;
+      transform: scale(1.05);
+    }
+    button:disabled {
+      border-color: #555;
+      box-shadow: none;
+      cursor: not-allowed;
+      color: #555;
+    }
+    #fun-fact {
+      display: none;
+      background: #111;
+      color: #00ff00;
+      padding: 15px;
+      border-radius: 5px;
+      margin: 10px 0;
+      border: 1px solid #00ff00;
+      box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+    }
+    #game-over {
+      display: none;
+      background: #111;
+      color: #ff0000; /* Neon red */
+      padding: 20px;
+      border-radius: 5px;
+      margin: 20px 0;
+      border: 1px solid #ff0000;
+      box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+    }
+    .hidden {
+      display: none;
+    }
+
+    /* Modal Styles for Start Pop-up */
+    #start-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .modal-content {
+      background: #000;
+      padding: 40px;
+      border-radius: 10px;
+      border: 2px solid #00ffff;
+      box-shadow: 0 0 30px #00ffff;
+      text-align: center;
+      max-width: 400px;
+    }
+    .modal-content h1 {
+      color: #ff00ff;
+      text-shadow: 0 0 10px #ff00ff;
+      margin-bottom: 20px;
+    }
+    .modal-content p {
+      color: #00ff00;
+      margin-bottom: 30px;
+      font-size: 1.1em;
+    }
+    #play-btn {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      background: #000;
+      color: #00ffff;
+      border: 2px solid #00ffff;
+      border-radius: 5px;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+    }
+    #play-btn:hover {
+      box-shadow: 0 0 25px #00ffff;
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <!-- Start Modal Pop-up -->
+  <div id="start-modal">
+    <div class="modal-content">
+      <h1>Word Scramble Story</h1>
+      <p>Unscramble famous literary quotes in a neon-lit challenge!<br>Ready to dive into the classics? 📖✨</p>
+      <button id="play-btn" onclick="startGameAndCloseModal()">Play</button>
+    </div>
+  </div>
+
+  <div class="game-container">
+    <h1>Word Scramble Story</h1>
+    <p>Drag and drop words to unscramble the literary quote below within the time limit!</p>
+    
+    <div id="score">Score: <span id="score-value">0</span>/100</div>
+    <div id="timer">Time: 30s</div>
+    
+    <div id="quote"></div>
+    
+    <button id="submit-btn" onclick="checkAnswer()" class="hidden">Submit Answer</button>
+    <button id="next-btn" onclick="nextQuote()" class="hidden">Next Quote</button>
+    <button id="restart-btn" onclick="startGame()" class="hidden">Play Again</button>
+    
+    <div id="fun-fact"></div>
+    <div id="game-over">
+      <h2>Game Over!</h2>
+      <p id="final-score-text">You have scored 0/100. Do you want to play again?</p>
+    </div>
+  </div>
+
+  <script>
+    // Game Data: Public-domain quotes from classics (Project Gutenberg)
+    const quotes = [
+      {
+        text: "It is a truth universally acknowledged",
+        fact: "From Jane Austen's Pride and Prejudice (1813)—a witty take on marriage and society!"
+      },
+      {
+        text: "Alice was beginning to get very tired",
+        fact: "Opening line from Lewis Carroll's Alice's Adventures in Wonderland (1865)—a dreamlike journey!"
+      },
+      {
+        text: "Call me Ishmael",
+        fact: "From Herman Melville's Moby-Dick (1851)—an epic tale of obsession and the sea!"
+      },
+      {
+        text: "It was the best of times",
+        fact: "From Charles Dickens' A Tale of Two Cities (1859)—set during the French Revolution!"
+      },
+      {
+        text: "All animals are equal",
+        fact: "From George Orwell's Animal Farm (1945)—a satirical fable on power and corruption!"
+      }
+    ];
+
+    let currentQuoteIndex = 0;
+    let currentQuoteWords = [];
+    let correctOrder = [];
+    let score = 0;
+    let timer = 30;
+    let timerInterval;
+    let gameActive = false;
+    let draggedElement = null;
+
+    // Start game and close modal
+    function startGameAndCloseModal() {
+      document.getElementById('start-modal').style.display = 'none';
+      startGame();
+    }
+
+    // Start the game
+    function startGame() {
+      currentQuoteIndex = 0;
+      score = 0;
+      updateScore();
+      document.getElementById('game-over').classList.add('hidden');
+      document.getElementById('restart-btn').classList.add('hidden');
+      nextQuote();
+      gameActive = true;
+    }
+
+    // Load next quote
+    function nextQuote() {
+      if (currentQuoteIndex >= quotes.length) {
+        endGame();
+        return;
+      }
+      const quote = quotes[currentQuoteIndex];
+      correctOrder = quote.text.split(' ');
+      currentQuoteWords = [...correctOrder]; // Copy for scrambling
+      shuffle(currentQuoteWords);
+      displayQuote();
+      startTimer();
+      document.getElementById('submit-btn').classList.remove('hidden');
+      document.getElementById('submit-btn').disabled = false;
+      document.getElementById('next-btn').classList.add('hidden');
+      document.getElementById('fun-fact').style.display = 'none';
+      currentQuoteIndex++;
+    }
+
+    // Shuffle array (Fisher-Yates)
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+
+    // Display scrambled quote
+    function displayQuote() {
+      const quoteDiv = document.getElementById('quote');
+      quoteDiv.innerHTML = '';
+      currentQuoteWords.forEach((word, index) => {
+        const wordSpan = document.createElement('span');
+        wordSpan.className = 'word';
+        wordSpan.textContent = word;
+        wordSpan.draggable = true;
+        wordSpan.addEventListener('dragstart', handleDragStart);
+        wordSpan.addEventListener('dragover', handleDragOver);
+        wordSpan.addEventListener('drop', handleDrop);
+        quoteDiv.appendChild(wordSpan);
+      });
+    }
+
+    // Drag and Drop Handlers
+    function handleDragStart(e) {
+      draggedElement = e.target;
+      e.target.classList.add('dragging');
+      e.dataTransfer.effectAllowed = 'move';
+      e.dataTransfer.setData('text/html', e.target.innerHTML);
+    }
+
+    function handleDragOver(e) {
+      e.preventDefault();
+      e.dataTransfer.dropEffect = 'move';
+      return false;
+    }
+
+    function handleDrop(e) {
+      if (e.stopPropagation()) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+      if (draggedElement !== e.target) {
+        // Swap words
+        const draggedText = draggedElement.textContent;
+        const targetText = e.target.textContent;
+        draggedElement.textContent = targetText;
+        e.target.textContent = draggedText;
+
+        // Update array
+        const draggedIndex = currentQuoteWords.indexOf(draggedText);
+        const targetIndex = currentQuoteWords.indexOf(targetText);
+        if (draggedIndex !== -1 && targetIndex !== -1) {
+          [currentQuoteWords[draggedIndex], currentQuoteWords[targetIndex]] = [targetText, draggedText];
+        }
+      }
+      draggedElement.classList.remove('dragging');
+      return false;
+    }
+
+    // Show wrong configuration in red box
+    function showWrongConfiguration() {
+      const quoteDiv = document.getElementById('quote');
+      const words = quoteDiv.querySelectorAll('.word');
+      words.forEach(word => word.classList.add('wrong'));
+      const wrongContainer = document.createElement('div');
+      wrongContainer.className = 'wrong-container';
+      wrongContainer.appendChild(quoteDiv.firstChild); // Move words to red container? Wait, better wrap
+      // Actually, since innerHTML is words, wrap them
+      const wordsHTML = Array.from(words).map(w => w.outerHTML).join('');
+      quoteDiv.innerHTML = `<div class="wrong-container">${wordsHTML}</div>`;
+    }
+
+    // Show correct quote
+    function showCorrect() {
+      const quoteDiv = document.getElementById('quote');
+      const correctPara = document.createElement('p');
+      correctPara.className = 'correct-quote';
+      correctPara.textContent = 'Correct: ' + correctOrder.join(' ');
+      quoteDiv.appendChild(correctPara);
+    }
+
+    // Check answer
+    function checkAnswer() {
+      clearInterval(timerInterval);
+      const currentWords = Array.from(document.querySelectorAll('.word')).map(span => span.textContent);
+      const isCorrect = currentWords.join(' ') === correctOrder.join(' ');
+      // Disable drag events
+      document.querySelectorAll('.word').forEach(span => {
+        span.draggable = false;
+        span.removeEventListener('dragstart', handleDragStart);
+        span.removeEventListener('dragover', handleDragOver);
+        span.removeEventListener('drop', handleDrop);
+      });
+      if (isCorrect) {
+        score += 20;
+        updateScore();
+        showFunFact(quotes[currentQuoteIndex - 1].fact);
+      } else {
+        showWrongConfiguration();
+        showCorrect();
+        showFunFact(quotes[currentQuoteIndex - 1].fact);
+      }
+      if (currentQuoteIndex >= quotes.length) {
+        endGame();
+      } else {
+        document.getElementById('next-btn').classList.remove('hidden');
+      }
+      document.getElementById('submit-btn').disabled = true;
+    }
+
+    // Show fun fact
+    function showFunFact(fact) {
+      const factDiv = document.getElementById('fun-fact');
+      factDiv.textContent = `Fun Fact: ${fact}`;
+      factDiv.style.display = 'block';
+    }
+
+    // Start timer
+    function startTimer() {
+      timer = 30;
+      updateTimer();
+      timerInterval = setInterval(() => {
+        timer--;
+        updateTimer();
+        if (timer <= 0) {
+          clearInterval(timerInterval);
+          // Disable drag events
+          document.querySelectorAll('.word').forEach(span => {
+            span.draggable = false;
+            span.removeEventListener('dragstart', handleDragStart);
+            span.removeEventListener('dragover', handleDragOver);
+            span.removeEventListener('drop', handleDrop);
+          });
+          // Treat as wrong
+          showWrongConfiguration();
+          showCorrect();
+          showFunFact(quotes[currentQuoteIndex - 1].fact);
+          if (currentQuoteIndex >= quotes.length) {
+            endGame();
+          } else {
+            document.getElementById('next-btn').classList.remove('hidden');
+          }
+          document.getElementById('submit-btn').disabled = true;
+        }
+      }, 1000);
+    }
+
+    // Update displays
+    function updateTimer() {
+      document.getElementById('timer').textContent = `Time: ${timer}s`;
+    }
+    function updateScore() {
+      document.getElementById('score-value').textContent = score;
+      document.getElementById('final-score-text').textContent = `You have scored ${score}/100. Do you want to play again?`;
+    }
+
+    // End game
+    function endGame() {
+      gameActive = false;
+      clearInterval(timerInterval);
+      document.getElementById('submit-btn').classList.add('hidden');
+      document.getElementById('next-btn').classList.add('hidden');
+      document.getElementById('game-over').classList.remove('hidden');
+      document.getElementById('restart-btn').classList.remove('hidden');
+    }
+
+    // Modal shows on load; game starts only after play click
+  </script>
+</body>
+</html>
