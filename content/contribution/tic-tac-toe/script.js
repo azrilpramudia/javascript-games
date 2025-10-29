@@ -1,99 +1,62 @@
-const score = {
-            wins: 0,
-            losses: 0,
-            ties: 0
-        };
+const board = document.querySelectorAll(".cell");
+const statusText = document.getElementById("status");
+const resetBtn = document.getElementById("reset");
 
-       // call function
-       updateScoreElement();
+let currentPlayer = "X";
+let boardState = ["", "", "", "", "", "", "", "", ""];
+let gameActive = true;
 
-        function playGame(playerMove){
+const winPatterns = [
+  [0,1,2], [3,4,5], [6,7,8], // rows
+  [0,3,6], [1,4,7], [2,5,8], // columns
+  [0,4,8], [2,4,6]           // diagonals
+];
 
-            const computerMove = PickComputerMove();
-            let result = '';
+board.forEach(cell => {
+  cell.addEventListener("click", () => handleClick(cell));
+});
 
-            if(playerMove === 'Rock'){
-                if (computerMove === 'Rock') {
-                    result = 'Tie.';
-                } else if (computerMove === 'Paper') {
-                    result = 'You lose.';
-                } else if (computerMove === 'Scissors') {
-                    result = 'You win.';
-                }
-            }
+function handleClick(cell) {
+  const index = cell.getAttribute("data-index");
 
-            else if(playerMove === 'Scissors'){
-                if (computerMove === 'Rock') {
-                    result = 'You lose.';
-                } else if (computerMove === 'Paper') {
-                    result = 'You win.';
-                } else if (computerMove === 'Scissors') {
-                    result = 'Tie.';
-                }
-            }
+  if (boardState[index] !== "" || !gameActive) return;
 
-            else if(playerMove === 'Paper'){
-                if (computerMove === 'Rock') {
-                    result = 'You win.';
-                } else if (computerMove === 'Paper') {
-                    result = 'Tie.';
-                } else if (computerMove === 'Scissors') {
-                    result = 'You lose.';
-                }
-            }
-             
-            if(result === 'You win.'){
-                score.wins +=1;
-            }
+  boardState[index] = currentPlayer;
+  cell.textContent = currentPlayer;
+  cell.classList.add(currentPlayer);
 
-            else if(result === 'You lose.'){
-                score.losses +=1;
+  if (checkWin()) {
+    statusText.textContent = `🏆 Player ${currentPlayer} Wins!`;
+    gameActive = false;
+    return;
+  }
 
-            }
+  if (boardState.every(cell => cell !== "")) {
+    statusText.textContent = "😅 It's a Draw!";
+    gameActive = false;
+    return;
+  }
 
-            else if(result === 'Tie.'){
-                score.ties +=1;
-            }
-            
-            localStorage.setItem('score' , JSON.stringify(score));
+  currentPlayer = currentPlayer === "X" ? "O" : "X";
+  statusText.textContent = `Player ${currentPlayer}'s Turn`;
+}
 
-            updateScoreElement();
+function checkWin() {
+  return winPatterns.some(pattern => {
+    return pattern.every(index => boardState[index] === currentPlayer);
+  });
+}
 
-            document.querySelector('.js-result').
-                innerHTML = result;
+resetBtn.addEventListener("click", resetGame);
 
-            document.querySelector('.js-moves').
-                innerHTML = `You
-                    <img src="${playerMove}-emoji-removebg-preview.png" class="move-icon">
-                    Computer
-                    <img src="${computerMove}-emoji-removebg-preview.png" class="move-icon">`;
+function resetGame() {
+  boardState = ["", "", "", "", "", "", "", "", ""];
+  currentPlayer = "X";
+  gameActive = true;
+  statusText.textContent = `Player ${currentPlayer}'s Turn`;
+  board.forEach(cell => {
+    cell.textContent = "";
+    cell.classList.remove("X", "O");
+  });
+}
 
-//             alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
-// Wins: ${score.wins} , Losses: ${score.losses} , Ties: ${score.ties}`);
-        }
-
-        function updateScoreElement(){
-            document.querySelector('.js-score')
-               .innerHTML = `Wins: ${score.wins} , Losses: ${score.losses} , Ties: ${score.ties}`
-        }
-
-        function PickComputerMove(){
-
-            const randomNumber = Math.random();
-            let ComputerMove ='';
-
-            if(randomNumber >= 0 && randomNumber < 1/3){
-                ComputerMove = 'Rock';
-            }
-
-            else if(randomNumber >= 1/3 && randomNumber < 2/3){
-                ComputerMove = 'Paper';
-                }
-
-            else if(randomNumber >= 2/3 && randomNumber <=1){
-                ComputerMove = 'Scissors';
-            }
-
-            return ComputerMove;
-        
-        }

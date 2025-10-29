@@ -1,44 +1,95 @@
- body{
-            background-color: rgb(25, 25, 25);
-            color: white;
-            font-family: Arial;
-        }
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@500&display=swap');
 
-        .Title{
-            font-size: 30px;
-            font-weight: bold;
-        }
+body {
+  background: linear-gradient(135deg, #141e30, #243b55);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  margin: 0;
+}
 
-        .move-icon{
-            height: 60px;
-        }
+.game-container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 3px solid #ff66cc;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 0 25px #ff99ff;
+  animation: glow 2s infinite alternate;
+}
 
-        .move-button{
-            background: transparent;
-            border: 3px solid white;
-            height: 120px;
-            width: 120px;
-            border-radius: 60px;
-            margin-right: 20px;
-            cursor: pointer;
+@keyframes glow {
+  from { box-shadow: 0 0 15px #ff66cc; }
+  to { box-shadow: 0 0 30px #ff99ff; }
+}
 
-        }
+.title {
+  font-family: 'Press Start 2P', cursive;
+  color: #ff99ff;
+  margin-bottom: 25px;
+  text-shadow: 0 0 8px #ff66cc;
+}
 
-        .result{
-            font-size: 25px;
-            font-weight: bold;
-            margin-top: 50px;
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
 
-        }
-        
-        .score{
-            margin-top: 60px;
-        }
+.cell {
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid #ff66cc;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
 
-        .reset-score-button{
-            background-color: white;
-            border: none;
-            font-size: 20px;
-            padding: 8px 15px;
-            cursor: pointer;
-        }
+.cell:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #ff99ff;
+}
+
+.cell.X {
+  color: #00eaff;
+  text-shadow: 0 0 8px #00eaff;
+}
+
+.cell.O {
+  color: #ff66cc;
+  text-shadow: 0 0 8px #ff66cc;
+}
+
+#status {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  text-shadow: 0 0 6px #ff99ff;
+}
+
+#reset {
+  background: #ff66cc;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: 'Poppins', sans-serif;
+}
+
+#reset:hover {
+  background: #ff99ff;
+  box-shadow: 0 0 10px #ff99ff;
+}
