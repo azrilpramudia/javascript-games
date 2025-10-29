@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Treasure Hunt — Hot & Cold Grid Guessing Game</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="board">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+      <div>
+        <h1>Treasure Hunt</h1>
+        <div class="small">Guess the hidden treasure on a 10×10 island. Click a tile to guess — receive Hot/Cold & directional hints.</div>
+      </div>
+      <div class="meta">
+        <div style="text-align:right">
+          <div class="small">Attempts</div>
+          <div id="ui-attempts" style="font-weight:800;color:var(--accent)">0</div>
+        </div>
+      </div>
+    </div>
+
+    <canvas id="map" width="880" height="640"></canvas>
+
+    <div style="display:flex;justify-content:space-between;margin-top:10px;align-items:center">
+      <div class="legend">
+        <div class="chip">Click a tile to probe</div>
+        <div class="chip">Hotter = closer</div>
+        <div class="chip">Use Hint (reveals quadrant)</div>
+      </div>
+      <div style="display:flex;gap:8px">
+        <button id="btn-new">New Game</button>
+        <button id="btn-hint" class="btn-primary">Hint</button>
+      </div>
+    </div>
+  </div>
+
+  <aside class="side">
+    <div class="stat"><div>Best (fewest)</div><div id="ui-best">—</div></div>
+    <div class="stat"><div>Mode</div><div id="ui-mode">Classic</div></div>
+
+    <div style="border-top:1px solid rgba(255,255,255,0.02);padding-top:8px">
+      <div class="small" style="margin-bottom:8px">Guesses</div>
+      <div class="guesses" id="guess-list"></div>
+    </div>
+
+    <div style="border-top:1px solid rgba(255,255,255,0.02);padding-top:8px">
+      <div class="small">How to Play</div>
+      <div class="small">The island is a 10×10 grid. Click tiles to probe — the game returns a color and a hint pointing closer to the treasure. Find it in as few moves as possible.</div>
+    </div>
+    <footer>
+      <div class="small">Saved best score uses localStorage. Want timed mode, limited probes, or multiplayer? Say which and I'll add it.</div>
+    </footer>
+  </aside>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
