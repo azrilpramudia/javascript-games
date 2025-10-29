@@ -347,13 +347,6 @@ Your support makes **JavaScript Games for Beginners** better every day. 💪
                 </a>
             </td>
             <td align="center">
-                <a href="https://github.com/VectorSigmaOmega">
-                    <img src="https://avatars.githubusercontent.com/u/69073394?v=4" width="100;" alt="VectorSigmaOmega"/>
-                    <br />
-                    <sub><b>VectorSigmaOmega</b></sub>
-                </a>
-            </td>
-            <td align="center">
                 <a href="https://github.com/Lakshith7748">
                 <img src="https://avatars.githubusercontent.com/u/184403935?v=4" width="100;" alt="Lakshith7748"/>
                  <br />
