@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  background: #050014;
+  color: #fff;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+#backgroundCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+h1 {
+  position: relative;
+  margin: 20px 0;
+  font-size: 2rem;
+  text-shadow: 0 0 10px #ff5c8a, 0 0 20px #b45cff;
+  z-index: 2;
+}
+
+#gameCanvas {
+  display: block;
+  margin: 0 auto;
+  border: 2px solid white;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(6px);
+  z-index: 1;
+  position: relative;
+}
+
+#restartBtn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  background: #ff5c8a;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  z-index: 2;
+  position: relative;
+}
+
+#restartBtn:hover {
+  background: #b45cff;
+  box-shadow: 0 0 15px #b45cff;
+}
