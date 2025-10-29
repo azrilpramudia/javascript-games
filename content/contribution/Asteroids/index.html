@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asteroids</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-info">
+        <div>Score: <span id="scoreDisplay">0</span></div>
+        <div>Lives: <span id="livesDisplay">3</span></div>
+    </div>
+    
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+    
+    <div class="instructions">
+        <p><span>&larr;</span> / <span>&rarr;</span> : Rotate</p>
+        <p><span>&uarr;</span> : Thrust</p>
+        <p><span>Spacebar</span> : Shoot</p>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
