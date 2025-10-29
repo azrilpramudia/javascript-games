@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Recursive:wght@400;700&display=swap");
+
+/* --- Theme Variables --- */
+:root {
+  --bg-color: #1a1a2e;
+  --accent-color: #e94560;
+  --text-color: #f0f0f0;
+  --muted-text: rgba(255, 255, 255, 0.6);
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+/* --- Global Styles --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg-color) no-repeat center center/cover;
+  color: var(--text-color);
+  font-family: "Recursive", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+/* --- Main Game Container (Glass Card) --- */
+.game-container {
+  width: 100%;
+  max-width: 500px;
+  padding: 2.5rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* --- Microphone Image & Animation --- */
+img {
+  width: 7rem;
+  height: 7rem;
+  margin-bottom: 1rem;
+  animation: pulse 2.5s infinite ease-in-out;
+  filter: drop-shadow(0 0 12px var(--accent-color));
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* --- Typography --- */
+h1 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--muted-text);
+  line-height: 1.5;
+}
+
+/* --- Message Display --- */
+.msg {
+  margin-top: 2rem;
+  font-size: 1.25rem;
+  min-height: 6rem; /* Reserve space */
+}
+
+.msg div {
+  color: var(--muted-text);
+  font-size: 1rem;
+}
+
+.box {
+  display: inline-block;
+  font-size: 1.75rem;
+  margin: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--glass-border);
+}
+
+/* --- Buttons --- */
+.btn {
+  cursor: pointer;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #ff5777;
+  transform: translateY(-2px);
+}
+
+.btn:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 4px;
+}
+
+.play-again {
+  margin-top: 1rem;
+}
+
+/* --- Fallback UI for Typed Guesses --- */
+#text-guess {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+#guess-input {
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  color: var(--text-color);
+  font-size: 1rem;
+  width: 12rem;
+  text-align: center;
+}
+
+#guess-input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+.voice-unsupported {
+  font-size: 0.9rem;
+  color: var(--muted-text);
+  margin-top: 1rem;
+}
