@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #0a0a12 0%, #010103 100%);
+  color: #fff;
+  font-family: 'VT323', monospace;
+  overflow: hidden;
+}
+
+.game-container {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+canvas {
+  border: 3px solid #6b00f0;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #0a0023 0%, #050010 100%);
+  box-shadow: 0 0 25px #ff00ff;
+}
+
+.overlay {
+  position: absolute;
+  text-align: center;
+}
+
+h1 {
+  font-size: 28px;
+  color: #ff77ff;
+  text-shadow: 0 0 10px #ff00ff;
+}
+
+button {
+  background: #6b00f0;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #ff00ff;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #ff00ff;
+  box-shadow: 0 0 20px #ff66ff;
+}
+
+.hint {
+  margin-top: 10px;
+  color: #ccc;
+  font-size: 14px;
+}
