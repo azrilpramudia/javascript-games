@@ -1,0 +1,230 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #FF6B9D 0%, #C44569 50%, #FFA502 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+    padding: 20px;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(255, 107, 157, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 165, 2, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 40% 20%, rgba(196, 69, 105, 0.2) 0%, transparent 50%);
+    animation: bgShift 15s ease-in-out infinite;
+}
+
+@keyframes bgShift {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    50% { transform: translate(-50px, -30px) rotate(5deg); }
+}
+
+.game-container {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.title {
+    color: white;
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 0px #C44569, 6px 6px 0px rgba(0,0,0,0.2);
+    letter-spacing: 2px;
+}
+
+.score-board {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.score-item {
+    background: rgba(255,255,255,0.2);
+    padding: 15px 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.score-label {
+    color: rgba(255,255,255,0.8);
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+.score-value {
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+#gameCanvas {
+    border: 4px solid rgba(255,255,255,0.5);
+    border-radius: 15px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.4), 0 0 0 8px rgba(255,255,255,0.1);
+    background: linear-gradient(to bottom, #4FACFE 0%, #00F2FE 100%);
+    cursor: pointer;
+}
+
+.instructions {
+    color: white;
+    margin-top: 20px;
+    font-size: 1.1em;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Game Over */
+.game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,0.9);
+    padding: 40px 60px;
+    border-radius: 20px;
+    color: white;
+    display: none;
+    z-index: 10;
+}
+
+.game-over.show {
+    display: block;
+    animation: popIn 0.3s ease-out;
+}
+
+@keyframes popIn {
+    0% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+.game-over h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #ff6b6b;
+}
+
+.game-over p {
+    font-size: 1.3em;
+    margin: 10px 0;
+}
+
+.restart-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.2em;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.restart-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+.restart-btn:active {
+    transform: translateY(0);
+}
+
+/* Start Screen */
+.start-screen {
+    position: absolute;
+    width: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,0.85);
+    padding: 50px 70px;
+    border-radius: 20px;
+    color: white;
+    z-index: 10;
+    text-align: center;
+}
+
+.start-screen.hide {
+    display: none;
+}
+
+.start-screen h2 {
+    font-size: 2.8em;
+    margin-bottom: 20px;
+    color: #FFD700;
+}
+
+.start-screen .how-to {
+    font-size: 1.1em;
+    margin: 20px 0;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.9);
+}
+
+.start-screen .how-to-item {
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.start-screen .icon {
+    font-size: 1.5em;
+}
+
+.start-btn {
+    background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%);
+    color: white;
+    border: none;
+    padding: 18px 50px;
+    font-size: 1.4em;
+    font-weight: bold;
+    border-radius: 35px;
+    cursor: pointer;
+    margin-top: 25px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(78, 205, 196, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 0 15px rgba(78, 205, 196, 0);
+    }
+}
+
+.start-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    animation: none;
+}
+
+.start-btn:active {
+    transform: translateY(0) scale(1);
+}
