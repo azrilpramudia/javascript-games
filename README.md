@@ -319,14 +319,6 @@ Your support makes **JavaScript Games for Beginners** better every day. 💪
                 </a>
             </td>
 		</tr>
-        <td align="center">
-    <a href="https://github.com/anahskal">
-        <img src="https://avatars.githubusercontent.com/u/169256712?v=4" width="100;" alt="anahskal"/>
-        <br />
-        <sub><b>anahskal</b></sub>
-    </a>
-</td>
-
 	<tbody>
 </table>
 <!-- readme: contributors -end -->
