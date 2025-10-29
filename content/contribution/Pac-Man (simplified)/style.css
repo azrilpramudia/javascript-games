@@ -1,0 +1,49 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #FFFF00; /* Pac-Man Yellow */
+    font-weight: normal;
+}
+
+.game-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+canvas {
+    background-color: #000;
+    border: 5px solid #0000FF; /* Pac-Man Blue */
+    display: block;
+}
+
+.info-panel {
+    text-align: left;
+    width: 200px;
+}
+
+.info-panel h2 {
+    color: #FFFF00;
+    margin: 0 0 20px 0;
+}
+
+.instructions p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.instructions span {
+    font-weight: bold;
+    color: #FFFF00;
+    background-color: #222;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
