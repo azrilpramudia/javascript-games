@@ -35,7 +35,8 @@ These projects are perfect for anyone who wants to:
 | 6️⃣  | ✂️ **Rock Paper Scissors** | Classic hand game with interactive UI and score tracking. |
 | 7️⃣  | 🔴🟡 **Connect 4**      | Drop discs to connect four in a row before your opponent does. |
 | 8️⃣  | ⚡ **Typing Test**      | Test your typing speed with small quotes. |
-| 9️⃣  | 🧩 **Sudoku**           | Fill the 9×9 grid so each row, column and 3×3 box contains digits 1–9.
+| 9️⃣  | 🧩 **Sudoku**           | Fill the 9×9 grid so each row, column and 3×3 box 
+| 🔟 | 🍉 **Fruit Ninja** | Slice flying fruits using your mouse! Try to avoid bombs. |contains digits 1–9.
 
 
 > Want to add your own game? Fork this repo and bring your creativity to life! 🎨

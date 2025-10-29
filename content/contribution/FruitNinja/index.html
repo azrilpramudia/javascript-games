@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fruit Ninja</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="game-container">
+    <h1>🍉 Fruit Ninja</h1>
+    <div id="stats">
+      <span id="score">Score: 0</span>
+      <span id="missed">Missed: 0 / 5</span>
+    </div>
+    <canvas id="gameCanvas"></canvas>
+    <div id="game-over" class="hidden">
+      <h2 id="game-over-text">Game Over!</h2>
+      <p>Your final score: <span id="final-score"></span></p>
+      <button id="restart-btn">Play Again</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
