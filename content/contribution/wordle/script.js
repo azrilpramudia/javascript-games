@@ -17,7 +17,7 @@ class WordleGame {
 
     initializeGame() {
         // Choose random solution from words.js
-        this.solution = SOLUTION_WORDS[Math.floor(Math.random() * SOLUTION_WORDS.length)];
+        this.solution = SOLUTION_WORDS[Math.floor(Math.random() * SOLUTION_WORDS.length)].toUpperCase();
         console.log('Solution:', this.solution); // For testing - remove in production
         
         // Create game grid
@@ -130,7 +130,7 @@ class WordleGame {
         }
 
         // Validate guess is in word list (using words.js)
-        if (!VALID_GUESSES.includes(this.currentGuess)) {
+        if (!VALID_GUESSES.includes(this.currentGuess.toLowerCase())) {
             this.showMessage('Not in word list', 'error');
             return;
         }
