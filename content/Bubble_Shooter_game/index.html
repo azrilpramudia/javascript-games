@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble Shooter Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Game Container -->
+    <div class="game-container">
+        <!-- Header with Title and Score -->
+        <div class="header">
+            <h1>Bubble Shooter</h1>
+            <div class="score-container">
+                <span class="score-label">Score:</span>
+                <span id="score" class="score-value">0</span>
+            </div>
+        </div>
+
+        <!-- Game Canvas -->
+        <canvas id="gameCanvas"></canvas>
+
+        <!-- Restart Button -->
+        <button id="restartBtn" class="restart-btn">Restart Game</button>
+
+        <!-- Instructions -->
+        <div class="instructions">
+            <p>🎯 Aim with your mouse and click to shoot!</p>
+            <p>💥 Match 3 or more bubbles of the same color to pop them</p>
+        </div>
+    </div>
+
+    <!-- Audio Elements for Sound Effects -->
+    <audio id="shootSound" preload="auto">
+        <!-- Shoot sound will be generated via Web Audio API -->
+    </audio>
+    <audio id="popSound" preload="auto">
+        <!-- Pop sound will be generated via Web Audio API -->
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
