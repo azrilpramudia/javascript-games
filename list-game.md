@@ -18,6 +18,7 @@ Automatically generated from the [content/contribution](./content/contribution) 
 | 12 | **FruitNinja** | [./content/contribution/FruitNinja/](./content/contribution/FruitNinja/) |
 | 13 | **Fun Bubble Shooter Game** | [./content/contribution/Fun-Bubble-Shooter-Game/](./content/contribution/Fun-Bubble-Shooter-Game/) |
 | 14 | **Gravity Ball Game** | [./content/contribution/Gravity-Ball Game/](./content/contribution/Gravity-Ball Game/) |
+<<<<<<< Updated upstream
 | 15 | **Guess The Number** | [./content/contribution/Guess-the-number/](./content/contribution/Guess-the-number/) |
 | 16 | **Magnet Maze** | [./content/contribution/Magnet-Maze/](./content/contribution/Magnet-Maze/) |
 | 17 | **Memory Card Game** | [./content/contribution/Memory-Card-Game/](./content/contribution/Memory-Card-Game/) |
@@ -97,4 +98,53 @@ Automatically generated from the [content/contribution](./content/contribution) 
 | 58 | **Wordle** | [./content/contribution/wordle/](./content/contribution/wordle/) |
 
 > 🧩 Auto-updated on 2025-10-30 14:18:16
+>>>>>>> Stashed changes
+=======
+| 15 | **Guess The Number Game** | [./content/contribution/Guess-The-Number Game/](./content/contribution/Guess-The-Number Game/) |
+| 16 | **Guess The Number** | [./content/contribution/Guess-the-number/](./content/contribution/Guess-the-number/) |
+| 17 | **Magnet Maze** | [./content/contribution/Magnet-Maze/](./content/contribution/Magnet-Maze/) |
+| 18 | **Memory Card Game** | [./content/contribution/Memory-Card-Game/](./content/contribution/Memory-Card-Game/) |
+| 19 | **Memory Match** | [./content/contribution/Memory-Match/](./content/contribution/Memory-Match/) |
+| 20 | **Number Guess** | [./content/contribution/Number-Guess/](./content/contribution/Number-Guess/) |
+| 21 | **Number Puzzle** | [./content/contribution/Number-Puzzle/](./content/contribution/Number-Puzzle/) |
+| 22 | **Pac Man (Simplified)** | [./content/contribution/Pac-Man-(simplified)/](./content/contribution/Pac-Man-(simplified)/) |
+| 23 | **PacMan** | [./content/contribution/PacMan/](./content/contribution/PacMan/) |
+| 24 | **Platform Jumper** | [./content/contribution/Platform-Jumper/](./content/contribution/Platform-Jumper/) |
+| 25 | **Space Invaders Game** | [./content/contribution/Space-Invaders-Game/](./content/contribution/Space-Invaders-Game/) |
+| 26 | **Sudoku 2.0** | [./content/contribution/Sudoku-2.0/](./content/contribution/Sudoku-2.0/) |
+| 27 | **Tic Tac Toe Game** | [./content/contribution/Tic-Tac-Toe-Game/](./content/contribution/Tic-Tac-Toe-Game/) |
+| 28 | **Tilting Maze Game** | [./content/contribution/Tilting-Maze-Game/](./content/contribution/Tilting-Maze-Game/) |
+| 29 | **Tower Stack** | [./content/contribution/Tower-Stack/](./content/contribution/Tower-Stack/) |
+| 30 | **Typing Speed Test Game** | [./content/contribution/Typing-Speed-Test Game/](./content/contribution/Typing-Speed-Test Game/) |
+| 31 | **TypingTest** | [./content/contribution/TypingTest/](./content/contribution/TypingTest/) |
+| 32 | **Word Scramble Story** | [./content/contribution/Word-Scramble-Story/](./content/contribution/Word-Scramble-Story/) |
+| 33 | **WordScramble** | [./content/contribution/WordScramble/](./content/contribution/WordScramble/) |
+| 34 | **Aim Trainer Game** | [./content/contribution/aim-trainer-game/](./content/contribution/aim-trainer-game/) |
+| 35 | **Chess** | [./content/contribution/chess/](./content/contribution/chess/) |
+| 36 | **Connect 4** | [./content/contribution/connect-4/](./content/contribution/connect-4/) |
+| 37 | **Emoji Catcher** | [./content/contribution/emoji-catcher/](./content/contribution/emoji-catcher/) |
+| 38 | **Game 2048** | [./content/contribution/game-2048/](./content/contribution/game-2048/) |
+| 39 | **Guessle** | [./content/contribution/guessle/](./content/contribution/guessle/) |
+| 40 | **Hangman** | [./content/contribution/hangman/](./content/contribution/hangman/) |
+| 41 | **Mastermind** | [./content/contribution/mastermind/](./content/contribution/mastermind/) |
+| 42 | **Minesweeper** | [./content/contribution/minesweeper/](./content/contribution/minesweeper/) |
+| 43 | **Newtons Laws** | [./content/contribution/newtons-laws/](./content/contribution/newtons-laws/) |
+| 44 | **Orbit Game** | [./content/contribution/orbit-game/](./content/contribution/orbit-game/) |
+| 45 | **Paddle Ball Game** | [./content/contribution/paddle-ball-game/](./content/contribution/paddle-ball-game/) |
+| 46 | **Pig Game** | [./content/contribution/pig-game/](./content/contribution/pig-game/) |
+| 47 | **Pong Game** | [./content/contribution/pong-game/](./content/contribution/pong-game/) |
+| 48 | **Reaction Speed Test** | [./content/contribution/reaction-speed-test/](./content/contribution/reaction-speed-test/) |
+| 49 | **Rock Paper Scissors** | [./content/contribution/rock-paper-scissors/](./content/contribution/rock-paper-scissors/) |
+| 50 | **Simon Says Game** | [./content/contribution/simon-says-game/](./content/contribution/simon-says-game/) |
+| 51 | **Simon Says Memory Game** | [./content/contribution/simon-says-memory-game/](./content/contribution/simon-says-memory-game/) |
+| 52 | **Snake Game** | [./content/contribution/snake-game/](./content/contribution/snake-game/) |
+| 53 | **Space Shooter Game** | [./content/contribution/space-shooter-game/](./content/contribution/space-shooter-game/) |
+| 54 | **Speaking Number Game** | [./content/contribution/speaking-number-game/](./content/contribution/speaking-number-game/) |
+| 55 | **Sudoku** | [./content/contribution/sudoku/](./content/contribution/sudoku/) |
+| 56 | **Tetris** | [./content/contribution/tetris/](./content/contribution/tetris/) |
+| 57 | **Tic Tac Toe** | [./content/contribution/tic-tac-toe/](./content/contribution/tic-tac-toe/) |
+| 58 | **Whack A Mole** | [./content/contribution/whack-a-mole/](./content/contribution/whack-a-mole/) |
+| 59 | **Wordle** | [./content/contribution/wordle/](./content/contribution/wordle/) |
+
+> 🧩 Auto-updated on 2025-10-30 14:18:58
 >>>>>>> Stashed changes
