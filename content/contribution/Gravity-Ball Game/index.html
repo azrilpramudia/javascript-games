@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gravity Ball — Reach the Flag</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="ui-top">
+    <h1>Gravity Ball</h1>
+    <div class="controls-top">
+      <button id="restartBtn">Restart</button>
+      <button id="nextBtn">Next Level</button>
+      <label>Gravity: <input id="gravityRange" type="range" min="200" max="1400" value="900" /></label>
+      <span id="gravityVal">900</span>
+    </div>
+  </div>
+
+  <div class="game-wrap">
+    <canvas id="gameCanvas"></canvas>
+    <div class="hud">
+      <div id="message" class="message">Use ← → and ↑ / Space to jump</div>
+      <div class="score">Level: <span id="levelNum">1</span></div>
+    </div>
+
+    <!-- mobile controls -->
+    <div class="mobile-controls" id="mobileControls" aria-hidden="true">
+      <button class="m-btn" id="mLeft">◀</button>
+      <button class="m-btn" id="mJump">▲</button>
+      <button class="m-btn" id="mRight">▶</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
