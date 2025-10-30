@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coin Toss Simulator</title>
+
+    <meta name="google-site-verification" content="u9MIvSvtdjNvbfiVKLGy8WuFdbVe-6XRKrV7KxNPRDs" />
+
+    <meta name="description"
+        content="Flip virtual coins with realistic animations and sound effects! Track heads, tails, and totals. Perfect for decision-making, teaching probability, or just having fun.">
+    <meta name="keywords"
+        content="coin toss simulator, flip a coin, heads or tails, coin flip online, probability simulator, virtual coin toss">
+
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Coin Toss Simulator</h1>
+        <div class="controls">
+            <button id="tossButton" class="btn">Flip</button>
+            <input type="number" id="coinCount" placeholder="Number of coins" min="1" class="input">
+            <button id="addCoinsButton" class="btn">+</button>
+            <button id="tossAllButton" class="btn"> Flip All</button>
+            <div class="switch-container">
+                <span>Vertical</span>
+                <label class="switch">
+                    <input type="checkbox" id="tossStyleToggle" title="vertical spin" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+        <div class="coin-container" id="coinContainer">
+            <div class="full-screen-icon" id="fullScreenIcon">⛶</div>
+            <div class="exit-full-screen-icon" id="exitFullScreenIcon">✖</div>
+            <audio src="./Sounds/coin-flip-shimmer.mp3" id="flip"></audio>
+            <audio src="./Sounds/coin-spinning.mp3" id="spin"></audio>
+            <!-- Coins will be added here dynamically -->
+        </div>
+        <div class="stats">
+            <div class="stat-box">
+                <p>Total Tosses: <span id="totalTossCount">0</span></p>
+            </div>
+            <div class="stat-box">
+                <p>Heads: <span id="headsCount">0</span></p>
+            </div>
+            <div class="stat-box">
+                <p>Tails: <span id="tailsCount">0</span></p>
+            </div>
+            <div class="stat-box">
+                <p>Total Coins: <span id="totalCoinsCount">1</span></p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
