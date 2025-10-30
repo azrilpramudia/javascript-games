@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Simple Chess</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <div class="board-wrap">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+        <div>
+          <h1>Simple Chess</h1>
+          <div style="font-size:13px;color:#9fb4c8">Click a piece to move. No castling/en passant.</div>
+        </div>
+        <div class="info">
+          <div style="text-align:right"><div style="font-size:13px;color:#9fb4c8">Turn</div><div id="turn" class="turn">White</div></div>
+        </div>
+      </div>
+      <div id="board" class="board"></div>
+    </div>
+
+    <div class="sidebar">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div style="font-size:13px;color:#9fb4c8">Game</div>
+        <div class="controls">
+          <button id="btn-new">New Game</button>
+          <button id="btn-undo" class="ghost">Undo</button>
+        </div>
+      </div>
+      <div class="status" id="status">Status: Ready</div>
+      <div style="font-size:13px;color:#9fb4c8">Move List</div>
+      <div class="moves" id="moves"></div>
+      <div style="border-top:1px solid rgba(255,255,255,0.02);padding-top:8px">
+        <div style="font-size:13px;color:#9fb4c8">Notes</div>
+        <div style="font-size:13px;color:#9fb4c8">No castling/en passant. Detects check and basic mate/stalemate.</div>
+      </div>
+      <footer>Built with plain HTML/CSS/JS</footer>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
