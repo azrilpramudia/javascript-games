@@ -4,7 +4,7 @@ Automatically generated from the [content/contribution](./content/contribution) 
 
 | No. | Game Title | Path |
 |:--:|:----------------|:----------------------------|
-| 1 | ** Sudoku2.0** | [./content/contribution/ Sudoku2.0/](./content/contribution/ Sudoku2.0/) |
+| 1 | ** Sudoku2.0** | [./content/contribution/ Sudoku2.0/](./content/contribution/Sudoku2.0/) |
 | 2 | **Anime Flappy Bird** | [./content/contribution/Anime-Flappy-Bird/](./content/contribution/Anime-Flappy-Bird/) |
 | 3 | **Asteroids** | [./content/contribution/Asteroids/](./content/contribution/Asteroids/) |
 | 4 | **Breakout Game** | [./content/contribution/Breakout-game/](./content/contribution/Breakout-game/) |
@@ -17,14 +17,14 @@ Automatically generated from the [content/contribution](./content/contribution) 
 | 11 | **Escaped_Runner** | [./content/contribution/Escaped_Runner/](./content/contribution/Escaped_Runner/) |
 | 12 | **FlappyBird** | [./content/contribution/FlappyBird/](./content/contribution/FlappyBird/) |
 | 13 | **FruitNinja** | [./content/contribution/FruitNinja/](./content/contribution/FruitNinja/) |
-| 14 | **Fun Bubble Shooter Game** | [./content/contribution/Fun-Bubble-Shooter Game/](./content/contribution/Fun-Bubble-Shooter Game/) |
+| 14 | **Fun Bubble Shooter Game** | [./content/contribution/Fun-Bubble-Shooter-Game/](./content/contribution/Fun-Bubble-Shooter-Game/) |
 | 15 | **Guess The Number** | [./content/contribution/Guess-the-number/](./content/contribution/Guess-the-number/) |
 | 16 | **Magnet Maze** | [./content/contribution/Magnet-Maze/](./content/contribution/Magnet-Maze/) |
 | 17 | **Memory Card Game** | [./content/contribution/Memory-Card-Game/](./content/contribution/Memory-Card-Game/) |
 | 18 | **Memory Match** | [./content/contribution/Memory-Match/](./content/contribution/Memory-Match/) |
 | 19 | **Number Guess** | [./content/contribution/Number-Guess/](./content/contribution/Number-Guess/) |
 | 20 | **Number Puzzle** | [./content/contribution/Number-Puzzle/](./content/contribution/Number-Puzzle/) |
-| 21 | **Pac Man (Simplified)** | [./content/contribution/Pac-Man (simplified)/](./content/contribution/Pac-Man (simplified)/) |
+| 21 | **Pac Man (Simplified)** | [./content/contribution/Pac-Man-(simplified)/](./content/contribution/Pac-Man-(simplified)/) |
 | 22 | **PacMan** | [./content/contribution/PacMan/](./content/contribution/PacMan/) |
 | 23 | **Platform Jumper** | [./content/contribution/Platform-Jumper/](./content/contribution/Platform-Jumper/) |
 | 24 | **Space Invaders Game** | [./content/contribution/Space-Invaders-Game/](./content/contribution/Space-Invaders-Game/) |
@@ -60,9 +60,3 @@ Automatically generated from the [content/contribution](./content/contribution) 
 | 54 | **Tic Tac Toe** | [./content/contribution/tic-tac-toe/](./content/contribution/tic-tac-toe/) |
 | 55 | **Whack A Mole** | [./content/contribution/whack-a-mole/](./content/contribution/whack-a-mole/) |
 | 56 | **Wordle** | [./content/contribution/wordle/](./content/contribution/wordle/) |
-=======
-> 🧩 Auto-updated on 2025-10-30 07:41:55
->>>>>>> Stashed changes
-=======
-> 🧩 Auto-updated on 2025-10-30 07:43:22
->>>>>>> Stashed changes
