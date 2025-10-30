@@ -4,31 +4,31 @@ Automatically generated from the [content/contribution](./content/contribution) 
 
 | No. | Game Title | Path |
 |:--:|:----------------|:----------------------------|
-| 1 | ** Sudoku2.0** | [./content/contribution/ Sudoku2.0/](./content/contribution/Sudoku2.0/) |
-| 2 | **Anime Flappy Bird** | [./content/contribution/Anime-Flappy-Bird/](./content/contribution/Anime-Flappy-Bird/) |
-| 3 | **Asteroids** | [./content/contribution/Asteroids/](./content/contribution/Asteroids/) |
-| 4 | **Breakout Game** | [./content/contribution/Breakout-game/](./content/contribution/Breakout-game/) |
-| 5 | **Brick Breaker Game** | [./content/contribution/Brick-Breaker-Game/](./content/contribution/Brick-Breaker-Game/) |
-| 6 | **Brick Breaker** | [./content/contribution/Brick-Breaker/](./content/contribution/Brick-Breaker/) |
-| 7 | **Bubble_Shooter_game** | [./content/contribution/Bubble_Shooter_game/](./content/contribution/Bubble_Shooter_game/) |
-| 8 | **Bubbleshooter** | [./content/contribution/Bubbleshooter/](./content/contribution/Bubbleshooter/) |
-| 9 | **Color Chain Game** | [./content/contribution/Color-Chain-game/](./content/contribution/Color-Chain-game/) |
-| 10 | **Dice Roll Simulator** | [./content/contribution/Dice-Roll-Simulator/](./content/contribution/Dice-Roll-Simulator/) |
-| 11 | **Escaped_Runner** | [./content/contribution/Escaped_Runner/](./content/contribution/Escaped_Runner/) |
-| 12 | **FlappyBird** | [./content/contribution/FlappyBird/](./content/contribution/FlappyBird/) |
-| 13 | **FruitNinja** | [./content/contribution/FruitNinja/](./content/contribution/FruitNinja/) |
-| 14 | **Fun Bubble Shooter Game** | [./content/contribution/Fun-Bubble-Shooter-Game/](./content/contribution/Fun-Bubble-Shooter-Game/) |
-| 15 | **Guess The Number** | [./content/contribution/Guess-the-number/](./content/contribution/Guess-the-number/) |
-| 16 | **Magnet Maze** | [./content/contribution/Magnet-Maze/](./content/contribution/Magnet-Maze/) |
-| 17 | **Memory Card Game** | [./content/contribution/Memory-Card-Game/](./content/contribution/Memory-Card-Game/) |
-| 18 | **Memory Match** | [./content/contribution/Memory-Match/](./content/contribution/Memory-Match/) |
-| 19 | **Number Guess** | [./content/contribution/Number-Guess/](./content/contribution/Number-Guess/) |
-| 20 | **Number Puzzle** | [./content/contribution/Number-Puzzle/](./content/contribution/Number-Puzzle/) |
-| 21 | **Pac Man (Simplified)** | [./content/contribution/Pac-Man-(simplified)/](./content/contribution/Pac-Man-(simplified)/) |
-| 22 | **PacMan** | [./content/contribution/PacMan/](./content/contribution/PacMan/) |
-| 23 | **Platform Jumper** | [./content/contribution/Platform-Jumper/](./content/contribution/Platform-Jumper/) |
-| 24 | **Space Invaders Game** | [./content/contribution/Space-Invaders-Game/](./content/contribution/Space-Invaders-Game/) |
-| 25 | **Tic Tac Toe Game** | [./content/contribution/Tic-Tac-Toe Game/](./content/contribution/Tic-Tac-Toe Game/) |
+| 1 | **Anime Flappy Bird** | [./content/contribution/Anime-Flappy-Bird/](./content/contribution/Anime-Flappy-Bird/) |
+| 2 | **Asteroids** | [./content/contribution/Asteroids/](./content/contribution/Asteroids/) |
+| 3 | **Breakout Game** | [./content/contribution/Breakout-game/](./content/contribution/Breakout-game/) |
+| 4 | **Brick Breaker Game** | [./content/contribution/Brick-Breaker-Game/](./content/contribution/Brick-Breaker-Game/) |
+| 5 | **Brick Breaker** | [./content/contribution/Brick-Breaker/](./content/contribution/Brick-Breaker/) |
+| 6 | **Bubble_Shooter_game** | [./content/contribution/Bubble_Shooter_game/](./content/contribution/Bubble_Shooter_game/) |
+| 7 | **Bubbleshooter** | [./content/contribution/Bubbleshooter/](./content/contribution/Bubbleshooter/) |
+| 8 | **Color Chain Game** | [./content/contribution/Color-Chain-game/](./content/contribution/Color-Chain-game/) |
+| 9 | **Dice Roll Simulator** | [./content/contribution/Dice-Roll-Simulator/](./content/contribution/Dice-Roll-Simulator/) |
+| 10 | **Escaped_Runner** | [./content/contribution/Escaped_Runner/](./content/contribution/Escaped_Runner/) |
+| 11 | **FlappyBird** | [./content/contribution/FlappyBird/](./content/contribution/FlappyBird/) |
+| 12 | **FruitNinja** | [./content/contribution/FruitNinja/](./content/contribution/FruitNinja/) |
+| 13 | **Fun Bubble Shooter Game** | [./content/contribution/Fun-Bubble-Shooter-Game/](./content/contribution/Fun-Bubble-Shooter-Game/) |
+| 14 | **Guess The Number** | [./content/contribution/Guess-the-number/](./content/contribution/Guess-the-number/) |
+| 15 | **Magnet Maze** | [./content/contribution/Magnet-Maze/](./content/contribution/Magnet-Maze/) |
+| 16 | **Memory Card Game** | [./content/contribution/Memory-Card-Game/](./content/contribution/Memory-Card-Game/) |
+| 17 | **Memory Match** | [./content/contribution/Memory-Match/](./content/contribution/Memory-Match/) |
+| 18 | **Number Guess** | [./content/contribution/Number-Guess/](./content/contribution/Number-Guess/) |
+| 19 | **Number Puzzle** | [./content/contribution/Number-Puzzle/](./content/contribution/Number-Puzzle/) |
+| 20 | **Pac Man (Simplified)** | [./content/contribution/Pac-Man-(simplified)/](./content/contribution/Pac-Man-(simplified)/) |
+| 21 | **PacMan** | [./content/contribution/PacMan/](./content/contribution/PacMan/) |
+| 22 | **Platform Jumper** | [./content/contribution/Platform-Jumper/](./content/contribution/Platform-Jumper/) |
+| 23 | **Space Invaders Game** | [./content/contribution/Space-Invaders-Game/](./content/contribution/Space-Invaders-Game/) |
+| 24 | **Sudoku 2.0** | [./content/contribution/Sudoku-2.0/](./content/contribution/Sudoku-2.0/) |
+| 25 | **Tic Tac Toe Game** | [./content/contribution/Tic-Tac-Toe-Game/](./content/contribution/Tic-Tac-Toe-Game/) |
 | 26 | **Tilting Maze Game** | [./content/contribution/Tilting-Maze-Game/](./content/contribution/Tilting-Maze-Game/) |
 | 27 | **Tower Stack** | [./content/contribution/Tower-Stack/](./content/contribution/Tower-Stack/) |
 | 28 | **TypingTest** | [./content/contribution/TypingTest/](./content/contribution/TypingTest/) |
@@ -60,3 +60,5 @@ Automatically generated from the [content/contribution](./content/contribution) 
 | 54 | **Tic Tac Toe** | [./content/contribution/tic-tac-toe/](./content/contribution/tic-tac-toe/) |
 | 55 | **Whack A Mole** | [./content/contribution/whack-a-mole/](./content/contribution/whack-a-mole/) |
 | 56 | **Wordle** | [./content/contribution/wordle/](./content/contribution/wordle/) |
+
+> 🧩 Auto-updated on 2025-10-30 07:54:48
