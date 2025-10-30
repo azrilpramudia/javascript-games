@@ -31,12 +31,22 @@ jobs:
           md5sum current_games.txt | cut -d " " -f1 > current_hash.txt
           echo "hash=$(cat current_hash.txt)" >> $GITHUB_OUTPUT
 
-      - name: 💾 Get previous folder hash (if exists)
+      - name: 💾 Get previous folder hash (safe mode)
         id: previous
         run: |
           if [ -f .games_hash ]; then
-            cat .games_hash
-            echo "hash=$(cat .games_hash)" >> $GITHUB_OUTPUT
+            # Ambil baris pertama yang valid (32 karakter hex)
+            HASH_LINE=$(head -n 1 .games_hash | tr -d '\r\n')
+
+            # Validasi format hash
+            if echo "$HASH_LINE" | grep -Eq '^[0-9a-f]{32}$'; then
+              echo "Previous hash: $HASH_LINE"
+              echo "hash=$HASH_LINE" >> $GITHUB_OUTPUT
+            else
+              echo "⚠️ Invalid or multiple hashes detected in .games_hash. Resetting it..."
+              echo "hash=none" >> $GITHUB_OUTPUT
+              echo "" > .games_hash
+            fi
           else
             echo "hash=none" >> $GITHUB_OUTPUT
           fi
@@ -46,8 +56,10 @@ jobs:
         run: |
           if [ "${{ steps.current.outputs.hash }}" = "${{ steps.previous.outputs.hash }}" ]; then
             echo "same=true" >> $GITHUB_OUTPUT
+            echo "✅ Folder structure unchanged, skipping update."
           else
             echo "same=false" >> $GITHUB_OUTPUT
+            echo "🔄 Folder structure changed, regenerating list-game.md..."
           fi
 
       - name: 🧠 Generate list-game.md (only if changed)
@@ -84,22 +96,22 @@ jobs:
           git config --local user.name "GitHub Action"
           branch="auto/update-game-list"
 
-          # Stash dulu perubahan supaya checkout tidak error
+          # Save change for secure branch checkout
           git add list-game.md .games_hash
           git stash push -m "temp-changes"
 
-          # Cek apakah branch sudah ada di remote
+          # Check if the branch already exists
           if git ls-remote --exit-code origin "$branch" >/dev/null 2>&1; then
-            echo "🌿 Branch $branch already exists. Checking it out..."
+            echo "🌿 Branch $branch already exists. Updating..."
             git fetch origin "$branch"
             git checkout "$branch"
-            git pull origin "$branch" --rebase
+            git pull origin "$branch" --rebase || echo "⚠️ Rebase skipped"
           else
             echo "🌱 Creating new branch $branch..."
             git checkout -b "$branch"
           fi
 
-          # Apply kembali perubahan yang disimpan
+          # Reapply saved changes
           git stash pop || echo "ℹ️ Nothing to pop, continue..."
 
           # Commit & Push
@@ -107,7 +119,7 @@ jobs:
           git commit -m "🎮 Auto update game list" || echo "No new commits to make"
           git push origin "$branch" --force-with-lease
 
-          # Buat PR hanya jika belum ada
+          # Create PR only if it doesn't exist yet
           gh pr list --head "$branch" --json number --jq '.[0].number' | grep -q '[0-9]' \
             && echo "⚠️ PR already exists, skipping creation." \
             || gh pr create \
