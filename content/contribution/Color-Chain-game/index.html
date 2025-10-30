@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Chain</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>🎨 Color Chain</h1>
+        <p class="subtitle">Match the color sequence!</p>
+
+        <div class="stats">
+            <div class="stat-box">
+                <div class="stat-label">Score</div>
+                <div class="stat-value" id="score">0</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-label">Level</div>
+                <div class="stat-value" id="level">1</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-label">High Score</div>
+                <div class="stat-value" id="highScore">0</div>
+            </div>
+        </div>
+
+        <div class="timer-bar">
+            <div class="timer-fill" id="timerFill"></div>
+        </div>
+
+        <div class="sequence-display" id="sequenceDisplay">
+            <p>Click START to begin!</p>
+        </div>
+
+        <div class="orb-grid" id="orbGrid"></div>
+
+        <button class="start-btn" id="startBtn">START GAME</button>
+
+        <div class="game-over hidden" id="gameOver">
+            <h2>Game Over!</h2>
+            <p class="final-score">Final Score: <span id="finalScore">0</span></p>
+            <button class="start-btn" id="restartBtn">PLAY AGAIN</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
