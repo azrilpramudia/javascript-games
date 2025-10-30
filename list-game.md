@@ -22,30 +22,17 @@ Automatically generated from the [content/contribution](./content/contribution) 
 | 16 | **Magnet Maze** | [./content/contribution/Magnet-Maze/](./content/contribution/Magnet-Maze/) |
 | 17 | **Memory Card Game** | [./content/contribution/Memory-Card-Game/](./content/contribution/Memory-Card-Game/) |
 | 18 | **Memory Match** | [./content/contribution/Memory-Match/](./content/contribution/Memory-Match/) |
-<<<<<<< Updated upstream
-| 19 | **Number Guess** | [./content/contribution/Number Guess/](./content/contribution/Number Guess/) |
-| 20 | **Number Puzzle** | [./content/contribution/Number Puzzle/](./content/contribution/Number Puzzle/) |
-| 21 | **Pac Man (Simplified)** | [./content/contribution/Pac-Man (simplified)/](./content/contribution/Pac-Man (simplified)/) |
-| 22 | **PacMan** | [./content/contribution/PacMan/](./content/contribution/PacMan/) |
-| 23 | **Platform Jumper** | [./content/contribution/Platform Jumper/](./content/contribution/Platform Jumper/) |
-| 24 | **Space Invaders Game** | [./content/contribution/Space Invaders Game/](./content/contribution/Space Invaders Game/) |
-=======
 | 19 | **Number Guess** | [./content/contribution/Number-Guess/](./content/contribution/Number-Guess/) |
 | 20 | **Number Puzzle** | [./content/contribution/Number-Puzzle/](./content/contribution/Number-Puzzle/) |
 | 21 | **Pac Man (Simplified)** | [./content/contribution/Pac-Man (simplified)/](./content/contribution/Pac-Man (simplified)/) |
 | 22 | **PacMan** | [./content/contribution/PacMan/](./content/contribution/PacMan/) |
 | 23 | **Platform Jumper** | [./content/contribution/Platform-Jumper/](./content/contribution/Platform-Jumper/) |
 | 24 | **Space Invaders Game** | [./content/contribution/Space-Invaders-Game/](./content/contribution/Space-Invaders-Game/) |
->>>>>>> Stashed changes
 | 25 | **Tic Tac Toe Game** | [./content/contribution/Tic-Tac-Toe Game/](./content/contribution/Tic-Tac-Toe Game/) |
 | 26 | **Tilting Maze Game** | [./content/contribution/Tilting-Maze-Game/](./content/contribution/Tilting-Maze-Game/) |
 | 27 | **Tower Stack** | [./content/contribution/Tower-Stack/](./content/contribution/Tower-Stack/) |
 | 28 | **TypingTest** | [./content/contribution/TypingTest/](./content/contribution/TypingTest/) |
-<<<<<<< Updated upstream
-| 29 | **Word Scramble Story** | [./content/contribution/Word Scramble Story/](./content/contribution/Word Scramble Story/) |
-=======
 | 29 | **Word Scramble Story** | [./content/contribution/Word-Scramble-Story/](./content/contribution/Word-Scramble-Story/) |
->>>>>>> Stashed changes
 | 30 | **WordScramble** | [./content/contribution/WordScramble/](./content/contribution/WordScramble/) |
 | 31 | **Aim Trainer Game** | [./content/contribution/aim-trainer-game/](./content/contribution/aim-trainer-game/) |
 | 32 | **Chess** | [./content/contribution/chess/](./content/contribution/chess/) |
@@ -74,12 +61,4 @@ Automatically generated from the [content/contribution](./content/contribution) 
 | 55 | **Whack A Mole** | [./content/contribution/whack-a-mole/](./content/contribution/whack-a-mole/) |
 | 56 | **Wordle** | [./content/contribution/wordle/](./content/contribution/wordle/) |
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-> 🧩 Auto-updated on 2025-10-30 07:35:04
-=======
-> 🧩 Auto-updated on 2025-10-30 07:38:01
->>>>>>> Stashed changes
-=======
-> 🧩 Auto-updated on 2025-10-30 07:41:32
->>>>>>> Stashed changes
+> 🧩 Auto-updated on 2025-10-30 07:41:54
