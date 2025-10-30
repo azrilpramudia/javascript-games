@@ -4,7 +4,7 @@ Automatically generated from the [content/contribution](./content/contribution) 
 
 | No. | Game Title | Path |
 |:--:|:----------------|:----------------------------|
-| 1 | ** Sudoku2.0** | [./content/contribution/ Sudoku2.0/](./content/contribution/ Sudoku2.0/) |
+| 1 | ** Sudoku2.0** | [./content/contribution/ Sudoku2.0/](./content/contribution/Sudoku2.0/) |
 | 2 | **Anime Flappy Bird** | [./content/contribution/Anime-Flappy-Bird/](./content/contribution/Anime-Flappy-Bird/) |
 | 3 | **Asteroids** | [./content/contribution/Asteroids/](./content/contribution/Asteroids/) |
 | 4 | **Breakout Game** | [./content/contribution/Breakout-game/](./content/contribution/Breakout-game/) |
@@ -60,17 +60,3 @@ Automatically generated from the [content/contribution](./content/contribution) 
 | 54 | **Tic Tac Toe** | [./content/contribution/tic-tac-toe/](./content/contribution/tic-tac-toe/) |
 | 55 | **Whack A Mole** | [./content/contribution/whack-a-mole/](./content/contribution/whack-a-mole/) |
 | 56 | **Wordle** | [./content/contribution/wordle/](./content/contribution/wordle/) |
-
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-> 🧩 Auto-updated on 2025-10-30 07:41:54
-=======
-> 🧩 Auto-updated on 2025-10-30 07:41:55
->>>>>>> Stashed changes
-=======
-> 🧩 Auto-updated on 2025-10-30 07:43:22
->>>>>>> Stashed changes
-=======
-> 🧩 Auto-updated on 2025-10-30 07:50:09
->>>>>>> Stashed changes
