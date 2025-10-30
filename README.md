@@ -303,14 +303,21 @@ Your support makes **JavaScript Games for Beginners** better every day. 💪
                 </a>
             </td>
             <td align="center">
+                <a href="https://github.com/riddhima-7321">
+                    <img src="https://avatars.githubusercontent.com/u/132067601?v=4" width="100;" alt="riddhima-7321"/>
+                    <br />
+                    <sub><b>riddhima-7321</b></sub>
+                </a>
+            </td>
+		</tr>
+		<tr>
+            <td align="center">
                 <a href="https://github.com/Mohitlikestocode">
                     <img src="https://avatars.githubusercontent.com/u/197102299?v=4" width="100;" alt="Mohitlikestocode"/>
                     <br />
                     <sub><b>Mohitlikestocode</b></sub>
                 </a>
             </td>
-		</tr>
-		<tr>
             <td align="center">
                 <a href="https://github.com/mdrafi28">
                     <img src="https://avatars.githubusercontent.com/u/174167695?v=4" width="100;" alt="mdrafi28"/>
@@ -346,6 +353,8 @@ Your support makes **JavaScript Games for Beginners** better every day. 💪
                     <sub><b>aditi-verma-20</b></sub>
                 </a>
             </td>
+		</tr>
+		<tr>
             <td align="center">
                 <a href="https://github.com/VectorSigmaOmega">
                     <img src="https://avatars.githubusercontent.com/u/69073394?v=4" width="100;" alt="VectorSigmaOmega"/>
