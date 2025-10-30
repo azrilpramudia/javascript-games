@@ -99,6 +99,13 @@ Your support makes **JavaScript Games for Beginners** better every day. 💪
                 </a>
             </td>
             <td align="center">
+                <a href="https://github.com/Sa-sketch-max">
+                    <img src="https://avatars.githubusercontent.com/u/118535055?v=4" width="100;" alt="Sa-sketch-max"/>
+                    <br />
+                    <sub><b>Sa-sketch-max</b></sub>
+                </a>
+            </td>
+            <td align="center">
                 <a href="https://github.com/kshitigambhir">
                     <img src="https://avatars.githubusercontent.com/u/134823553?v=4" width="100;" alt="kshitigambhir"/>
                     <br />
@@ -110,13 +117,6 @@ Your support makes **JavaScript Games for Beginners** better every day. 💪
                     <img src="https://avatars.githubusercontent.com/u/136215055?v=4" width="100;" alt="Devdammie"/>
                     <br />
                     <sub><b>Devdammie</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/Sa-sketch-max">
-                    <img src="https://avatars.githubusercontent.com/u/118535055?v=4" width="100;" alt="Sa-sketch-max"/>
-                    <br />
-                    <sub><b>Sa-sketch-max</b></sub>
                 </a>
             </td>
             <td align="center">
