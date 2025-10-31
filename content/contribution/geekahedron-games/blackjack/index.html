@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Blackjack</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="app">
+    <h1>Blackjack</h1>
+
+    <section id="table" aria-live="polite">
+      <div class="info-row">
+        <div class="balance">Balance: $<span id="balance">100</span></div>
+        <div class="bet">
+          Bet: $
+          <input id="bet-input" type="number" min="1" step="1" value="10" aria-label="Bet amount" />
+          <button id="bet-max">Max</button>
+        </div>
+      </div>
+
+    <div id="game-area" class="blackjack-layout">
+    <!-- Dealer row -->
+    <div class="row dealer-row" aria-label="Dealer area">
+        <div class="dealer-left">
+        <div class="deck-area" id="deck-area" aria-hidden="true">
+            <div class="card-stack" id="stack">
+            <div class="count-badge" id="stack-count" aria-live="polite">52</div>
+            <div class="card-back-layer layer-1"></div>
+            <div class="card-back-layer layer-2"></div>
+            <div class="card-back-layer layer-3"></div>
+            </div>
+        </div>
+        </div>
+
+        <div class="dealer-hand-area">
+        <h3>Dealer</h3>
+        <div class="hand" id="dealer-hand" aria-live="polite"></div>
+        <div class="hand-total" id="dealer-total" aria-hidden="true"></div>
+        </div>
+    </div>
+
+    <!-- Player row -->
+    <div class="row player-row" aria-label="Player area">
+        <div class="player-hand-area">
+        <h3>Player</h3>
+        <div class="hand" id="player-hand" aria-live="polite"></div>
+        <div class="hand-total" id="player-total" aria-hidden="true"></div>
+        </div>
+    </div>
+    </div>
+
+
+    <div id="controls" class="controls-row">
+<div class="controls-left">
+  <button id="deal-btn">Deal <span class="key-badge" aria-hidden="true">Enter</span></button>
+  <button id="hit-btn" disabled>Hit <span class="key-badge" aria-hidden="true">Space</span></button>
+  <button id="stand-btn" disabled>Stand <span class="key-badge" aria-hidden="true">S</span></button>
+  <button id="double-btn" disabled>Double <span class="key-badge" aria-hidden="true">D</span></button>
+  <button id="split-btn" disabled>Split <span class="key-badge" aria-hidden="true">P</span></button>
+</div>
+
+
+    <div class="controls-right">
+        <button id="restart-btn" style="display:none">Restart</button>
+        <p id="result" role="status" aria-live="polite"></p>
+    </div>
+    </div>
+
+    </section>
+
+    <footer class="help">
+      <small>Keyboard: Enter = Deal, Space = Hit, S = Stand, D = Double (when available), P = Split (when available)</small>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
