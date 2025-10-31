@@ -1,0 +1,360 @@
+:root {
+  --card-w: 90px;
+  --card-h: 126px;
+  --card-radius: 10px;
+  --card-border: 2px solid rgba(255,255,255,0.06);
+  --card-font-large: 2.2rem;
+  --card-font-small: 1.4rem;
+  --stack-gap: 16px; /* horizontal gap between face-up card and stack */
+}
+
+/* Reset and base styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, #1e1e2f, #3a3a5f);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+main {
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+/* Game layout */
+#game-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+/* Player column uses a horizontal row for card + stack */
+.player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Row that contains face-up card and side stack */
+.player-row {
+  display: flex;
+  align-items: center;
+  gap: var(--stack-gap);
+}
+
+/* Ensure both face-up card and card-back layers share one size and style */
+.card,
+.card-back-layer {
+  width: var(--card-w);
+  height: var(--card-h);
+  box-sizing: border-box;
+  border-radius: var(--card-radius);
+  border: var(--card-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Face-up card styling (stack-consistent look) */
+.card {
+  background: linear-gradient(180deg, #222428, #131317);
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+  font-size: var(--card-font-large);
+  line-height: 1;
+  padding: 6px;
+}
+
+/* If you use inline SVG inside .card, let it fill the box */
+.card svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* suits */
+.suit {
+  font-weight: 700;
+  display: inline-block;
+  line-height: 1;
+  margin-left: 2px;
+}
+
+/* red suits */
+.suit-hearts,
+.suit-diamonds {
+  color: #e53935;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.03);
+}
+
+/* black suits (use near-white for contrast on dark bg) */
+.suit-spades,
+.suit-clubs {
+  color: #f5f5f5;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+/* optional: smaller suit inside card rank for nicer layout */
+.card .rank {
+  font-size: var(--card-font-small);
+  display: inline-block;
+  vertical-align: middle;
+}
+.card .suit {
+  font-size: 1.6rem;
+  vertical-align: middle;
+}
+
+/* Card back base (face-down visual) */
+.card-back-layer {
+  background: linear-gradient(180deg, #2c2c3f, #1b1b28);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+  transition: transform 250ms ease, opacity 200ms ease, box-shadow 250ms ease;
+  display: block;
+  pointer-events: none;
+}
+
+/* load SVG for card back image (overrides gradient if present) */
+.card-back-layer {
+  background-image: url('card-back.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Side stack container: positioned to the right of the face-up card in the player row */
+.card-stack {
+  width: var(--card-w);
+  height: var(--card-h);
+  position: relative;
+  margin-top: 0; /* stack sits on the same horizontal line as face-up card */
+  pointer-events: none;
+}
+
+/* numeric badge that sits above the stack */
+.count-badge {
+  position: absolute;
+  top: -10px;
+  right: -6px;
+  min-width: 28px;
+  height: 28px;
+  padding: 0 6px;
+  border-radius: 14px;
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+  pointer-events: none;
+  z-index: 999;
+}
+
+/* make sure the badge scales on mobile */
+@media (max-width: 600px) {
+  :root {
+    --card-w: 72px;
+    --card-h: 100px;
+    --card-font-large: 1.6rem;
+    --stack-gap: 12px;
+  }
+  .count-badge { top: -8px; right: -5px; min-width: 24px; height: 24px; font-size: 0.85rem; border-radius: 12px; }
+}
+
+/* Arrange layers with increasing offset; JS will toggle classes or inline styles for counts */
+.card-stack .layer-1 { z-index: 1; transform: translate(0, 0) rotate(-1deg); opacity: 1; position: absolute; left: 0; top: 0; }
+.card-stack .layer-2 { z-index: 2; transform: translate(6px, 6px) rotate(-0.5deg); opacity: 1; position: absolute; left: 0; top: 0; }
+.card-stack .layer-3 { z-index: 3; transform: translate(12px, 12px) rotate(0deg); opacity: 1; position: absolute; left: 0; top: 0; }
+.card-stack .layer-4 { z-index: 4; transform: translate(18px, 18px) rotate(0.5deg); opacity: 1; position: absolute; left: 0; top: 0; }
+.card-stack .layer-5 { z-index: 5; transform: translate(24px, 24px) rotate(1deg); opacity: 1; position: absolute; left: 0; top: 0; }
+
+/* When a layer is hidden, we fade and lift it so stack shrinks visually */
+.layer-hidden {
+  opacity: 0;
+  transform: translate(0, -8px) scale(0.98) !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25) !important;
+}
+
+/* VS divider */
+.vs {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffcc00;
+}
+
+/* Controls */
+#controls {
+  margin-top: 20px;
+}
+
+button {
+  background-color: #ffcc00;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #e6b800;
+}
+
+#continue-war {
+  display: none; /* JS will toggle */
+}
+
+/* Restart button style matches other buttons but is hidden until needed */
+#restart-btn {
+  display: none;
+  margin-left: 8px;
+}
+
+/* When restart is visible, keep spacing consistent */
+#controls button { margin: 0 6px; }
+
+#result {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Visual style for disabled buttons (used for Play Round while Auto runs) */
+button:disabled,
+button.disabled-look {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+  filter: grayscale(25%);
+  pointer-events: none;
+}
+
+
+
+#auto-controls.control-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+#auto-speed {
+  width: 140px;
+  vertical-align: middle;
+}
+
+#auto-toggle {
+  background: #66c2a5;
+  color: #000;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px,1px,1px,1px);
+  white-space: nowrap;
+}
+
+/* Responsive tweaks */
+@media (max-width: 900px) {
+  #game-area { gap: 24px; }
+}
+
+@media (max-width: 600px) {
+  #game-area {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .player-row {
+    flex-direction: row;
+    gap: 12px;
+  }
+
+  .card {
+    font-size: 1.6rem;
+  }
+}
+
+/* single-row layout */
+#game-area.single-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  margin-bottom: 30px;
+}
+
+/* groupings for predictable spacing */
+.deck-area,
+.card-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--card-w);
+}
+
+/* center the two middle cards and give them extra breathing room */
+.card-area {
+  width: calc(var(--card-w) + 12px);
+}
+
+/* optionally reduce gap on smaller screens */
+@media (max-width: 900px) {
+  #game-area.single-row { gap: 18px; }
+}
+
+/* ensure visual stacking remains to the side within the deck-area */
+.card-stack {
+  position: relative;
+  width: var(--card-w);
+  height: var(--card-h);
+  pointer-events: none;
+}
+
+/* Keep card-back-layer absolute positioning inside the stack */
+.card-stack .card-back-layer {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* adjust layer offsets to move stack visually to the right of the card shape */
+.card-stack .layer-1 { transform: translate(0, 0) rotate(-1deg); z-index:1; }
+.card-stack .layer-2 { transform: translate(6px, 6px) rotate(-0.5deg); z-index:2; }
+.card-stack .layer-3 { transform: translate(12px, 12px) rotate(0deg); z-index:3; }
+.card-stack .layer-4 { transform: translate(18px, 18px) rotate(0.5deg); z-index:4; }
+.card-stack .layer-5 { transform: translate(24px, 24px) rotate(1deg); z-index:5; }
+
+/* ensure the face-up .card and .card-back-layer keep same visual size */
+.card, .card-back-layer { width: var(--card-w); height: var(--card-h); }
+
+/* responsive: stack and card scale down on small screens */
+@media (max-width: 600px) {
+  #game-area.single-row { gap: 12px; }
+  .card-area { width: calc(var(--card-w)); }
+  .deck-area { width: var(--card-w); }
+}

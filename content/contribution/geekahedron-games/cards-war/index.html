@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cards: War</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <h1>War</h1>
+    <section id="game-area" class="single-row">
+    <!-- Player 1 deck (face-down stack) -->
+    <div class="deck-area" id="p1-deck">
+        <div class="card-stack" id="stack1" role="img" aria-label="Player 1 card stack">
+        <div class="count-badge" id="stack-count1" aria-live="polite">26</div>
+        <div class="card-back-layer layer-1"></div>
+        <div class="card-back-layer layer-2"></div>
+        <div class="card-back-layer layer-3"></div>
+        <div class="card-back-layer layer-4"></div>
+        <div class="card-back-layer layer-5"></div>
+        </div>
+    </div>
+
+    <!-- Player 1 face-up card -->
+    <div class="card-area">
+        <div class="card" id="card1" aria-live="polite"></div>
+    </div>
+
+    <!-- Player 2 face-up card -->
+    <div class="card-area">
+        <div class="card" id="card2" aria-live="polite"></div>
+    </div>
+
+    <!-- Player 2 deck (face-down stack) -->
+    <div class="deck-area" id="p2-deck">
+        <div class="card-stack" id="stack2" role="img" aria-label="Player 2 card stack">
+        <div class="count-badge" id="stack-count2" aria-live="polite">26</div>
+        <div class="card-back-layer layer-1"></div>
+        <div class="card-back-layer layer-2"></div>
+        <div class="card-back-layer layer-3"></div>
+        <div class="card-back-layer layer-4"></div>
+        <div class="card-back-layer layer-5"></div>
+        </div>
+    </div>
+    </section>
+
+
+    <section id="controls">
+        <button id="next-round">Play Round</button>
+        <button id="continue-war" style="display:none">Continue War</button>
+        <div id="auto-controls" class="control-row" style="margin-top:12px;">
+            <button id="auto-toggle">Auto: Off</button>
+            <label for="auto-speed" class="visually-hidden">Auto speed (ms)</label>
+            <input id="auto-speed" type="range" min="100" max="1500" step="100" value="400">
+            <span id="auto-speed-value" aria-hidden="true" style="margin-left:8px;">400ms</span>
+        </div>
+        <p id="result"></p>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
