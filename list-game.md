@@ -33,7 +33,7 @@ Automatically generated from the [content/contribution](./content/contribution) 
 | 27 | **Tic Tac Toe Game** | [./content/contribution/Tic-Tac-Toe-Game/](./content/contribution/Tic-Tac-Toe-Game/) |
 | 28 | **Tilting Maze Game** | [./content/contribution/Tilting-Maze-Game/](./content/contribution/Tilting-Maze-Game/) |
 | 29 | **Tower Stack** | [./content/contribution/Tower-Stack/](./content/contribution/Tower-Stack/) |
-| 30 | **Typing Speed Test Game** | [./content/contribution/Typing-Speed-Test Game/](./content/contribution/Typing-Speed-Test Game/) |
+| 30 | **Typing Speed Test Game** | [./content/contribution/Typing-Speed-Test-Game/](./content/contribution/Typing-Speed-Test-Game/) |
 | 31 | **TypingTest** | [./content/contribution/TypingTest/](./content/contribution/TypingTest/) |
 | 32 | **Word Scramble Story** | [./content/contribution/Word-Scramble-Story/](./content/contribution/Word-Scramble-Story/) |
 | 33 | **WordScramble** | [./content/contribution/WordScramble/](./content/contribution/WordScramble/) |
@@ -64,4 +64,4 @@ Automatically generated from the [content/contribution](./content/contribution) 
 | 58 | **Whack A Mole** | [./content/contribution/whack-a-mole/](./content/contribution/whack-a-mole/) |
 | 59 | **Wordle** | [./content/contribution/wordle/](./content/contribution/wordle/) |
 
-> 🧩 Auto-updated on 2025-10-31 03:58:26
+> 🧩 Auto-updated on 2025-10-31 04:00:12
