@@ -2,7 +2,7 @@ name: 🧑‍💻 Smart Contributor Updater
 
 on:
   schedule:
-    - cron: "0 * * * *" # setiap 1 jam
+    - cron: "0 * * * *" #Every One Hour
   workflow_dispatch:
 
 permissions:
@@ -18,7 +18,44 @@ jobs:
       - name: 🧩 Checkout Repository
         uses: actions/checkout@v4
 
+      - name: 📥 Get Current Contributor List
+        id: current
+        run: |
+          curl -s "https://api.github.com/repos/${{ github.repository }}/contributors?per_page=100" \
+          | jq -r '.[].login' | sort > current_contributors.txt
+          md5sum current_contributors.txt | cut -d " " -f1 > current_hash.txt
+          echo "hash=$(cat current_hash.txt)" >> $GITHUB_OUTPUT
+
+      - name: 💾 Get Previous Contributor Hash (Safe Mode)
+        id: previous
+        run: |
+          if [ -f .contributors_hash ]; then
+            HASH_LINE=$(head -n 1 .contributors_hash | tr -d '\r\n')
+            if echo "$HASH_LINE" | grep -Eq '^[0-9a-f]{32}$'; then
+              echo "Previous hash: $HASH_LINE"
+              echo "hash=$HASH_LINE" >> $GITHUB_OUTPUT
+            else
+              echo "⚠️ Invalid hash file, resetting..."
+              echo "hash=none" >> $GITHUB_OUTPUT
+              echo "" > .contributors_hash
+            fi
+          else
+            echo "hash=none" >> $GITHUB_OUTPUT
+          fi
+
+      - name: 🔍 Compare Contributor Lists
+        id: compare
+        run: |
+          if [ "${{ steps.current.outputs.hash }}" = "${{ steps.previous.outputs.hash }}" ]; then
+            echo "same=true" >> $GITHUB_OUTPUT
+            echo "✅ No new contributors found. Skipping update."
+          else
+            echo "same=false" >> $GITHUB_OUTPUT
+            echo "🆕 New contributor(s) detected! Proceeding with update..."
+          fi
+
       - name: ✏️ Update Contributors in README
+        if: steps.compare.outputs.same == 'false'
         uses: akhilmhdh/contributors-readme-action@v2.3.11
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -32,3 +69,13 @@ jobs:
           create_pr: true
           pr_title: "🤖 Auto update contributors list"
           pr_body: "This PR automatically updates the contributor list in README.md 💫"
+
+      - name: 💾 Save New Contributor Hash
+        if: steps.compare.outputs.same == 'false'
+        run: |
+          cp current_hash.txt .contributors_hash
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "GitHub Action"
+          git add .contributors_hash
+          git commit -m "🔄 Update contributor hash" || echo "no changes"
+          git push
