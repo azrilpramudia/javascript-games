@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at center, #0a0f2c, #000);
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+  color: #fff;
+}
+
+/* Glowing particles background */
+body::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: repeating-radial-gradient(circle, rgba(255,255,255,0.15) 2px, transparent 6px);
+  animation: move 15s linear infinite;
+}
+@keyframes move {
+  from { transform: translate(0, 0); }
+  to { transform: translate(-50%, -50%); }
+}
+
+.game-container {
+  background: rgba(20, 20, 40, 0.8);
+  border-radius: 20px;
+  padding: 30px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 0 30px rgba(255, 0, 200, 0.5);
+  z-index: 1;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ff66cc;
+  text-shadow: 0 0 15px #ff33cc;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.text-box {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  min-height: 100px;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.correct {
+  color: #00ff99;
+  text-shadow: 0 0 8px #00ff99;
+}
+
+.incorrect {
+  color: #ff3333;
+  text-shadow: 0 0 8px #ff3333;
+}
+
+#input-area {
+  width: 100%;
+  height: 100px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 1rem;
+  resize: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.buttons {
+  text-align: center;
+  margin-top: 20px;
+}
+
+button {
+  background: linear-gradient(135deg, #ff33cc, #9933ff);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: #fff;
+  margin: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #ff33cc;
+}
