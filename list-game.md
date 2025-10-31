@@ -17,8 +17,8 @@ Automatically generated from the [content/contribution](./content/contribution) 
 | 11 | **FlappyBird** | [./content/contribution/FlappyBird/](./content/contribution/FlappyBird/) |
 | 12 | **FruitNinja** | [./content/contribution/FruitNinja/](./content/contribution/FruitNinja/) |
 | 13 | **Fun Bubble Shooter Game** | [./content/contribution/Fun-Bubble-Shooter-Game/](./content/contribution/Fun-Bubble-Shooter-Game/) |
-| 14 | **Gravity Ball Game** | [./content/contribution/Gravity-Ball Game/](./content/contribution/Gravity-Ball Game/) |
-| 15 | **Guess The Number Game** | [./content/contribution/Guess-The-Number Game/](./content/contribution/Guess-The-Number Game/) |
+| 14 | **Gravity Ball Game** | [./content/contribution/Gravity-Ball-Game/](./content/contribution/Gravity-Ball-Game/) |
+| 15 | **Guess The Number Game** | [./content/contribution/Guess-The-Number-Game/](./content/contribution/Guess-The-Number-Game/) |
 | 16 | **Guess The Number** | [./content/contribution/Guess-the-number/](./content/contribution/Guess-the-number/) |
 | 17 | **Magnet Maze** | [./content/contribution/Magnet-Maze/](./content/contribution/Magnet-Maze/) |
 | 18 | **Memory Card Game** | [./content/contribution/Memory-Card-Game/](./content/contribution/Memory-Card-Game/) |
@@ -64,8 +64,4 @@ Automatically generated from the [content/contribution](./content/contribution) 
 | 58 | **Whack A Mole** | [./content/contribution/whack-a-mole/](./content/contribution/whack-a-mole/) |
 | 59 | **Wordle** | [./content/contribution/wordle/](./content/contribution/wordle/) |
 
-<<<<<<< Updated upstream
-> 🧩 Auto-updated on 2025-10-30 14:19:19
-=======
-> 🧩 Auto-updated on 2025-10-30 14:19:20
->>>>>>> Stashed changes
+> 🧩 Auto-updated on 2025-10-31 03:58:26
