@@ -1,0 +1,258 @@
+:root {
+  --card-w: 90px;
+  --card-h: 126px;
+  --card-radius: 10px;
+  --card-border: 2px solid rgba(255,255,255,0.08);
+  --accent: #ffcc00;
+  --bg: linear-gradient(to bottom, #1e1e2f, #3a3a5f);
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial;
+  color: #fff;
+  background: var(--bg);
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  align-items: flex-start;
+  padding: 24px;
+}
+
+main { width: 980px; max-width: 96%; }
+
+h1 { text-align: center; margin: 6px 0 18px; font-size: 1.8rem; }
+
+#table {
+  background: rgba(0,0,0,0.18);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+}
+
+.info-row {
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.balance { font-weight:700; }
+.bet { display:flex; align-items:center; gap:8px; }
+#bet-input { width:80px; padding:6px; border-radius:6px; border:none; font-size:1rem; }
+
+
+.count-badge {
+  position:absolute;
+  top:-10px;
+  right:-6px;
+  min-width:28px;
+  height:28px;
+  padding:0 6px;
+  border-radius:14px;
+  background: rgba(0,0,0,0.7);
+  color:#fff;
+  font-weight:700;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:999;
+}
+
+/* hands */
+.card {
+  width: var(--card-w);
+  height: var(--card-h);
+  border-radius: var(--card-radius);
+  border: var(--card-border);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size: 1.4rem;
+  background: linear-gradient(180deg,#222428,#131317);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+  padding:6px;
+  color:#fff;
+}
+.card .rank { font-size: 1.0rem; margin-right:4px; }
+.card .suit { font-size: 1.4rem; }
+
+.card.face-down {
+  background-image: url('card-back.svg');
+  background-size: cover;
+  background-position: center;
+  color: transparent;
+}
+
+/* Blackjack stacked layout: dealer row above player row */
+.blackjack-layout { display:flex; flex-direction:column; gap:18px; align-items:center; }
+
+/* rows */
+.row { width: 100%; display:flex; align-items:center; justify-content:center; gap:18px; }
+
+/* dealer-specific layout: deck left, dealer hand centered */
+.dealer-row { justify-content:flex-start; padding: 8px 12px; }
+.dealer-left { width: 140px; display:flex; align-items:center; justify-content:flex-start; }
+
+/* hand areas centered in their column */
+.dealer-hand-area, .player-hand-area { display:flex; flex-direction:column; align-items:center; gap:8px; width: 70%; max-width: 720px; }
+
+/* player row centers the player's cards */
+.player-row { justify-content:center; padding: 4px 12px; }
+
+/* keep card stack small and compact */
+.deck-area { width: var(--card-w); display:flex; align-items:center; justify-content:center; }
+.card-stack { width: var(--card-w); height: var(--card-h); position: relative; pointer-events: none; }
+
+/* visually separate split hands */
+.split-hand { display:inline-flex; flex-direction:column; align-items:center; gap:6px; margin:0 8px; }
+.split-hand.active-hand { outline: 3px solid rgba(255,204,0,0.18); padding:6px; border-radius:8px; }
+.split-label { font-size:0.85rem; opacity:0.85; }
+.split-cards { display:flex; gap:8px; }
+.split-total { font-weight:700; font-size:0.95rem; }
+
+
+/* reduce number of visual layers for blackjack (cleaner) */
+.card-stack .card-back-layer { position:absolute; left:0; top:0; width:100%; height:100%; border-radius:var(--card-radius); background-image: url('card-back.svg'); background-size:cover; }
+.card-stack .layer-1 { z-index:1; transform: translate(0,0) rotate(-1deg); }
+.card-stack .layer-2 { z-index:2; transform: translate(8px,8px) rotate(-0.6deg); }
+.card-stack .layer-3 { z-index:3; transform: translate(16px,16px); }
+
+/* center hands and limit width so cards don't run off-screen */
+.hand { display:flex; gap:10px; align-items:flex-end; flex-wrap:wrap; justify-content:center; min-height: var(--card-h); }
+
+/* smaller stack-count badge when shown next to dealer */
+#stack-count { top:-8px; right:-6px; min-width:26px; height:26px; font-size:0.9rem; }
+
+/* responsive adjustments for narrow screens */
+@media (max-width: 720px) {
+  .dealer-hand-area, .player-hand-area { width: 100%; max-width: none; }
+  .dealer-row { justify-content:center; gap:12px; }
+  .dealer-left { display:none; } /* optionally hide deck on tiny screens */
+}
+
+
+/* controls */
+#controls { display:flex; flex-direction:column; align-items:center; gap:8px; margin-top:12px; }
+#controls > * { margin: 0 4px; }
+button {
+  background: var(--accent);
+  color:#000;
+  border:none;
+  padding:8px 12px;
+  border-radius:8px;
+  cursor:pointer;
+}
+button[disabled], button.disabled-look {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* keep readonly bet input high-contrast and obviously non-editable */
+input[readonly] {
+  background-color: #fff;
+  color: #111;
+  opacity: 1;
+  border-color: rgba(0,0,0,0.12);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.03);
+  cursor: default;
+}
+
+/* optional: visually hint that input is locked */
+input[readonly]::after { content: ''; }
+
+/* if you still use disabled for something, ensure it's readable too */
+input:disabled {
+  opacity: 1;
+  color: #111;
+  background-color: #f7f7f7;
+}
+
+
+/* single-row controls */
+.controls-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  margin-top: 12px;
+  padding: 6px 8px;
+}
+
+.controls-left { display:flex; gap:8px; align-items:center; }
+.controls-right { display:flex; gap:12px; align-items:center; }
+
+/* make status text shrink gracefully */
+/* allow result text to wrap and expand */
+.controls-right #result {
+  margin: 0;
+  font-weight: 700;
+  white-space: normal;      /* allow wrapping */
+  overflow: visible;       /* let it expand */
+  text-overflow: clip;
+  max-width: 60ch;         /* sensible width limit, adjust as needed */
+  word-break: break-word;  /* break long words if necessary */
+}
+
+
+/* keep buttons visually consistent */
+.controls-row button {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+/* key badge small pill next to button labels */
+.key-badge {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 6px;
+  font-size: 0.75rem;
+  line-height: 1;
+  border-radius: 6px;
+  background: rgba(0,0,0,0.12);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.25) inset;
+  vertical-align: middle;
+  font-family: monospace;
+  letter-spacing: 0.6px;
+}
+
+/* slightly tighter button content to keep controls row compact */
+.controls-left button { display:inline-flex; align-items:center; gap:6px; }
+
+/* Responsive: hide verbose "Space" label on very small screens (space shown in footer) */
+@media (max-width: 420px) {
+  .key-badge { padding: 2px 4px; font-size: 0.68rem; margin-left:6px; }
+  /* optionally hide Space word and show caret symbol instead */
+  .key-badge:contains("Space") { display:none; } /* note: :contains not standard; keep fallback */
+}
+
+
+/* responsive: stack controls on narrow viewports */
+@media (max-width: 520px) {
+  .controls-row { flex-direction: column; align-items: stretch; gap: 8px; }
+  .controls-left { justify-content: center; flex-wrap:wrap; }
+  .controls-right { justify-content: center; }
+  .controls-right #result { max-width: none; text-align:center; }
+}
+
+
+#result { margin-top:8px; font-weight:700; min-height:1.2em; }
+
+/* footer help */
+.help { margin-top:8px; text-align:center; color:rgba(255,255,255,0.7); font-size:0.9rem; }
+
+/* responsive */
+@media (max-width: 720px) {
+  .single-row { gap:12px; flex-wrap:wrap; justify-content: center; }
+  .hand-area { width: 160px; }
+  .card { font-size: 1.2rem; }
+  :root { --card-w:72px; --card-h:100px; }
+}
