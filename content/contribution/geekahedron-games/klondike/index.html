@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Klondike Solitaire — Starter</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="board">
+    <header class="controls">
+      <button id="newBtn">New Game</button>
+      <button id="undoBtn" disabled>Undo</button>
+      <div class="info">
+        <span id="moves">Moves: 0</span>
+        <span id="timer">Time: 0s</span>
+      </div>
+    </header>
+
+    <section class="top-row">
+      <div id="stock" class="pile slot">Stock</div>
+      <div id="waste" class="pile slot">Waste</div>
+      <div class="foundations">
+        <div class="slot" data-suit="hearts">♥</div>
+        <div class="slot" data-suit="diamonds">♦</div>
+        <div class="slot" data-suit="clubs">♣</div>
+        <div class="slot" data-suit="spades">♠</div>
+      </div>
+    </section>
+
+    <section id="tableau" class="tableau">
+      <div class="col" data-col="0"></div>
+      <div class="col" data-col="1"></div>
+      <div class="col" data-col="2"></div>
+      <div class="col" data-col="3"></div>
+      <div class="col" data-col="4"></div>
+      <div class="col" data-col="5"></div>
+      <div class="col" data-col="6"></div>
+    </section>
+  </main>
+
+  <script src="game.js" type="module"></script>
+</body>
+</html>

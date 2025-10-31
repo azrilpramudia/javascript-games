@@ -1,0 +1,266 @@
+:root {
+  --bg: #0b6b3a;
+  --card-bg: #fff;
+  --card-border: rgba(0,0,0,0.12);
+  --slot-bg: rgba(255,255,255,0.06);
+  --card-w: 80px;
+  --card-h: 110px;
+  --card-radius: 8px;
+  --card-gap-y: 30px;
+}
+
+/* Reset / base */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, "Segoe UI", Roboto, -apple-system, "Helvetica Neue", Arial;
+  background: var(--bg);
+  color: #fff;
+  padding: 16px;
+}
+
+/* Board layout */
+.board { max-width: 980px; margin: 0 auto; }
+.controls { display: flex; gap: 12px; align-items: center; margin-bottom: 12px; }
+.top-row { display: flex; gap: 12px; align-items: center; margin-bottom: 12px; }
+.info { margin-left: auto; display:flex; gap:12px; align-items:center; }
+
+/* Slots (stock / waste / foundations) */
+.pile.slot {
+  width: var(--card-w);
+  height: var(--card-h);
+  background: var(--slot-bg);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Foundations container: horizontal row */
+.foundations {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-left: auto;
+}
+
+/* Individual foundation slot: fixed size, center content, keep cards flowing inside */
+.foundations .slot {
+  flex: 0 0 auto;                /* don't stretch or shrink */
+  width: var(--card-w);
+  height: var(--card-h);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;            /* contains any inserted card */
+  background: var(--slot-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  color: rgba(255,255,255,0.9);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+/* When a small .card is placed inside a slot, let it layout normally (not absolute) */
+.foundations .slot .card {
+  position: static;
+  transform: none;
+  margin: 0;
+}
+
+/* empty-slot suit glyph styling */
+.foundations .slot.empty {
+  color: rgba(255,255,255,0.6);
+  font-size: 1.4rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* Tableau grid */
+.tableau { display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; }
+.col {
+  min-height: 140px;
+  padding: 6px;
+  background: transparent;
+  border-radius: 6px;
+  position: relative; /* stacking context for cards */
+}
+
+/* Card base */
+.card {
+  --w: var(--card-w);
+  --h: var(--card-h);
+  width: var(--w);
+  height: var(--h);
+  border-radius: var(--card-radius);
+  background: linear-gradient(180deg,#fff,#f6f6f6);
+  color: #111;
+  border: 1px solid var(--card-border);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.18);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 6px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-align: center;
+  pointer-events: auto;
+  user-select: none;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Stacking offset controlled via --index */
+.col .card { left: 0; }
+.col .card[data-index] { transform: translateY(calc(var(--index) * var(--card-gap-y))); }
+
+/* Empty tableau visual hint */
+
+/* Empty-slot visual: show a card-sized placeholder (face-down) */
+.col.empty {
+  outline: 2px dashed rgba(255,255,255,0.12);
+  background: linear-gradient(0deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
+  min-height: calc(var(--card-h) + 12px);
+  padding-top: 10px;
+}
+
+.col .empty-placeholder-card {
+  width: var(--card-w);
+  height: var(--card-h);
+  border-radius: var(--card-radius);
+  background: linear-gradient(180deg,#222,#151515);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.18);
+  border: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.06);
+  font-size: 1.1rem;
+  pointer-events: none;
+}
+
+/* subtle hover when a valid selection exists */
+.col.drop-target {
+  outline-color: rgba(255,255,0,0.28);
+  background: linear-gradient(0deg, rgba(255,255,0,0.03), rgba(255,255,0,0.01));
+}
+
+/* placeholder inside empty column */
+.col .empty-placeholder {
+  color: rgba(255,255,255,0.55);
+  font-size: 0.9rem;
+  font-weight: 600;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* small suit hint (optional) */
+.col .empty-placeholder .suit-hint {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* Card back */
+.card.back {
+  background: linear-gradient(180deg,#2b2b2b,#151515);
+  color: #fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:800;
+  letter-spacing:1px;
+}
+.card.back::after {
+  content: "♦♣♦";
+  opacity: 0.12;
+  font-size: 1.2rem;
+}
+
+/* Small variant */
+.card.small {
+  width: 64px;
+  height: 88px;
+  font-size: 0.85rem;
+  padding: 4px;
+}
+
+/* Rank / suit layout inside card */
+.card .rank-top,
+.card .rank-bottom {
+  font-size: 0.85rem;
+  line-height: 1;
+}
+.card .rank-bottom { transform: rotate(180deg); }
+.card .suit-large {
+  font-size: 1.7rem;
+  line-height: 1;
+  margin: 4px 0;
+}
+
+/* Suit coloring */
+.card.suit-hearts,
+.card.suit-diamonds { color: #b81d1d; }
+.card.suit-clubs,
+.card.suit-spades { color: #111; }
+
+/* Selection / hover */
+.card.selected {
+  outline: 3px solid rgba(255,255,0,0.14);
+  transform: translateY(calc(var(--index) * var(--card-gap-y))) scale(1.03);
+  z-index: 20;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.28);
+}
+.card:not(.back):hover {
+  transform: translateY(calc(var(--index) * var(--card-gap-y))) translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.32);
+}
+
+/* Utility / accessibility tweaks */
+.card { -webkit-tap-highlight-color: transparent; }
+
+
+/* pile container tweaks */
+.pile.slot { position: relative; display:flex; align-items:center; justify-content:center; padding:6px; }
+
+/* small card variant (exists already) -- ensure consistent border */
+.card.small { width:64px; height:88px; font-size:0.85rem; padding:4px; }
+
+/* stacked look for stock: slightly offset shadows to imply a stack */
+.pile.slot .card.back.small {
+  transform: translateY(0);
+  box-shadow:
+    0 2px 4px rgba(0,0,0,0.18),
+    0 6px 12px rgba(0,0,0,0.10);
+}
+
+/* count badge in top-right of pile */
+.pile-count {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  font-size: 0.75rem;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+
+/* stock empty state */
+.pile.slot.empty { opacity: 0.6; color: rgba(255,255,255,0.7); }
+
+/* align small foundation/top pile visuals neatly */
+.top-row .pile.slot { width: var(--card-w); height: var(--card-h); display:flex; align-items:center; justify-content:center; }
