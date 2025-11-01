@@ -120,17 +120,17 @@ Your support makes **JavaScript Games for Beginners** better every day. 💪
                 </a>
             </td>
             <td align="center">
-                <a href="https://github.com/K2976">
-                    <img src="https://avatars.githubusercontent.com/u/120504065?v=4" width="100;" alt="K2976"/>
+                <a href="https://github.com/geekahedron">
+                    <img src="https://avatars.githubusercontent.com/u/1170864?v=4" width="100;" alt="geekahedron"/>
                     <br />
-                    <sub><b>K2976</b></sub>
+                    <sub><b>geekahedron</b></sub>
                 </a>
             </td>
             <td align="center">
-                <a href="https://github.com/kayode96-max">
-                    <img src="https://avatars.githubusercontent.com/u/67349260?v=4" width="100;" alt="kayode96-max"/>
+                <a href="https://github.com/devvsingh">
+                    <img src="https://avatars.githubusercontent.com/u/148372017?v=4" width="100;" alt="devvsingh"/>
                     <br />
-                    <sub><b>kayode96-max</b></sub>
+                    <sub><b>devvsingh</b></sub>
                 </a>
             </td>
 		</tr>
@@ -143,54 +143,24 @@ Your support makes **JavaScript Games for Beginners** better every day. 💪
                 </a>
             </td>
             <td align="center">
-                <a href="https://github.com/devvsingh">
-                    <img src="https://avatars.githubusercontent.com/u/148372017?v=4" width="100;" alt="devvsingh"/>
+                <a href="https://github.com/kayode96-max">
+                    <img src="https://avatars.githubusercontent.com/u/67349260?v=4" width="100;" alt="kayode96-max"/>
                     <br />
-                    <sub><b>devvsingh</b></sub>
+                    <sub><b>kayode96-max</b></sub>
                 </a>
             </td>
             <td align="center">
-                <a href="https://github.com/AhishRagav">
-                    <img src="https://avatars.githubusercontent.com/u/183275684?v=4" width="100;" alt="AhishRagav"/>
+                <a href="https://github.com/K2976">
+                    <img src="https://avatars.githubusercontent.com/u/120504065?v=4" width="100;" alt="K2976"/>
                     <br />
-                    <sub><b>AhishRagav</b></sub>
+                    <sub><b>K2976</b></sub>
                 </a>
             </td>
             <td align="center">
-                <a href="https://github.com/GOUTHAMVE04">
-                    <img src="https://avatars.githubusercontent.com/u/180084300?v=4" width="100;" alt="GOUTHAMVE04"/>
+                <a href="https://github.com/Midhat-hub">
+                    <img src="https://avatars.githubusercontent.com/u/176475738?v=4" width="100;" alt="Midhat-hub"/>
                     <br />
-                    <sub><b>GOUTHAMVE04</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/SunjeetKajla">
-                    <img src="https://avatars.githubusercontent.com/u/206449884?v=4" width="100;" alt="SunjeetKajla"/>
-                    <br />
-                    <sub><b>SunjeetKajla</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/dhairyagoel-git">
-                    <img src="https://avatars.githubusercontent.com/u/77429914?v=4" width="100;" alt="dhairyagoel-git"/>
-                    <br />
-                    <sub><b>dhairyagoel-git</b></sub>
-                </a>
-            </td>
-		</tr>
-		<tr>
-            <td align="center">
-                <a href="https://github.com/geekahedron">
-                    <img src="https://avatars.githubusercontent.com/u/1170864?v=4" width="100;" alt="geekahedron"/>
-                    <br />
-                    <sub><b>geekahedron</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/sea-deep">
-                    <img src="https://avatars.githubusercontent.com/u/122673793?v=4" width="100;" alt="sea-deep"/>
-                    <br />
-                    <sub><b>sea-deep</b></sub>
+                    <sub><b>Midhat-hub</b></sub>
                 </a>
             </td>
             <td align="center">
@@ -201,10 +171,40 @@ Your support makes **JavaScript Games for Beginners** better every day. 💪
                 </a>
             </td>
             <td align="center">
-                <a href="https://github.com/Midhat-hub">
-                    <img src="https://avatars.githubusercontent.com/u/176475738?v=4" width="100;" alt="Midhat-hub"/>
+                <a href="https://github.com/sea-deep">
+                    <img src="https://avatars.githubusercontent.com/u/122673793?v=4" width="100;" alt="sea-deep"/>
                     <br />
-                    <sub><b>Midhat-hub</b></sub>
+                    <sub><b>sea-deep</b></sub>
+                </a>
+            </td>
+		</tr>
+		<tr>
+            <td align="center">
+                <a href="https://github.com/dhairyagoel-git">
+                    <img src="https://avatars.githubusercontent.com/u/77429914?v=4" width="100;" alt="dhairyagoel-git"/>
+                    <br />
+                    <sub><b>dhairyagoel-git</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/SunjeetKajla">
+                    <img src="https://avatars.githubusercontent.com/u/206449884?v=4" width="100;" alt="SunjeetKajla"/>
+                    <br />
+                    <sub><b>SunjeetKajla</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/GOUTHAMVE04">
+                    <img src="https://avatars.githubusercontent.com/u/180084300?v=4" width="100;" alt="GOUTHAMVE04"/>
+                    <br />
+                    <sub><b>GOUTHAMVE04</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/AhishRagav">
+                    <img src="https://avatars.githubusercontent.com/u/183275684?v=4" width="100;" alt="AhishRagav"/>
+                    <br />
+                    <sub><b>AhishRagav</b></sub>
                 </a>
             </td>
             <td align="center">
