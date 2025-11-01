@@ -23,6 +23,10 @@ jobs:
     steps:
       - name: 🧩 Checkout repository
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          persist-credentials: true
+          fetch-depth: 0
 
       - name: 📦 Get current folder structure
         id: current
@@ -84,7 +88,7 @@ jobs:
       - name: 🔑 Authenticate GitHub CLI
         if: steps.compare.outputs.same == 'false'
         run: |
-          echo "${{ secrets.GITHUB_TOKEN }}" | gh auth login --with-token
+          echo "${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}" | gh auth login --with-token
 
       - name: 🪄 Commit and create pull request safely
         if: steps.compare.outputs.same == 'false'
