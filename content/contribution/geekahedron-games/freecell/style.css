@@ -1,0 +1,191 @@
+/* Global layout */
+body {
+  background: #222;
+  color: #eee;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+#game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* top-row: free cells to left, foundations to right */
+.top-row {
+  width: 100%;
+  max-width: 980px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  margin: 12px 0;
+  padding: 0 12px;
+  box-sizing: border-box;
+}
+
+/* ensure free-cells and foundations keep their internal gap */
+.free-cells,
+.foundations {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+/* foundation slot specifics */
+.foundation-slot {
+  position: relative;
+  width: var(--card-w, 60px);
+  height: var(--card-h, 90px);
+}
+
+/* placeholder suit marker for empty foundation */
+.foundation-slot .suit-placeholder {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 16px;
+  opacity: 0.24;
+  pointer-events: none;
+  font-weight: 700;
+}
+
+/* make placeholder color match suit */
+.foundation-slot.suit-spades .suit-placeholder,
+.foundation-slot.suit-clubs .suit-placeholder { color: #111; }
+.foundation-slot.suit-hearts .suit-placeholder,
+.foundation-slot.suit-diamonds .suit-placeholder { color: #c00; }
+
+/* when foundation has a top card, hide the placeholder by default */
+.foundation-slot .card { position: absolute; top: 0; left: 0; }
+
+/* small spacing tweak so the top-row doesn't collide with tableau */
+#game > .zone + .zone,
+.top-row + #tableau { margin-top: 8px; }
+
+
+.zone {
+  display: flex;
+  gap: 8px;
+  margin: 16px 0;
+}
+
+/* Tableau stacks (vertical overlap like Klondike) */
+.stack {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 0;
+  margin-right: 12px;
+}
+
+/* Card visuals and interaction base */
+.card {
+  --card-w: 60px;
+  --card-h: 90px;
+
+  width: var(--card-w);
+  height: var(--card-h);
+  position: relative;
+  box-sizing: border-box;
+  border-radius: 6px;
+  background: #fff;
+  color: #000;
+  cursor: pointer;
+  display: block;
+  overflow: visible;
+
+  /* subtle edge so cards remain readable under overlap */
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background-clip: padding-box;
+
+  /* outline placeholder prevents layout shift when highlighted */
+  outline: 2px solid transparent;
+  outline-offset: 0;
+
+  /* transitions */
+  transition: transform 140ms ease, box-shadow 120ms ease, outline-color 120ms ease;
+  pointer-events: auto;
+}
+
+/* Overlap offset for stacked cards (applied to each card inside a stack) */
+.stack .card {
+  margin-top: -64px; /* adjust to control overlap amount; card height ~90 */
+  z-index: 0;
+  transition: transform 150ms ease, box-shadow 120ms ease;
+}
+
+/* first card in a column stays fully visible */
+.stack .card:first-child {
+  margin-top: 0;
+}
+
+/* Hover lift hint (keeps outlines readable) */
+.stack .card:hover,
+.card:hover {
+  z-index: 500;
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.45);
+  outline-color: rgba(255, 215, 79, 0.25);
+}
+
+/* Selection / active state — visible above neighbors */
+.card.selected {
+  z-index: 1000;
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+  outline-color: #ffd54f;
+  outline-offset: -2px;
+}
+
+/* Ensure stacked cards don't hide the selected outline */
+.stack .card { z-index: 0; }
+.stack .card.selected { z-index: 1000; }
+
+/* Color variants by suit */
+.card.red { color: #c00; }
+.card.black { color: #111; }
+
+/* Top-left inline rank + suit */
+.card .top {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  font-weight: 700;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  font-size: 12px;
+  pointer-events: none;
+}
+.card .suit-inline { font-size: 12px; }
+
+/* Bottom-right suit (optional; keep or remove as desired) */
+.card .suit {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  font-size: 14px;
+  pointer-events: none;
+}
+
+/* Keep center area available for hover/drag visuals but empty text */
+.card .center { visibility: hidden; }
+
+/* Empty-slot visuals */
+.empty-slot { opacity: 0.25; }
+
+/* Suit color styling for the top area */
+.card.red .top,
+.card.red .suit-inline { color: #c00; }
+.card.black .top,
+.card.black .suit-inline { color: #111; }
+
+/* Responsive adjustments */
+@media (max-width: 700px) {
+  :root { --card-w: 48px; --card-h: 72px; }
+  .stack { margin-right: 8px; }
+  .card .top { font-size: 11px; top: 4px; left: 4px; }
+  .card .suit { font-size: 12px; bottom: 4px; right: 4px; }
+}
