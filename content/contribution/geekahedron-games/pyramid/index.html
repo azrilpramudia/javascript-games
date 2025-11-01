@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pyramid Solitaire</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Pyramid Solitaire</h1>
+  <p id="instructions">
+    Remove cards that add up to 13. Kings can be removed alone. Only uncovered cards can be selected. Use the draw pile to help clear the pyramid.
+  </p>
+  <div id="game">
+    <div id="pyramid"></div>
+    <div id="stock-area">
+      <div id="stock" class="card back"></div>
+      <div id="waste" class="card"></div>
+    </div>
+    <button onclick="startGame()">New Game</button>
+    <div id="status"></div>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>
