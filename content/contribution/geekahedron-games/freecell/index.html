@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>FreeCell</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>FreeCell</h1>
+  <p id="instructions">
+    Move all cards to the foundation piles. Use free cells to temporarily hold cards. Build tableau columns in alternating colors, descending order.
+  </p>
+  <div id="game">
+    <div id="top-row" class="top-row">
+    <div id="free-cells" class="zone free-cells" aria-label="Free cells"></div>
+    <div id="foundations" class="zone foundations" aria-label="Foundations"></div>
+    </div>
+    <div id="tableau" class="zone"></div>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>
