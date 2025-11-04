@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Match Puzzle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="header">
+            <div class="score-box">Score: <span id="score">0</span></div>
+            <button id="startBtn">New Game</button>
+            <div class="level-box">Level: <span id="level">1</span></div>
+        </div>
+        
+        <div class="game-board" id="gameBoard">
+            <!-- Game grid will be generated here -->
+        </div>
+
+        <div class="controls">
+            <button id="leftBtn">⬅️</button>
+            <button id="rotateBtn">🔄</button>
+            <button id="rightBtn">➡️</button>
+            <button id="dropBtn">⬇️</button>
+        </div>
+
+        <div class="game-over hidden" id="gameOver">
+            <h2>Game Over!</h2>
+            <p>Final Score: <span id="finalScore">0</span></p>
+            <button id="restartBtn">Play Again</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
