@@ -268,6 +268,13 @@ Your support makes **JavaScript Games for Beginners** better every day. 💪
 		</tr>
 		<tr>
             <td align="center">
+                <a href="https://github.com/pghana365">
+                    <img src="https://avatars.githubusercontent.com/u/238744324?v=4" width="100;" alt="pghana365"/>
+                    <br />
+                    <sub><b>pghana365</b></sub>
+                </a>
+            </td>
+            <td align="center">
                 <a href="https://github.com/kris2005mehra">
                     <img src="https://avatars.githubusercontent.com/u/183271663?v=4" width="100;" alt="kris2005mehra"/>
                     <br />
@@ -302,6 +309,8 @@ Your support makes **JavaScript Games for Beginners** better every day. 💪
                     <sub><b>Srushti-Thombre</b></sub>
                 </a>
             </td>
+		</tr>
+		<tr>
             <td align="center">
                 <a href="https://github.com/Shachi12Shukla">
                     <img src="https://avatars.githubusercontent.com/u/152056204?v=4" width="100;" alt="Shachi12Shukla"/>
@@ -309,8 +318,6 @@ Your support makes **JavaScript Games for Beginners** better every day. 💪
                     <sub><b>Shachi12Shukla</b></sub>
                 </a>
             </td>
-		</tr>
-		<tr>
             <td align="center">
                 <a href="https://github.com/riddhima-7321">
                     <img src="https://avatars.githubusercontent.com/u/132067601?v=4" width="100;" alt="riddhima-7321"/>
@@ -346,6 +353,8 @@ Your support makes **JavaScript Games for Beginners** better every day. 💪
                     <sub><b>AnjaliPai16</b></sub>
                 </a>
             </td>
+		</tr>
+		<tr>
             <td align="center">
                 <a href="https://github.com/Anahskal">
                     <img src="https://avatars.githubusercontent.com/u/169256712?v=4" width="100;" alt="Anahskal"/>
@@ -353,8 +362,6 @@ Your support makes **JavaScript Games for Beginners** better every day. 💪
                     <sub><b>Anahskal</b></sub>
                 </a>
             </td>
-		</tr>
-		<tr>
             <td align="center">
                 <a href="https://github.com/aditi-verma-20">
                     <img src="https://avatars.githubusercontent.com/u/181006413?v=4" width="100;" alt="aditi-verma-20"/>
