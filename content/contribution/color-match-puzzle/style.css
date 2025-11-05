@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.game-container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    backdrop-filter: blur(10px);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    background: rgba(0,0,0,0.2);
+    border-radius: 8px;
+}
+
+.score-box, .level-box {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 8px 16px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 6px;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(8, 40px);
+    grid-template-rows: repeat(12, 40px);
+    gap: 2px;
+    background: rgba(0,0,0,0.3);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.block {
+    border-radius: 4px;
+    transition: transform 0.2s;
+}
+
+.block.red { background: linear-gradient(135deg, #ff6b6b, #ee5253); }
+.block.blue { background: linear-gradient(135deg, #48dbfb, #0abde3); }
+.block.green { background: linear-gradient(135deg, #1dd1a1, #10ac84); }
+.block.yellow { background: linear-gradient(135deg, #ffd32a, #ffa502); }
+.block.purple { background: linear-gradient(135deg, #9c88ff, #8c7ae6); }
+
+.block.active {
+    transform: scale(0.9);
+}
+
+.block.matched {
+    animation: matched 0.3s ease-out;
+}
+
+@keyframes matched {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(0); }
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+button {
+    padding: 12px 24px;
+    font-size: 18px;
+    border: none;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+.controls button {
+    padding: 15px;
+    font-size: 24px;
+}
+
+.game-over {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,0.9);
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.game-over h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.game-over button {
+    margin-top: 20px;
+    background: #4CAF50;
+    padding: 12px 30px;
+}
+
+.hidden {
+    display: none;
+}
