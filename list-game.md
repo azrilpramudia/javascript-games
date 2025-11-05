@@ -41,30 +41,31 @@ Automatically generated from the [content/contribution](./content/contribution) 
 | 35 | **Aim Trainer Game** | [./content/contribution/aim-trainer-game/](./content/contribution/aim-trainer-game/) |
 | 36 | **Chess** | [./content/contribution/chess/](./content/contribution/chess/) |
 | 37 | **Coin Toss Simulator** | [./content/contribution/coin-toss-simulator/](./content/contribution/coin-toss-simulator/) |
-| 38 | **Connect 4** | [./content/contribution/connect-4/](./content/contribution/connect-4/) |
-| 39 | **Emoji Catcher** | [./content/contribution/emoji-catcher/](./content/contribution/emoji-catcher/) |
-| 40 | **Game 2048** | [./content/contribution/game-2048/](./content/contribution/game-2048/) |
-| 41 | **Geekahedron Games** | [./content/contribution/geekahedron-games/](./content/contribution/geekahedron-games/) |
-| 42 | **Guessle** | [./content/contribution/guessle/](./content/contribution/guessle/) |
-| 43 | **Hangman** | [./content/contribution/hangman/](./content/contribution/hangman/) |
-| 44 | **Mastermind** | [./content/contribution/mastermind/](./content/contribution/mastermind/) |
-| 45 | **Minesweeper** | [./content/contribution/minesweeper/](./content/contribution/minesweeper/) |
-| 46 | **Newtons Laws** | [./content/contribution/newtons-laws/](./content/contribution/newtons-laws/) |
-| 47 | **Orbit Game** | [./content/contribution/orbit-game/](./content/contribution/orbit-game/) |
-| 48 | **Paddle Ball Game** | [./content/contribution/paddle-ball-game/](./content/contribution/paddle-ball-game/) |
-| 49 | **Pig Game** | [./content/contribution/pig-game/](./content/contribution/pig-game/) |
-| 50 | **Pong Game** | [./content/contribution/pong-game/](./content/contribution/pong-game/) |
-| 51 | **Reaction Speed Test** | [./content/contribution/reaction-speed-test/](./content/contribution/reaction-speed-test/) |
-| 52 | **Rock Paper Scissors** | [./content/contribution/rock-paper-scissors/](./content/contribution/rock-paper-scissors/) |
-| 53 | **Simon Says Game** | [./content/contribution/simon-says-game/](./content/contribution/simon-says-game/) |
-| 54 | **Simon Says Memory Game** | [./content/contribution/simon-says-memory-game/](./content/contribution/simon-says-memory-game/) |
-| 55 | **Snake Game** | [./content/contribution/snake-game/](./content/contribution/snake-game/) |
-| 56 | **Space Shooter Game** | [./content/contribution/space-shooter-game/](./content/contribution/space-shooter-game/) |
-| 57 | **Speaking Number Game** | [./content/contribution/speaking-number-game/](./content/contribution/speaking-number-game/) |
-| 58 | **Sudoku** | [./content/contribution/sudoku/](./content/contribution/sudoku/) |
-| 59 | **Tetris** | [./content/contribution/tetris/](./content/contribution/tetris/) |
-| 60 | **Tic Tac Toe** | [./content/contribution/tic-tac-toe/](./content/contribution/tic-tac-toe/) |
-| 61 | **Whack A Mole** | [./content/contribution/whack-a-mole/](./content/contribution/whack-a-mole/) |
-| 62 | **Wordle** | [./content/contribution/wordle/](./content/contribution/wordle/) |
+| 38 | **Color Match Puzzle** | [./content/contribution/color-match-puzzle/](./content/contribution/color-match-puzzle/) |
+| 39 | **Connect 4** | [./content/contribution/connect-4/](./content/contribution/connect-4/) |
+| 40 | **Emoji Catcher** | [./content/contribution/emoji-catcher/](./content/contribution/emoji-catcher/) |
+| 41 | **Game 2048** | [./content/contribution/game-2048/](./content/contribution/game-2048/) |
+| 42 | **Geekahedron Games** | [./content/contribution/geekahedron-games/](./content/contribution/geekahedron-games/) |
+| 43 | **Guessle** | [./content/contribution/guessle/](./content/contribution/guessle/) |
+| 44 | **Hangman** | [./content/contribution/hangman/](./content/contribution/hangman/) |
+| 45 | **Mastermind** | [./content/contribution/mastermind/](./content/contribution/mastermind/) |
+| 46 | **Minesweeper** | [./content/contribution/minesweeper/](./content/contribution/minesweeper/) |
+| 47 | **Newtons Laws** | [./content/contribution/newtons-laws/](./content/contribution/newtons-laws/) |
+| 48 | **Orbit Game** | [./content/contribution/orbit-game/](./content/contribution/orbit-game/) |
+| 49 | **Paddle Ball Game** | [./content/contribution/paddle-ball-game/](./content/contribution/paddle-ball-game/) |
+| 50 | **Pig Game** | [./content/contribution/pig-game/](./content/contribution/pig-game/) |
+| 51 | **Pong Game** | [./content/contribution/pong-game/](./content/contribution/pong-game/) |
+| 52 | **Reaction Speed Test** | [./content/contribution/reaction-speed-test/](./content/contribution/reaction-speed-test/) |
+| 53 | **Rock Paper Scissors** | [./content/contribution/rock-paper-scissors/](./content/contribution/rock-paper-scissors/) |
+| 54 | **Simon Says Game** | [./content/contribution/simon-says-game/](./content/contribution/simon-says-game/) |
+| 55 | **Simon Says Memory Game** | [./content/contribution/simon-says-memory-game/](./content/contribution/simon-says-memory-game/) |
+| 56 | **Snake Game** | [./content/contribution/snake-game/](./content/contribution/snake-game/) |
+| 57 | **Space Shooter Game** | [./content/contribution/space-shooter-game/](./content/contribution/space-shooter-game/) |
+| 58 | **Speaking Number Game** | [./content/contribution/speaking-number-game/](./content/contribution/speaking-number-game/) |
+| 59 | **Sudoku** | [./content/contribution/sudoku/](./content/contribution/sudoku/) |
+| 60 | **Tetris** | [./content/contribution/tetris/](./content/contribution/tetris/) |
+| 61 | **Tic Tac Toe** | [./content/contribution/tic-tac-toe/](./content/contribution/tic-tac-toe/) |
+| 62 | **Whack A Mole** | [./content/contribution/whack-a-mole/](./content/contribution/whack-a-mole/) |
+| 63 | **Wordle** | [./content/contribution/wordle/](./content/contribution/wordle/) |
 
-> 🧩 Auto-updated on 2025-11-01 04:12:14
+> 🧩 Auto-updated on 2025-11-05 06:11:06
