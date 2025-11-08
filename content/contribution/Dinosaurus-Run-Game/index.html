@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dino Run - Siang/Malam + Awan</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <h1>🦖 Dinosaurus Run – Vanilla HTML/CSS/JS</h1>
+    <p class="sub">Space/Tap untuk melompat • Hindari kaktus! (Siang/Malam & Awan)</p>
+
+    <div class="card">
+      <div class="topbar">
+        <div class="btns">
+          <button id="btnStart" class="primary">Mulai</button>
+          <button id="btnPause">Jeda (P)</button>
+          <button id="btnRestart">Ulangi (Enter)</button>
+        </div>
+        <div class="hud">
+          Skor: <span id="score">0</span> • Rekor: <span id="hiscore">0</span>
+        </div>
+      </div>
+
+      <div class="canvas-area">
+        <canvas id="game" width="900" height="240" aria-label="Dino Run"></canvas>
+      </div>
+
+      <div class="help">
+        Kontrol: <kbd>Space</kbd>/<kbd>W</kbd>/<kbd>↑</kbd> lompat • <kbd>P</kbd> jeda • <kbd>Enter</kbd> ulang. Tap/klik kanvas juga.
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

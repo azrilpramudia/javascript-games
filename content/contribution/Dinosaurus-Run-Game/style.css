@@ -1,0 +1,95 @@
+:root{
+  --bg: #f7f7f7;
+  --card-bg: #fff;
+  --muted: #8b8b8b;
+  --accent: #2f7dff;
+  --ground-day: #444;
+  --ground-night: #999;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: "Segoe UI", Roboto, system-ui, -apple-system, "Helvetica Neue", Arial;
+  background:var(--bg);
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  min-height:100vh;
+  padding:32px 16px;
+  color:#222;
+}
+
+.wrap{
+  width:min(980px, 98vw);
+}
+
+h1{margin:0 0 4px;font-size:1.6rem}
+.sub{margin:0 0 12px;color:#666;font-size:.95rem}
+
+.card{
+  background:var(--card-bg);
+  border:1px solid #e6e6e6;
+  border-radius:12px;
+  padding:14px;
+  box-shadow:0 8px 28px rgba(0,0,0,0.06);
+}
+
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  margin-bottom:12px;
+  flex-wrap:wrap;
+}
+
+.btns{display:flex;gap:8px}
+button{
+  border:0;
+  padding:8px 12px;
+  border-radius:8px;
+  background:#222;
+  color:#fff;
+  cursor:pointer;
+  font-weight:600;
+}
+button.primary{background:var(--accent)}
+button:active{transform:translateY(1px)}
+
+.hud{font-weight:700;color:#333}
+
+.canvas-area{
+  border-radius:8px;
+  overflow:hidden;
+  background:linear-gradient(#fff,#f1f1f1);
+  padding:10px;
+}
+
+canvas{
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:6px;
+  background:transparent;
+}
+
+/* help text */
+.help{
+  margin-top:10px;
+  font-size:.85rem;
+  color:var(--muted);
+  text-align:center;
+}
+kbd{
+  background:#eee;
+  padding:2px 6px;
+  border-radius:6px;
+  font-weight:700;
+}
+
+/* responsive smaller canvas on tiny screens */
+@media (max-width:520px){
+  .card{padding:10px}
+  canvas{height:160px}
+}
