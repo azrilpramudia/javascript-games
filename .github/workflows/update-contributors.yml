@@ -1,8 +1,6 @@
 name: 🧑‍💻 Smart Contributor Updater
 
 on:
-  schedule:
-    - cron: "0 * * * *" # Setiap 1 jam
   workflow_dispatch:
 
 permissions:
