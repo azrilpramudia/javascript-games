@@ -1,13 +1,9 @@
-name: 🧑‍💻 Update Contributors Automatically
+name: 🧑‍💻 Smart Contributor Updater
 
 on:
-  pull_request:
-    types: [closed]
-    branches:
-      - main
-  workflow_dispatch:
   schedule:
-    - cron: "0 7 * * 0"
+    - cron: "0 * * * *" # Setiap 1 jam
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -15,22 +11,73 @@ permissions:
 
 jobs:
   update-contributors:
-    if: github.event.pull_request.merged == true || github.event_name == 'workflow_dispatch' || github.event_name == 'schedule'
     runs-on: ubuntu-latest
+    name: 🧾 Auto Update Contributors in README.md
 
     steps:
-      - name: Checkout repository
+      - name: 🧩 Checkout Repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Generate contributors section
-        uses: akhilmhdh/contributors-readme-action@v2.3.10
+      - name: ⚡ Restore Previous Contributor Hash
+        id: cache
+        uses: actions/cache@v4
         with:
-          image_size: 100
-          readme_path: README.md
-          commit_message: "🤖 Update contributors list"
-          auto_detect_branch_protection: true
-          pr_title_on_protected: "🤖 Auto update contributors"
+          path: .cache_contributors_hash
+          key: contributor-hash-${{ github.repository }}
+          restore-keys: |
+            contributor-hash-
+
+      - name: 📥 Get Current Contributor Hash
+        id: contributors
+        run: |
+          curl -s "https://api.github.com/repos/${{ github.repository }}/contributors?per_page=100" \
+          | jq -r '.[].login' | sort | md5sum | cut -d " " -f1 > new_hash.txt
+          echo "hash=$(cat new_hash.txt)" >> $GITHUB_OUTPUT
+
+      - name: 💾 Get Previous Hash (from cache)
+        id: previous
+        run: |
+          if [ -f .cache_contributors_hash ]; then
+            echo "hash=$(cat .cache_contributors_hash)" >> $GITHUB_OUTPUT
+          else
+            echo "hash=none" >> $GITHUB_OUTPUT
+          fi
+
+      - name: 🔍 Compare Contributor Hashes
+        id: compare
+        run: |
+          if [ "${{ steps.contributors.outputs.hash }}" = "${{ steps.previous.outputs.hash }}" ]; then
+            echo "same=true" >> $GITHUB_OUTPUT
+            echo "✅ No new contributors found."
+          else
+            echo "same=false" >> $GITHUB_OUTPUT
+            echo "🆕 New contributors detected!"
+          fi
+
+      - name: ✏️ Update Contributors in README.md
+        if: steps.compare.outputs.same == 'false'
+        uses: akhilmhdh/contributors-readme-action@v2.3.11
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          readme_path: "README.md"
+          image_size: 100
+          columns_per_row: 6
+          use_username: true
+          commit_message: "🧑‍💻 chore: update contributors list"
+
+      - name: 💾 Save New Hash to Cache
+        if: steps.compare.outputs.same == 'false'
+        run: |
+          echo "${{ steps.contributors.outputs.hash }}" > .cache_contributors_hash
+
+      - name: 🚀 Create Pull Request (if branch protected)
+        if: steps.compare.outputs.same == 'false'
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: "auto/update-contributors"
+          title: "🤖 Auto update contributors list"
+          body: "Automatically updated the contributor section in README.md 💫"
