@@ -99,6 +99,13 @@ Your support makes **JavaScript Games for Beginners** better every day. 💪
                 </a>
             </td>
             <td align="center">
+                <a href="https://github.com/restuusgh">
+                    <img src="https://avatars.githubusercontent.com/u/135532018?v=4" width="100;" alt="restuusgh"/>
+                    <br />
+                    <sub><b>restuusgh</b></sub>
+                </a>
+            </td>
+            <td align="center">
                 <a href="https://github.com/Sa-sketch-max">
                     <img src="https://avatars.githubusercontent.com/u/118535055?v=4" width="100;" alt="Sa-sketch-max"/>
                     <br />
@@ -126,6 +133,8 @@ Your support makes **JavaScript Games for Beginners** better every day. 💪
                     <sub><b>geekahedron</b></sub>
                 </a>
             </td>
+		</tr>
+		<tr>
             <td align="center">
                 <a href="https://github.com/devvsingh">
                     <img src="https://avatars.githubusercontent.com/u/148372017?v=4" width="100;" alt="devvsingh"/>
@@ -133,8 +142,6 @@ Your support makes **JavaScript Games for Beginners** better every day. 💪
                     <sub><b>devvsingh</b></sub>
                 </a>
             </td>
-		</tr>
-		<tr>
             <td align="center">
                 <a href="https://github.com/LakshmiSowmya04">
                     <img src="https://avatars.githubusercontent.com/u/112118575?v=4" width="100;" alt="LakshmiSowmya04"/>
@@ -147,13 +154,6 @@ Your support makes **JavaScript Games for Beginners** better every day. 💪
                     <img src="https://avatars.githubusercontent.com/u/67349260?v=4" width="100;" alt="kayode96-max"/>
                     <br />
                     <sub><b>kayode96-max</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/restuusgh">
-                    <img src="https://avatars.githubusercontent.com/u/135532018?v=4" width="100;" alt="restuusgh"/>
-                    <br />
-                    <sub><b>restuusgh</b></sub>
                 </a>
             </td>
             <td align="center">
