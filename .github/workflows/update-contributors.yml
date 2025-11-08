@@ -21,6 +21,9 @@ jobs:
         uses: akhilmhdh/contributors-readme-action@v2.3.10
         with:
           image_size: 100
-          commit_message: "🤖 Update contributors list"
           readme_path: README.md
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          commit_message: "🤖 Update contributors list"
+          auto_detect_branch_protection: true
+          pr_title_on_protected: "🤖 Auto update contributors"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
