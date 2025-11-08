@@ -5,10 +5,17 @@ on:
     types: [closed]
     branches:
       - main
+  workflow_dispatch:
+  schedule:
+    - cron: "0 7 * * 0"
+
+permissions:
+  contents: write
+  pull-requests: write
 
 jobs:
   update-contributors:
-    if: github.event.pull_request.merged == true
+    if: github.event.pull_request.merged == true || github.event_name == 'workflow_dispatch' || github.event_name == 'schedule'
     runs-on: ubuntu-latest
 
     steps:
