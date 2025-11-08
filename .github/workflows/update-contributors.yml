@@ -20,7 +20,15 @@ jobs:
         with:
           fetch-depth: 0
 
-      # 🔹 Ambil daftar contributor terbaru dari GitHub API
+      - name: ⚡ Restore Previous Contributor Hash
+        id: cache
+        uses: actions/cache@v4
+        with:
+          path: .cache_contributors_hash
+          key: contributor-hash-${{ github.repository }}
+          restore-keys: |
+            contributor-hash-
+
       - name: 📥 Get Current Contributor Hash
         id: contributors
         run: |
@@ -28,17 +36,15 @@ jobs:
           | jq -r '.[].login' | sort | md5sum | cut -d " " -f1 > new_hash.txt
           echo "hash=$(cat new_hash.txt)" >> $GITHUB_OUTPUT
 
-      # 🔹 Baca hash contributor lama dari cache repo
-      - name: 💾 Get Previous Hash
+      - name: 💾 Get Previous Hash (from cache)
         id: previous
         run: |
-          if [ -f .contributors_hash ]; then
-            echo "hash=$(cat .contributors_hash)" >> $GITHUB_OUTPUT
+          if [ -f .cache_contributors_hash ]; then
+            echo "hash=$(cat .cache_contributors_hash)" >> $GITHUB_OUTPUT
           else
             echo "hash=none" >> $GITHUB_OUTPUT
           fi
 
-      # 🔹 Bandingkan hash contributor lama dan baru
       - name: 🔍 Compare Contributor Hashes
         id: compare
         run: |
@@ -50,7 +56,6 @@ jobs:
             echo "🆕 New contributors detected!"
           fi
 
-      # 🔹 Update contributor list di README.md (bagian <!-- readme: contributors -start -->)
       - name: ✏️ Update Contributors in README.md
         if: steps.compare.outputs.same == 'false'
         uses: akhilmhdh/contributors-readme-action@v2.3.11
@@ -63,18 +68,11 @@ jobs:
           use_username: true
           commit_message: "🧑‍💻 chore: update contributors list"
 
-      # 🔹 Simpan hash contributor terbaru (biar tidak update berulang kali)
-      - name: 💾 Save New Contributor Hash
+      - name: 💾 Save New Hash to Cache
         if: steps.compare.outputs.same == 'false'
         run: |
-          echo "${{ steps.contributors.outputs.hash }}" > .contributors_hash
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add .contributors_hash
-          git commit -m "🔄 Update contributor hash" || echo "no changes"
-          git push
+          echo "${{ steps.contributors.outputs.hash }}" > .cache_contributors_hash
 
-      # 🔹 (Opsional) Buat PR otomatis kalau branch utama dilindungi
       - name: 🚀 Create Pull Request (if branch protected)
         if: steps.compare.outputs.same == 'false'
         uses: peter-evans/create-pull-request@v5
