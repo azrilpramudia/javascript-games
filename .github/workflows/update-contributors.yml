@@ -17,6 +17,8 @@ jobs:
     steps:
       - name: 🧩 Checkout Repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: 📥 Get Current Contributor List
         id: current
@@ -70,12 +72,13 @@ jobs:
           pr_title: "🤖 Auto update contributors list"
           pr_body: "This PR automatically updates the contributor list in README.md 💫"
 
-      - name: 💾 Save New Contributor Hash
+      - name: 💾 Save New Contributor Hash and Create PR
         if: steps.compare.outputs.same == 'false'
-        run: |
-          cp current_hash.txt .contributors_hash
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "GitHub Action"
-          git add .contributors_hash
-          git commit -m "🔄 Update contributor hash" || echo "no changes"
-          git push
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "🔄 Update contributor hash"
+          branch: "auto/update-contributors-hash"
+          title: "🔄 Update contributor hash"
+          body: "Automatically updated .contributors_hash file after contributor changes."
+          add-paths: ".contributors_hash"
