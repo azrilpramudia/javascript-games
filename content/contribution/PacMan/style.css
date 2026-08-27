@@ -7,6 +7,11 @@ body {
     color: #fff;
 }
 
+
+.game-title{
+    text-shadow: 2px 2px #FF0000;
+}
+
 canvas {
     background-color: #000;
     border: 5px solid #0000FF; /* Blue border like the arcade */
