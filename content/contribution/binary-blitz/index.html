@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Binary Blitz is a beginner-friendly binary-to-decimal conversion game.">
+    <title>Binary Blitz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="game-card">
+        <header>
+            <p class="eyebrow">Binary conversion challenge</p>
+            <h1>Binary Blitz</h1>
+            <p class="instructions">Convert each binary number to decimal. Choose the correct answer before moving to the next round.</p>
+        </header>
+
+        <section class="status-bar" aria-label="Game status">
+            <p>Question <strong id="question-number">1</strong>/<span id="question-total">10</span></p>
+            <p>Score <strong id="score">0</strong></p>
+        </section>
+
+        <section id="question-panel" class="question-panel">
+            <p class="prompt">What is this binary number in decimal?</p>
+            <p id="binary-number" class="binary-number" aria-live="polite">00000000</p>
+            <div id="answer-options" class="answer-grid" aria-label="Answer choices"></div>
+            <p id="feedback" class="feedback" aria-live="polite"></p>
+            <button id="next-button" class="primary-button" type="button" hidden>Next Question</button>
+        </section>
+
+        <section id="results-panel" class="results-panel" hidden>
+            <p class="result-icon" aria-hidden="true">🏁</p>
+            <h2>Challenge Complete!</h2>
+            <p id="final-score" class="final-score"></p>
+            <p id="result-message"></p>
+            <button id="restart-button" class="primary-button" type="button">Play Again</button>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
