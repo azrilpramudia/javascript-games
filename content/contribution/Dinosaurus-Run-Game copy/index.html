@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title id="pageTitle">Dino Run - Siang/Malam + Awan</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <h1 id="gameTitle">🦖 Dinosaurus Run – Vanilla HTML/CSS/JS</h1>
+    <p id="gameDesc" class="sub">Space/Tap untuk melompat • Hindari kaktus! (Siang/Malam & Awan)</p>
+
+    <div class="card">
+      <div class="topbar">
+        <div class="btns">
+          <button id="btnStart" class="primary">Mulai</button>
+          <button id="btnPause">Jeda (P)</button>
+          <button id="btnRestart">Ulangi (Enter)</button>
+          <button id="btnLang">English</button>
+        </div>
+        <div id="gameScore" class="hud">
+          <span id="scoreLabel">Skor:</span>
+          <span id="score">0</span>
+          <span id="hiscoreLabel">• Rekor:</span>  
+          <span id="hiscore">0</span>
+        </div>
+      </div>
+
+      <div class="canvas-area">
+        <canvas id="game" width="900" height="240" aria-label="Dino Run"></canvas>
+      </div>
+
+      <div id="helpInfo" class="help">
+        <span id="controlLabel">Kontrol:</span>
+        <kbd>Space</kbd>/<kbd>W</kbd>/<kbd>↑</kbd>
+        <span id="jumpLabel">lompat</span> •
+        <kbd>P</kbd>
+        <span id="pauseLabel">jeda</span> •
+        <kbd>Enter</kbd>
+        <span id="restartLabel">ulang</span>.
+        <span id="tapLabel">Tap/klik kanvas juga.</span>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
