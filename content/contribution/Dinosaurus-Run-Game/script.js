@@ -12,6 +12,92 @@ const btnPause = document.getElementById('btnPause');
 const btnRestart = document.getElementById('btnRestart');
 const scoreEl = document.getElementById('score');
 const hiscoreEl = document.getElementById('hiscore');
+const pageTitle = document.getElementById('pageTitle');
+const gameTitle = document.getElementById('gameTitle');
+const gameDesc = document.getElementById('gameDesc');
+const btnLang = document.getElementById('btnLang');
+const scoreLabel = document.getElementById('scoreLabel');
+const hiscoreLabel = document.getElementById('hiscoreLabel');
+const controlLabel = document.getElementById('controlLabel');
+const jumpLabel = document.getElementById('jumpLabel');
+const pauseLabel = document.getElementById('pauseLabel');
+const restartLabel = document.getElementById('restartLabel');
+const tapLabel = document.getElementById('tapLabel');
+
+
+/* ====== Language Translations ====== */
+
+const translations = {
+  id: {
+    pageTitle: "Dino Run - Siang/Malam + Awan",
+    gameTitle: "🦖 Dinosaurus Run – Vanilla HTML/CSS/JS",
+    gameDesc: "Space/Tap untuk melompat • Hindari kaktus! (Siang/Malam & Awan)",
+    btnStart: "Mulai",
+    btnPause: "Jeda (P)",
+    btnRestart: "Ulangi (Enter)",
+    scoreLabel: "Skor:",
+    hiscoreLabel: "• Rekor:",
+    controlLabel: "Kontrol:",
+    jumpLabel: "lompat",
+    pauseLabel: "jeda",
+    restartLabel: "ulang",
+    tapLabel: "Tap/klik kanvas juga",
+  },
+
+  en: {
+    pageTitle: "Dino Run - Day/Night + Clouds",
+    gameTitle: "🦖 Dinosaur Run – Vanilla HTML/CSS/JS",
+    gameDesc: "Space/Tap to jump • Avoid the cacti! (Day/Night & Clouds)",
+    btnStart: "Start",
+    btnPause: "Pause (P)",
+    btnRestart: "Restart (Enter)",
+    scoreLabel: "Score:",
+    hiscoreLabel: "• High Score:",
+    controlLabel: "Controls:",
+    jumpLabel: "jump",
+    pauseLabel: "pause",
+    restartLabel: "restart",
+    tapLabel: "Tap/click the canvas too",
+  }
+};
+
+/* ====== Language Functionality ====== */
+
+let currentLanguage = "id"; 
+
+btnLang.addEventListener('click', () => {
+  if (currentLanguage === "id") {
+    currentLanguage = "en";
+  } else {
+    currentLanguage = "id";
+  }
+  document.documentElement.lang = currentLanguage;
+  setLanguage(currentLanguage);
+});
+
+
+function setLanguage(language){
+  gameTitle.textContent = translations[language].gameTitle;
+  gameDesc.textContent = translations[language].gameDesc;
+  btnStart.textContent = translations[language].btnStart;
+  btnPause.textContent = translations[language].btnPause;
+  btnRestart.textContent = translations[language].btnRestart;
+  scoreLabel.textContent = translations[language].scoreLabel;
+  hiscoreLabel.textContent = translations[language].hiscoreLabel;
+  controlLabel.textContent = translations[language].controlLabel;
+  jumpLabel.textContent = translations[language].jumpLabel;
+  pauseLabel.textContent = translations[language].pauseLabel;
+  restartLabel.textContent = translations[language].restartLabel;
+  tapLabel.textContent = translations[language].tapLabel;
+  pageTitle.textContent = translations[language].pageTitle;
+
+  if (language === "id") {
+    btnLang.textContent = "English";
+  } else {
+    btnLang.textContent = "Bahasa";
+  }
+
+}
 
 /* ====== Settings & State ====== */
 const STATE = {
