@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const livesDisplay = document.getElementById('lives');
     const gameOverScreen = document.getElementById('gameOver');
     const restartButton = document.getElementById('restartButton');
+    const pauseBtn = document.getElementById('pauseBtn');
 
     // --- Game Constants ---
     const TILE_SIZE = 28; // Each tile is 28x28 pixels
@@ -58,6 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let isFleeing = false;
     let fleeTimer = 0;
     let gameRunning = true;
+    let gamePaused = false;
     let pacman;
     let blinky; // Our one ghost
     
@@ -358,6 +360,7 @@ document.addEventListener('DOMContentLoaded', () => {
      */
     function update() {
         if (!gameRunning) return;
+        if (gamePaused) return;
 
         // Move entities
         pacman.move();
