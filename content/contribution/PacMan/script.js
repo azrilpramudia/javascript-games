@@ -356,6 +356,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     /**
+     * Add pause button
+     */
+
+    /* ====== Language Functionality ====== */
+
+    pauseBtn.addEventListener('click', () => {
+    if (gamePaused === false) {
+        gamePaused = true;
+        pauseBtn.textContent = "Play";
+    } else {
+        gamePaused = false;
+        pauseBtn.textContent = "Pause";
+    }});
+
+
+    /**
      * Updates all game logic.
      */
     function update() {
@@ -544,6 +560,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!gameRunning) {
             return; // Stop the loop if game is over
         }
+
+        if (gamePaused) {
+            requestAnimationFrame(gameLoop);
+            return;
+        }
         
         update();
         draw();
@@ -554,7 +575,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Event Listeners ---
     // Focus the canvas to capture key events
     canvas.focus();
-    canvas.addEventListener('keydown', handleInput);
+    document.addEventListener('keydown', handleInput);
     
     restartButton.addEventListener('click', () => {
         // Reloading the page is the simplest way to reset the entire game state
