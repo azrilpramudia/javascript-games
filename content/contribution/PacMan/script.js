@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const livesDisplay = document.getElementById('lives');
     const gameOverScreen = document.getElementById('gameOver');
     const restartButton = document.getElementById('restartButton');
+    const pauseBtn = document.getElementById('pauseBtn');
 
     // --- Game Constants ---
     const TILE_SIZE = 28; // Each tile is 28x28 pixels
@@ -58,6 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let isFleeing = false;
     let fleeTimer = 0;
     let gameRunning = true;
+    let gamePaused = false;
     let pacman;
     let blinky; // Our one ghost
     
@@ -354,10 +356,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     /**
+     * Add pause button
+     */
+
+    /* ====== Language Functionality ====== */
+
+    pauseBtn.addEventListener('click', () => {
+    if (gamePaused === false) {
+        gamePaused = true;
+        pauseBtn.textContent = "Play";
+    } else {
+        gamePaused = false;
+        pauseBtn.textContent = "Pause";
+    }});
+
+
+    /**
      * Updates all game logic.
      */
     function update() {
         if (!gameRunning) return;
+        if (gamePaused) return;
 
         // Move entities
         pacman.move();
@@ -541,6 +560,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!gameRunning) {
             return; // Stop the loop if game is over
         }
+
+        if (gamePaused) {
+            requestAnimationFrame(gameLoop);
+            return;
+        }
         
         update();
         draw();
@@ -551,7 +575,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Event Listeners ---
     // Focus the canvas to capture key events
     canvas.focus();
-    canvas.addEventListener('keydown', handleInput);
+    document.addEventListener('keydown', handleInput);
     
     restartButton.addEventListener('click', () => {
         // Reloading the page is the simplest way to reset the entire game state
