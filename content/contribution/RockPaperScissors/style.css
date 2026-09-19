@@ -1,0 +1,278 @@
+:root{
+    --felt-900:#0f2e23;
+    --felt-800:#153d2e;
+    --felt-700:#1c4d3a;
+    --cream:#f4ecd8;
+    --gold:#d4a24e;
+    --gold-bright:#e6bd6f;
+    --brick:#c1483e;
+    --brick-dark:#8f3129;
+    --ink:#0c1f18;
+    --line: rgba(244,236,216,0.14);
+    --font-display: "Fraunces", Georgia, serif;
+    --font-ui: "Space Grotesk", -apple-system, sans-serif;
+  }
+  :root{
+    --bg-outer: radial-gradient(120% 140% at 50% -10%, var(--felt-700) 0%, var(--felt-900) 60%, #081a13 100%);
+    --panel: rgba(244,236,216,0.05);
+    --panel-border: rgba(244,236,216,0.12);
+    --text-main: var(--cream);
+    --text-dim: rgba(244,236,216,0.6);
+  }
+  
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  
+  body{
+    min-height:100vh;
+    background: var(--bg-outer);
+    font-family: var(--font-ui);
+    color: var(--text-main);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding: 32px 18px;
+  }
+  
+  .table{
+    width:100%;
+    max-width: 620px;
+    position:relative;
+  }
+  
+  .table::before{
+    content:"";
+    position:absolute;
+    inset:-40px;
+    background-image: radial-gradient(rgba(244,236,216,0.035) 1px, transparent 1px);
+    background-size: 14px 14px;
+    pointer-events:none;
+    z-index:0;
+    border-radius: 40px;
+  }
+  
+  header{
+    position:relative;
+    z-index:1;
+    text-align:center;
+    margin-bottom: 34px;
+  }
+  
+  .kicker{
+    font-family: var(--font-ui);
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    color: var(--gold-bright);
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  
+  h1{
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-optical-sizing: auto;
+    font-size: clamp(2.4rem, 7vw, 3.4rem);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+  }
+  
+  .instruction{
+    margin-top: 12px;
+    color: var(--text-dim);
+    font-size: 16px;
+  }
+  
+  .choices{
+    position:relative;
+    z-index:1;
+    display:flex;
+    justify-content:center;
+    gap: 16px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+  }
+  
+  .choice{
+    --chip: var(--cream);
+    width: 108px;
+    height: 108px;
+    border-radius: 50%;
+    border: none;
+    cursor:pointer;
+    background:
+      radial-gradient(circle at 35% 30%, #fffdf6 0%, var(--chip) 55%, #e7dcc0 100%);
+    box-shadow:
+      0 6px 0 rgba(0,0,0,0.28),
+      0 10px 18px rgba(0,0,0,0.35),
+      inset 0 0 0 3px rgba(12,31,24,0.08);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap: 4px;
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--ink);
+    transition: transform 120ms ease, box-shadow 120ms ease;
+  }
+  .choice .emoji{ font-size: 34px; line-height:1; }
+  
+  .choice:hover{
+    transform: translateY(-3px);
+    box-shadow:
+      0 9px 0 rgba(0,0,0,0.28),
+      0 14px 22px rgba(0,0,0,0.4),
+      inset 0 0 0 3px rgba(12,31,24,0.08);
+  }
+  .choice:active{
+    transform: translateY(2px);
+    box-shadow:
+      0 3px 0 rgba(0,0,0,0.28),
+      0 5px 10px rgba(0,0,0,0.35),
+      inset 0 0 0 3px rgba(12,31,24,0.08);
+  }
+  .choice:focus-visible{
+    outline: 3px solid var(--gold-bright);
+    outline-offset: 4px;
+  }
+  
+  .choice.selected{
+    --chip: var(--gold-bright);
+  }
+  
+  .stage{
+    position:relative;
+    z-index:1;
+    background: var(--panel);
+    border: 1px solid var(--panel-border);
+    border-radius: 18px;
+    padding: 26px 24px;
+    margin-bottom: 26px;
+  }
+  
+  .versus{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap: 18px;
+    margin-bottom: 16px;
+  }
+  
+  .side{
+    flex:1;
+    text-align:center;
+  }
+  .side .label{
+    font-size:12px;
+    letter-spacing:0.1em;
+    color: var(--text-dim);
+    margin-bottom: 8px;
+  }
+  .side .glyph{
+    font-size: 44px;
+    line-height:1;
+    height: 52px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .side .name{
+    margin-top:6px;
+    font-size: 14px;
+    text-transform: capitalize;
+    color: var(--text-main);
+    min-height: 18px;
+  }
+  
+  .vs-mark{
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 18px;
+    color: var(--gold-bright);
+    opacity:0.85;
+  }
+  
+  #result-message{
+    text-align:center;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(1.3rem, 4vw, 1.7rem);
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+  }
+  #result-message.win{ color: var(--gold-bright); }
+  #result-message.lose{ color: #e0897f; }
+  #result-message.draw{ color: var(--text-dim); }
+  
+  .scoreboard{
+    position:relative;
+    z-index:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap: 0;
+    margin-bottom: 28px;
+    border-radius: 14px;
+    overflow:hidden;
+    border: 1px solid var(--panel-border);
+  }
+  .score-block{
+    flex:1;
+    padding: 16px 10px;
+    text-align:center;
+    background: var(--panel);
+  }
+  .score-block + .score-block{
+    border-left: 1px solid var(--panel-border);
+  }
+  .score-block .tally-label{
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: var(--text-dim);
+    margin-bottom: 6px;
+  }
+  .score-block .tally-num{
+    font-family: var(--font-display);
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--gold-bright);
+  }
+  
+  .actions{
+    position:relative;
+    z-index:1;
+    display:flex;
+    justify-content:center;
+  }
+  
+  #reset-button{
+    padding: 12px 28px;
+    border-radius: 999px;
+    border: 1px solid var(--panel-border);
+    background: transparent;
+    color: var(--text-main);
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 14px;
+    cursor:pointer;
+    transition: background 120ms ease, border-color 120ms ease, transform 120ms ease;
+  }
+  #reset-button:hover{
+    background: rgba(244,236,216,0.08);
+    border-color: var(--gold-bright);
+  }
+  #reset-button:active{ transform: translateY(1px); }
+  #reset-button:focus-visible{
+    outline: 3px solid var(--gold-bright);
+    outline-offset: 3px;
+  }
+  
+  @media (max-width: 420px){
+    .choice{ width: 90px; height: 90px; }
+    .choice .emoji{ font-size: 28px; }
+    .side .glyph{ font-size: 36px; }
+  }
+  
+  @media (prefers-reduced-motion: reduce){
+    .choice, #reset-button{ transition: none; }
+  }

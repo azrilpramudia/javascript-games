@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Rock Paper Scissors</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <main class="table">
+            <header>
+                <div class="kicker">Game Night</div>
+                <h1>Rock, Paper, Scissors</h1>
+                <p class="instruction">Pick your move — first to feel lucky wins
+                    the round.</p>
+            </header>
+
+            <div class="choices" role="group" aria-label="Choose your move">
+                <button class="choice" data-choice="rock" aria-label="Rock">
+                    <span class="emoji" aria-hidden="true">🪨</span>Rock
+                </button>
+                <button class="choice" data-choice="paper" aria-label="Paper">
+                    <span class="emoji" aria-hidden="true">📄</span>Paper
+                </button>
+                <button class="choice" data-choice="scissors"
+                    aria-label="Scissors">
+                    <span class="emoji" aria-hidden="true">✂️</span>Scissors
+                </button>
+            </div>
+
+            <div class="stage">
+                <div class="versus">
+                    <div class="side">
+                        <div class="label">YOU</div>
+                        <div class="glyph" id="player-glyph">–</div>
+                        <div class="name" id="player-choice">—</div>
+                    </div>
+                    <div class="vs-mark">vs</div>
+                    <div class="side">
+                        <div class="label">COMPUTER</div>
+                        <div class="glyph" id="computer-glyph">–</div>
+                        <div class="name" id="computer-choice">—</div>
+                    </div>
+                </div>
+                <h2 id="result-message">Make your choice!</h2>
+            </div>
+
+            <div class="scoreboard">
+                <div class="score-block">
+                    <div class="tally-label">PLAYER</div>
+                    <div class="tally-num" id="player-score">0</div>
+                </div>
+                <div class="score-block">
+                    <div class="tally-label">COMPUTER</div>
+                    <div class="tally-num" id="computer-score">0</div>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button id="reset-button">Reset game</button>
+            </div>
+        </main>
+
+        <script src="script.js"></script>
+    </body>
+</html>
