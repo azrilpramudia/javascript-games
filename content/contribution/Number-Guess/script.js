@@ -28,6 +28,12 @@ guessBtn.addEventListener("click", () => {
     }
 });
 
+guessInput.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        guessBtn.click();
+    }
+});
+
 restartBtn.addEventListener("click", () => {
     secretNumber = Math.floor(Math.random() * 100) + 1;
     attempts = 0;
